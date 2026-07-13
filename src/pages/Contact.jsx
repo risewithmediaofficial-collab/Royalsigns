@@ -62,7 +62,7 @@ export default function Contact() {
           {/* Info Card Panel */}
           <div className="contact-info-panel">
             <h2>Our Shop Location & Info</h2>
-            <p className="panel-desc">We are located in Krishnagiri. Drop by our workshop or contact us online.</p>
+            <p className="panel-desc">We deliver premium signage and branding solutions for businesses across Chennai and Krishnagiri. Reach out to us for a site survey or a free consultation.</p>
 
             <ul className="info-list">
               <li>
@@ -71,7 +71,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4>Workshop Address</h4>
-                  <p>Naveen Arcade Building, Service Road, Gandhi Nagar, Krishnagiri, Tamil Nadu 635002, India.</p>
+                  <p>Royal Signs, No. 13/6, Tamilar Street, Loganathan Nagar, Padmanabha Nagar, Choolaimedu, Chennai – 600094</p>
                 </div>
               </li>
 
@@ -81,7 +81,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4>Call Our Desk</h4>
-                  <p><a href="tel:+919876543210" className="link-hover">+91 98765 43210</a></p>
+                  <p><a href="tel:+919791378755" className="link-hover">+91 97913 78755</a></p>
+                  <p><a href="tel:+917845008323" className="link-hover">+91 78450 08323</a></p>
                   <p className="light-sub text-xs">For emergency repair support or order status</p>
                 </div>
               </li>
@@ -109,11 +110,11 @@ export default function Contact() {
             </ul>
 
             <div className="quick-buttons-row">
-              <a href="tel:+919876543210" className="btn btn-red">
+              <a href="tel:+919791378755" className="btn btn-red">
                 <Phone size={16} /> Call Now
               </a>
               <a 
-                href="https://wa.me/919876543210?text=Hi%20Royal%20Signs,%20I'm%20writing%20from%20your%20website%20to%20discuss%20a%20name%20board." 
+                href="https://wa.me/919791378755?text=Hi%20Royal%20Signs,%20I'm%20writing%20from%20your%20website%20to%20discuss%20a%20branding%20project." 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="btn btn-yellow"

@@ -16,8 +16,8 @@ export default function Home() {
   // Stats counting logic
   const [experience, setExperience] = useState(0);
   const [projects, setProjects] = useState(0);
-  const [reviews, setReviews] = useState(0);
-  const [cities, setCities] = useState(0);
+  const [signages, setSignages] = useState(0);
+  const [acpWorks, setAcpWorks] = useState(0);
 
   useEffect(() => {
     // Stats animation triggers when page loads
@@ -37,9 +37,9 @@ export default function Home() {
     };
 
     animateStat("11", setExperience);
-    animateStat("1200", setProjects);
-    animateStat("168", setReviews);
-    animateStat("15", setCities);
+    animateStat("673", setProjects);
+    animateStat("4291", setSignages);
+    animateStat("75", setAcpWorks);
   }, []);
   const clientLogos = [
     "TVS Motors", "Adayar Ananda Bhavan", "Apollo Pharmacy", 
@@ -176,7 +176,7 @@ export default function Home() {
       {/* Trusted Clients Slider */}
       <section className="trusted-clients-section">
         <div className="container">
-          <p className="trusted-title text-center">TRUSTED BY 1200+ BUSINESSES ACROSS TAMIL NADU</p>
+          <p className="trusted-title text-center">TRUSTED BY 673+ PROJECTS ACROSS CHENNAI & KRISHNAGIRI</p>
           <div className="logos-slider-marquee">
             <div className="logos-track">
               {clientLogos.concat(clientLogos).map((logo, index) => (
@@ -202,9 +202,9 @@ export default function Home() {
 
           <div className="about-text-content">
             <span className="badge badge-red">About Us</span>
-            <h2>Krishnagiri's Premier Custom Signage Shop</h2>
+            <h2>Premium Signage & Branding Solutions for Every Business</h2>
             <p>
-              Royal Signs has spent over 11 years engineering visual name boards for showrooms, hotels, factories, and schools. We manage every step in-house — from digital spatial drafting and sheet grooving to metal welding and secure heights mounting.
+              At Royal Signs, we specialize in delivering complete signage and branding solutions with professional craftsmanship and premium quality. From acrylic letters and LED signages to ACP elevations, glazing works, and unipoles, we create signage that strengthens brand identity and adds a premium, professional appearance.
             </p>
             
             {/* Stats list with animated counters */}
@@ -218,12 +218,12 @@ export default function Home() {
                 <p>Projects Completed</p>
               </div>
               <div className="stat-card">
-                <h3>{reviews}+</h3>
-                <p>Happy Customer Reviews</p>
+                <h3>{signages}+</h3>
+                <p>Signages Installed</p>
               </div>
               <div className="stat-card">
-                <h3>{cities}+</h3>
-                <p>Cities Served</p>
+                <h3>{acpWorks}+</h3>
+                <p>ACP Elevation Works</p>
               </div>
             </div>
           </div>

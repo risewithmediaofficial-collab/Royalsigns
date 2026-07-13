@@ -293,11 +293,11 @@ export default function IntroAnimation() {
                         className="smh-active-content-inner"
                     >
                         <h2>
-                            Lighting Up <br />
-                            <span style={{ color: '#D62828' }}>Your Brand</span>
+                            Crafting Premium Signage <br />
+                            <span style={{ color: '#D62828' }}>That Elevates Your Brand</span>
                         </h2>
                         <p>
-                            Premium custom-made LED sign boards, ACP cladding, and neon displays designed to get your business noticed in Krishnagiri.
+                            11+ Years of Excellence • 673+ Projects Completed • 4,291+ Signages Installed • Complete Design, Fabrication & Installation Across Chennai & Krishnagiri
                         </p>
                         <div className="smh-btn-row">
                             <button 

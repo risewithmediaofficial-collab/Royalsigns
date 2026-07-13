@@ -41,9 +41,9 @@ export default function About() {
       {/* Subpage Header Banner */}
       <section className="page-header section-padding text-center">
         <div className="container">
-          <span className="badge badge-yellow">Our Legacy</span>
-          <h1>About Royal Signs</h1>
-          <p>Krishnagiri's trusted custom sign board manufacturer since 2015.</p>
+          <span className="badge badge-yellow">About Royal Signs</span>
+          <h1>Crafting Premium Signage That Elevates Your Brand</h1>
+          <p>We specialize in acrylic letters, trim cap letters, LED signages, ACP elevations, glazing works, unipoles, and complete branding solutions for businesses across Chennai and Krishnagiri.</p>
         </div>
       </section>
 
@@ -53,7 +53,7 @@ export default function About() {
           <div className="story-image-side glass-panel">
             <div className="story-box-badge pulse-glow-element">
               <h3>11+</h3>
-              <p>Years of Quality Craft</p>
+              <p>Years of Excellence</p>
             </div>
             <div className="story-logo-neon">
               <span className="glow-yellow">ESTD</span>
@@ -62,15 +62,15 @@ export default function About() {
           </div>
 
           <div className="story-text">
-            <h2>Crafting Visual Identity for Over a Decade</h2>
+            <h2>Premium Signage & Branding Solutions with Professional Craftsmanship</h2>
             <p>
-              Founded in 2015 in Gandhi Nagar, Krishnagiri, **Royal Signs** was established with a singular vision: to deliver premium illuminated name boards that enable businesses to communicate their brand presence with high visibility.
+              At Royal Signs, we specialize in delivering complete signage and branding solutions with professional craftsmanship and premium quality. Our expertise includes acrylic letters, trim cap letters, LED signages, ACP elevations, glazing works, unipoles, uniform fabrication, and a wide range of custom branding solutions tailored for businesses of all sizes.
             </p>
             <p>
-              Over the last 11 years, we have grown from a modest fabrication workshop into a full-scale commercial manufacturer. Today, we house heavy industrial CNC cutting systems, automated laser benders, and a dedicated team of fabrication engineers and installers.
+              With 11+ years of industry experience, we have successfully completed 673+ projects, 4,291+ signages, and 75+ ACP elevation works. From concept and design to fabrication and on-site installation, we provide end-to-end solutions that ensure quality, durability, and outstanding visual appeal.
             </p>
             <p>
-              Whether it is a single boutique neon sign board or massive multi-floor corporate ACP branding cladding, we deliver pixel-perfect execution tailored to the unique spatial needs of each customer.
+              Whether you are looking to enhance your shop, office, showroom, restaurant, hospital, educational institution, or corporate workspace, our team creates signage that strengthens your brand identity and gives your business a premium, professional appearance.
             </p>
           </div>
         </div>
@@ -83,7 +83,7 @@ export default function About() {
             <Eye size={40} className="icon-yellow" />
             <h3>Our Vision</h3>
             <p>
-              To lead the visual signage and outdoor branding market in South India by consistently engineering the most durable, bright, and stunning LED illumination solutions that make storefronts stand out.
+              To become a trusted name in premium signage and branding by creating striking, durable, and innovative solutions that elevate businesses with lasting visual impact.
             </p>
           </div>
 
@@ -91,7 +91,7 @@ export default function About() {
             <ShieldCheck size={40} className="icon-red" />
             <h3>Our Mission</h3>
             <p>
-              To deliver premium quality branding and signs using Grade-A acrylics, non-fading ACP panels, and long-lasting LEDs. We aim to offer smooth end-to-end execution, ensuring fast delivery and high installation standards.
+              To deliver precision-engineered signage and branding solutions using premium materials, expert craftsmanship, and flawless execution. We are committed to quality, reliability, and a seamless experience from design to installation.
             </p>
           </div>
         </div>

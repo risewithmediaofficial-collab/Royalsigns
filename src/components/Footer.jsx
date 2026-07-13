@@ -16,7 +16,7 @@ export default function Footer() {
             <span className="logo-text">ROYAL<span className="logo-accent">SIGNS</span></span>
           </Link>
           <p className="footer-desc">
-            Premium custom sign boards and branding solutions since 2015. Lighting up businesses in Krishnagiri and across Tamil Nadu.
+            Premium signage and branding solutions with professional craftsmanship and quality materials. We serve businesses across Chennai and Krishnagiri.
           </p>
           <div className="rating-card">
             <div className="rating-stars">
@@ -51,12 +51,12 @@ export default function Footer() {
             <li>
               <MapPin size={20} className="footer-icon-yellow" />
               <span>
-                Naveen Arcade Building, Service Road, Gandhi Nagar, Krishnagiri, Tamil Nadu 635002
+                Royal Signs, No. 13/6, Tamilar Street, Loganathan Nagar, Padmanabha Nagar, Choolaimedu, Chennai – 600094
               </span>
             </li>
             <li>
               <Phone size={18} className="footer-icon-red" />
-              <a href="tel:+919876543210">+91 98765 43210</a>
+              <a href="tel:+919791378755">+91 97913 78755</a>
             </li>
             <li>
               <Mail size={18} className="footer-icon-yellow" />
