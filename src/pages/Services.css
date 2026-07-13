@@ -1,0 +1,159 @@
+.tabs-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 50px;
+}
+
+.tab-btn {
+  background-color: #ffffff;
+  color: var(--text-body);
+  border: 1px solid var(--color-border);
+  padding: 10px 24px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  border-radius: 9999px; /* Rounded pill style tabs */
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.tab-btn:hover {
+  border-color: var(--color-red);
+  color: var(--color-red);
+}
+
+.tab-btn.active {
+  background-color: var(--color-red);
+  color: #ffffff;
+  border-color: var(--color-red);
+  box-shadow: 0 4px 15px rgba(214, 40, 40, 0.15);
+}
+
+/* Service Detail Cards Grid */
+.services-list-grid {
+  margin-bottom: 40px;
+}
+
+.service-detail-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.service-detail-card:hover {
+  border-color: var(--color-red);
+}
+
+.detail-card-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.detail-icon-wrap {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid var(--color-border);
+  background-color: var(--bg-secondary);
+  color: var(--color-red);
+}
+
+.service-detail-card:hover .detail-icon-wrap {
+  background-color: var(--color-red);
+  color: #ffffff;
+}
+
+.detail-card-header h3 {
+  font-size: 1.4rem;
+  color: var(--text-heading);
+}
+
+.detail-desc {
+  color: var(--text-body);
+  font-size: 0.95rem;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.detail-specs {
+  margin-bottom: 30px;
+  border-top: 1px solid var(--color-border);
+  padding-top: 20px;
+}
+
+.detail-specs h4 {
+  font-size: 0.9rem;
+  color: var(--text-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 15px;
+}
+
+.detail-specs ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.detail-specs li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--text-body);
+}
+
+.dot-bullet {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-red);
+  box-shadow: 0 0 5px rgba(214, 40, 40, 0.4);
+  flex-shrink: 0;
+}
+
+.detail-actions {
+  margin-top: auto;
+}
+
+/* FAQ Layout */
+.faq-section {
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--color-border);
+}
+
+.faq-card {
+  height: 100%;
+}
+
+.faq-card h3 {
+  font-size: 1.15rem;
+  color: var(--text-heading);
+  margin-bottom: 12px;
+}
+
+.faq-card p {
+  color: var(--text-body);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .tabs-container {
+    gap: 10px;
+  }
+  
+  .tab-btn {
+    padding: 8px 18px;
+    font-size: 0.85rem;
+  }
+}

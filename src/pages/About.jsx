@@ -1,0 +1,156 @@
+import React from 'react';
+import { Compass, Eye, ShieldCheck, Hammer, Sparkles, Layers, Sliders, CheckCircle2 } from 'lucide-react';
+import './About.css';
+
+export default function About() {
+  const steps = [
+    {
+      num: "01",
+      title: "Consultation & Survey",
+      desc: "Our team conducts a physical site measurement to evaluate spacing, mounting angles, wind forces, and power connections.",
+      icon: <Compass size={24} className="icon-yellow" />
+    },
+    {
+      num: "02",
+      title: "Computerized Design",
+      desc: "We render high-resolution 2D and 3D digital layouts showing how your signboard will look in daytime and illuminated at night.",
+      icon: <Sliders size={24} className="icon-red" />
+    },
+    {
+      num: "03",
+      title: "CNC & Laser Fabrication",
+      desc: "ACP sheets are groove-cut on computerized CNC router machines, and acrylic letters are precision laser-cut for flawless alignments.",
+      icon: <Hammer size={24} className="icon-yellow" />
+    },
+    {
+      num: "04",
+      title: "LED Illumination Assembly",
+      desc: "We embed energy-efficient Samsung LED modules with waterproof wiring harnesses inside the channel letters.",
+      icon: <Sparkles size={24} className="icon-red" />
+    },
+    {
+      num: "05",
+      title: "Installation & Commissioning",
+      desc: "Our professional heights-technicians install structural wall brackets, mount the sign, and calibrate the lighting controller safely.",
+      icon: <Layers size={24} className="icon-yellow" />
+    }
+  ];
+
+  return (
+    <div className="about-page">
+      {/* Subpage Header Banner */}
+      <section className="page-header section-padding text-center">
+        <div className="container">
+          <span className="badge badge-yellow">Our Legacy</span>
+          <h1>About Royal Signs</h1>
+          <p>Krishnagiri's trusted custom sign board manufacturer since 2015.</p>
+        </div>
+      </section>
+
+      {/* History Story Section */}
+      <section className="story-section section-padding">
+        <div className="container story-grid">
+          <div className="story-image-side glass-panel">
+            <div className="story-box-badge pulse-glow-element">
+              <h3>11+</h3>
+              <p>Years of Quality Craft</p>
+            </div>
+            <div className="story-logo-neon">
+              <span className="glow-yellow">ESTD</span>
+              <span className="glow-red">2015</span>
+            </div>
+          </div>
+
+          <div className="story-text">
+            <h2>Crafting Visual Identity for Over a Decade</h2>
+            <p>
+              Founded in 2015 in Gandhi Nagar, Krishnagiri, **Royal Signs** was established with a singular vision: to deliver premium illuminated name boards that enable businesses to communicate their brand presence with high visibility.
+            </p>
+            <p>
+              Over the last 11 years, we have grown from a modest fabrication workshop into a full-scale commercial manufacturer. Today, we house heavy industrial CNC cutting systems, automated laser benders, and a dedicated team of fabrication engineers and installers.
+            </p>
+            <p>
+              Whether it is a single boutique neon sign board or massive multi-floor corporate ACP branding cladding, we deliver pixel-perfect execution tailored to the unique spatial needs of each customer.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Vision & Mission Core */}
+      <section className="vision-mission-section section-padding">
+        <div className="container grid-2">
+          <div className="card vision-card">
+            <Eye size={40} className="icon-yellow" />
+            <h3>Our Vision</h3>
+            <p>
+              To lead the visual signage and outdoor branding market in South India by consistently engineering the most durable, bright, and stunning LED illumination solutions that make storefronts stand out.
+            </p>
+          </div>
+
+          <div className="card mission-card">
+            <ShieldCheck size={40} className="icon-red" />
+            <h3>Our Mission</h3>
+            <p>
+              To deliver premium quality branding and signs using Grade-A acrylics, non-fading ACP panels, and long-lasting LEDs. We aim to offer smooth end-to-end execution, ensuring fast delivery and high installation standards.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Process Flow Timeline */}
+      <section className="process-section section-padding">
+        <div className="container">
+          <div className="section-header text-center">
+            <span className="badge badge-red">How We Work</span>
+            <h2>Our Seamless <span className="logo-accent">Fabrication Process</span></h2>
+            <p>Every name board goes through five rigorous checks from pixel layout to power testing.</p>
+          </div>
+
+          <div className="process-timeline">
+            {steps.map((step, idx) => (
+              <div className="process-card-row" key={idx}>
+                <div className="process-number">
+                  <span>{step.num}</span>
+                </div>
+                <div className="process-line-connector">
+                  <div className="inner-line"></div>
+                </div>
+                <div className="card process-content-card">
+                  <div className="process-header">
+                    {step.icon}
+                    <h3>{step.title}</h3>
+                  </div>
+                  <p>{step.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Quality Commitment Section */}
+      <section className="commitment-section section-padding">
+        <div className="container text-center commitment-box glass-panel">
+          <h2>Our Quality Guarantee</h2>
+          <p>
+            We use heavy-gauge aluminum frames, original 3mm ACP sheets, pure virgin acrylic, and high-lumen waterproof LED modules that do not dim over time.
+          </p>
+          <div className="grid-3 guarantee-grid">
+            <div className="guarantee-item">
+              <CheckCircle2 className="icon-yellow" size={24} />
+              <span>Original Samsung LEDs</span>
+            </div>
+            <div className="guarantee-item">
+              <CheckCircle2 className="icon-red" size={24} />
+              <span>Waterproof Adapters</span>
+            </div>
+            <div className="guarantee-item">
+              <CheckCircle2 className="icon-yellow" size={24} />
+              <span>Rust-Free Metal Structure</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}

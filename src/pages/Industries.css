@@ -1,0 +1,115 @@
+.industries-grid-section {
+  background-color: var(--bg-secondary);
+}
+
+.industry-card-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.industry-card-detail:hover {
+  border-color: var(--color-red);
+}
+
+.industry-icon-row {
+  margin-bottom: 20px;
+}
+
+.icon-badge {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border);
+  background-color: var(--bg-secondary);
+  color: var(--color-red);
+}
+
+.industry-card-detail:hover .icon-badge {
+  background-color: var(--color-red);
+  color: #ffffff;
+}
+
+.industry-info h3 {
+  font-size: 1.4rem;
+  color: var(--text-heading);
+  margin-bottom: 5px;
+}
+
+.industry-sub {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--color-red);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 15px;
+}
+
+.industry-sol {
+  color: var(--text-body);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.industry-footer {
+  margin-top: 25px;
+  border-top: 1px solid var(--color-border);
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.industry-common-badge {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.industry-common-badge strong {
+  color: var(--text-heading);
+}
+
+.btn-industry-link {
+  background: transparent;
+  border: none;
+  color: var(--color-red);
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: var(--transition);
+}
+
+.btn-industry-link:hover {
+  color: var(--color-red-hover);
+  gap: 8px;
+}
+
+/* Custom solution box bottom */
+.custom-solution-box {
+  padding: 50px 30px;
+  border: 1px solid var(--color-border);
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background-color: #ffffff;
+}
+
+.custom-solution-box h2 {
+  font-size: 2rem;
+}
+
+.custom-solution-box p {
+  color: var(--text-body);
+  max-width: 600px;
+}

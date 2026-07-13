@@ -1,0 +1,258 @@
+/* Scroll Morph Hero Styling */
+.smh-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-primary);
+  overflow: hidden;
+}
+
+.smh-center-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+  transform: translateY(30px); /* Shift entire animation down to clear sticky navbar */
+}
+
+/* Scattered / Circle state text */
+.smh-intro-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  pointer-events: none;
+  width: 100%;
+  padding: 0 24px;
+}
+
+.smh-logo-title {
+  font-family: var(--font-heading);
+  font-size: 3.1rem; /* Perfectly sized to fit cleanly within circle diameter */
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--text-heading);
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+.smh-logo-subtext {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--text-body); 
+  text-transform: uppercase;
+  margin-top: 12px;
+  max-width: 320px; 
+  line-height: 1.45;
+}
+
+/* Parent wrapper for active content (Original layout at top 12%) */
+.smh-active-content-wrapper {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 15;
+  width: 100%;
+  max-width: 650px;
+  padding: 0 24px;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+}
+
+/* Inner flex content panel */
+.smh-active-content-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.smh-active-content-inner h2 {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--text-heading);
+  margin-bottom: 15px;
+  letter-spacing: -1.5px;
+}
+
+.smh-active-content-inner p {
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: var(--text-body);
+  margin-bottom: 30px;
+}
+
+.smh-btn-row {
+  display: flex;
+  gap: 16px;
+  pointer-events: auto; /* enables clicks on CTA buttons */
+  justify-content: center;
+}
+
+/* Cards absolute layers */
+.smh-cards-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Flip card specifics */
+.flip-card-outer {
+  cursor: pointer;
+}
+
+.flip-card-face {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+}
+
+.face-front {
+  background-color: #e5e7eb;
+}
+
+.face-front img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.face-back {
+  background-color: #111827;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border: 1px solid #374151;
+}
+
+.face-back .view-label {
+  font-size: 8px;
+  font-weight: bold;
+  color: #3b82f6;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 2px;
+}
+
+.face-back .details-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+/* Lightbox Modal overlay styling */
+.smh-lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+  backdrop-filter: blur(8px);
+}
+
+.smh-lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  cursor: default;
+}
+
+.smh-lightbox-content img {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  display: block;
+}
+
+.smh-lightbox-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.smh-lightbox-close:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .smh-center-container {
+    transform: translateY(-20px);
+  }
+  
+  .smh-logo-title {
+    font-size: 2.1rem;
+  }
+  
+  .smh-logo-subtext {
+    font-size: 0.7rem;
+    max-width: 250px;
+  }
+  
+  .smh-active-content-wrapper {
+    top: 5%;
+  }
+  
+  .smh-active-content-inner h2 {
+    font-size: 2.2rem;
+  }
+  
+  .smh-active-content-inner p {
+    font-size: 0.95rem;
+  }
+  
+  .smh-btn-row {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    align-items: center;
+  }
+  
+  .smh-btn-row .btn {
+    width: 100%;
+    max-width: 250px;
+  }
+}
