@@ -100,6 +100,8 @@ export default function IntroAnimation() {
     const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
     const [activeLightboxImg, setActiveLightboxImg] = useState(null);
     const containerRef = useRef(null);
+    const isMobileView = containerSize.width > 0 && containerSize.width < 768;
+    const displayImageCount = isMobileView ? 10 : TOTAL_IMAGES;
 
     // --- Container Size ---
     useEffect(() => {
@@ -132,6 +134,7 @@ export default function IntroAnimation() {
     useEffect(() => {
         const container = containerRef.current;
         if (!container) return;
+        if (containerSize.width === 0 || isMobileView) return;
 
         const handleWheel = (e) => {
             const current = scrollRef.current;
@@ -200,7 +203,15 @@ export default function IntroAnimation() {
             container.removeEventListener("touchstart", handleTouchStart);
             container.removeEventListener("touchmove", handleTouchMove);
         };
-    }, [virtualScroll]);
+    }, [virtualScroll, isMobileView, containerSize.width]);
+
+    useEffect(() => {
+        setIsMobileLayout(isMobileView);
+        if (isMobileView) {
+            scrollRef.current = 0;
+            virtualScroll.set(0);
+        }
+    }, [isMobileView, virtualScroll]);
 
     // snappy springs for instant, responsive scrolling
     const morphProgress = useTransform(virtualScroll, [0, 400], [0, 1]);
@@ -223,10 +234,10 @@ export default function IntroAnimation() {
 
     useEffect(() => {
         const container = containerRef.current;
-        if (!container) return;
+        if (!container || isMobileView) return;
         container.addEventListener("mousemove", handleMouseMove);
         return () => container.removeEventListener("mousemove", handleMouseMove);
-    }, [handleMouseMove]);
+    }, [handleMouseMove, isMobileView]);
 
     useEffect(() => {
         const timer1 = setTimeout(() => setIntroPhase("line"), 500);
@@ -326,18 +337,19 @@ export default function IntroAnimation() {
 
                 {/* Shuffling Cards Circle/Arc */}
                 <div className="smh-cards-container">
-                    {IMAGES.slice(0, TOTAL_IMAGES).map((src, i) => {
+                    {IMAGES.slice(0, displayImageCount).map((src, i) => {
                         let target = { x: 0, y: 0, rotation: 0, scale: 1, opacity: 1 };
+                        const isMobile = containerSize.width < 768;
+                        const itemCount = displayImageCount;
 
                         if (introPhase === "scatter") {
                             target = scatterPositions[i];
                         } else if (introPhase === "line") {
-                            const lineSpacing = 70; 
-                            const lineTotalWidth = TOTAL_IMAGES * lineSpacing;
+                            const lineSpacing = 60;
+                            const lineTotalWidth = itemCount * lineSpacing;
                             const lineX = i * lineSpacing - lineTotalWidth / 2;
                             target = { x: lineX, y: 0, rotation: 0, scale: 1, opacity: 1 };
                         } else {
-                            const isMobile = containerSize.width < 768;
                             const minDimension = Math.min(containerSize.width, containerSize.height);
 
                             // Keep circle radius larger to avoid central text collisions
@@ -345,7 +357,7 @@ export default function IntroAnimation() {
                                 ? Math.min(minDimension * 0.38, 140) 
                                 : Math.min(minDimension * 0.40, 310);
 
-                            const circleAngle = (i / TOTAL_IMAGES) * 360;
+                            const circleAngle = (i / Math.max(1, itemCount)) * 360;
                             const circleRad = (circleAngle * Math.PI) / 180;
                             const circlePos = {
                                 x: Math.cos(circleRad) * circleRadius,
@@ -361,10 +373,9 @@ export default function IntroAnimation() {
 
                             const spreadAngle = isMobile ? 90 : 110;
                             const startAngle = -90 - (spreadAngle / 2);
-                            const step = spreadAngle / (TOTAL_IMAGES - 1);
+                            const step = spreadAngle / Math.max(1, itemCount - 1);
 
                             const scrollProgress = Math.min(Math.max(rotateValue / 360, 0), 1);
-
                             const maxRotation = 25; 
                             const boundedRotation = (scrollProgress - 0.5) * maxRotation;
 

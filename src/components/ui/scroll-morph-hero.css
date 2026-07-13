@@ -5,6 +5,8 @@
   height: 100%;
   background-color: var(--bg-primary);
   overflow: hidden;
+  touch-action: pan-y;
+  will-change: transform;
 }
 
 .smh-center-container {
@@ -69,6 +71,7 @@
   pointer-events: none;
   display: flex;
   justify-content: center;
+  will-change: transform, opacity;
 }
 
 /* Inner flex content panel */
@@ -118,6 +121,7 @@
 /* Flip card specifics */
 .flip-card-outer {
   cursor: pointer;
+  will-change: transform, opacity;
 }
 
 .flip-card-face {
@@ -138,6 +142,7 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
+  backface-visibility: hidden;
 }
 
 .face-back {
