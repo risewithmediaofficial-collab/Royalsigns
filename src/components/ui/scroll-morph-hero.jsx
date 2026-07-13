@@ -206,7 +206,6 @@ export default function IntroAnimation() {
     }, [virtualScroll, isMobileView, containerSize.width]);
 
     useEffect(() => {
-        setIsMobileLayout(isMobileView);
         if (isMobileView) {
             scrollRef.current = 0;
             virtualScroll.set(0);
