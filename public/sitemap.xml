@@ -37,7 +37,8 @@
     <priority>0.75</priority>
   </url>
 
-  <url>royalsignsnetwork.com/contact</loc>
+  <url>
+    <loc>https://royalsignsnetwork.com/contact</loc>
     <lastmod>2026-07-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
