@@ -1,7 +1,46 @@
 import React, { useState } from 'react';
-import { LayoutGrid, ShoppingBag, Landmark, GraduationCap, Building2, MapPin, Sparkles, Image } from 'lucide-react';
+import { LayoutGrid, ShoppingBag, Landmark, GraduationCap, Building2, Sparkles } from 'lucide-react';
 import ScrollStack, { ScrollStackItem } from '../components/ui/ScrollStack';
 import './Portfolio.css';
+
+// Project images from assets
+import imgProj1 from '../assets/royal signs/06d4621ee8660303b0f2fc993bca811f.jpg.jpeg';
+import imgProj2 from '../assets/royal signs/IMG-20241023-WA0084.jpg.jpeg';
+import imgProj3 from '../assets/royal signs/IMG_20250111_141505.jpg.jpeg';
+import imgProj4 from '../assets/royal signs/IMG-20250718-WA0009.jpg.jpeg';
+import imgProj5 from '../assets/royal signs/IMG-20251002-WA0001.jpg.jpeg';
+import imgProj6 from '../assets/royal signs/IMG-20241023-WA0071.jpg.jpeg';
+
+// Subcomponent for responsive fast-loading portfolio image
+function PortfolioCardImage({ src, categoryIcon }) {
+  const [isLoaded, setIsLoaded] = useState(false);
+  return (
+    <div className="scroll-stack-image-frame" style={{ border: 'none' }}>
+      {!isLoaded && (
+        <div style={{ position: 'absolute', inset: 0, backgroundColor: '#e5e7eb', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div className="smh-card-spinner" />
+        </div>
+      )}
+      <img
+        src={src}
+        alt="Project work"
+        loading="lazy"
+        decoding="async"
+        onLoad={() => setIsLoaded(true)}
+        style={{
+          opacity: isLoaded ? 1 : 0,
+          transition: 'opacity 0.3s ease',
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover'
+        }}
+      />
+      <div className="scroll-stack-category-badge">
+        {categoryIcon}
+      </div>
+    </div>
+  );
+}
 
 export default function Portfolio() {
   const [filter, setFilter] = useState('all');
@@ -23,7 +62,8 @@ export default function Portfolio() {
       location: "Krishnagiri Bypass Road",
       year: "2025",
       desc: "Full front elevation ACP cladding with custom illuminated warm-white LED acrylic letters, spanning 45 feet wide.",
-      icon: <ShoppingBag size={36} />
+      icon: <ShoppingBag size={36} />,
+      image: imgProj1
     },
     {
       id: 2,
@@ -33,7 +73,8 @@ export default function Portfolio() {
       location: "Gandhi Nagar, Krishnagiri",
       year: "2024",
       desc: "Emergency signage, entry direction boards, and double-sided green LED cross sign board for doctor clinical cabin.",
-      icon: <Landmark size={36} />
+      icon: <Landmark size={36} />,
+      image: imgProj2
     },
     {
       id: 3,
@@ -43,7 +84,8 @@ export default function Portfolio() {
       location: "Rayakottai Road, Krishnagiri",
       year: "2025",
       desc: "High-grade 304 stainless steel letters with back-lit warm LEDs mounted on solid concrete gate pillar structure.",
-      icon: <GraduationCap size={36} />
+      icon: <GraduationCap size={36} />,
+      image: imgProj3
     },
     {
       id: 4,
@@ -53,7 +95,8 @@ export default function Portfolio() {
       location: "Hosur Industrial Zone",
       year: "2024",
       desc: "Double pillar outdoor sign board standing 15 feet high, built with heavy structural metal channels to resist wind loads.",
-      icon: <Building2 size={36} />
+      icon: <Building2 size={36} />,
+      image: imgProj4
     },
     {
       id: 5,
@@ -63,7 +106,8 @@ export default function Portfolio() {
       location: "Gandhi Nagar, Krishnagiri",
       year: "2025",
       desc: "Custom flexible script neon letters in bright pink and cyan, mounted on transparent acrylic backing for reception backdrop.",
-      icon: <Sparkles size={36} />
+      icon: <Sparkles size={36} />,
+      image: imgProj5
     },
     {
       id: 6,
@@ -73,7 +117,8 @@ export default function Portfolio() {
       location: "Service Road, Krishnagiri",
       year: "2025",
       desc: "Branding of 3 floors including frosted privacy sticker panels on glass partitions, direction tags, and acrylic door nameplates.",
-      icon: <LayoutGrid size={36} />
+      icon: <LayoutGrid size={36} />,
+      image: imgProj6
     }
   ];
 
@@ -113,15 +158,8 @@ export default function Portfolio() {
             {filteredProjects.map((proj) => (
               <ScrollStackItem key={proj.id} itemClassName="portfolio-stack-card">
                 <div className="stack-card-content">
-                  {/* Image Frame Placeholder */}
-                  <div className="scroll-stack-image-frame">
-                    <Image size={32} strokeWidth={1.5} />
-                    <span style={{ fontSize: '0.75rem', fontWeight: 600 }}>Project Photo</span>
-                    {/* Small category icon badge */}
-                    <div className="scroll-stack-category-badge">
-                      {proj.icon}
-                    </div>
-                  </div>
+                  {/* Visual Image component with lazy load */}
+                  <PortfolioCardImage src={proj.image} categoryIcon={proj.icon} />
                   <div>
                     <span className="badge badge-red" style={{ marginBottom: '8px', display: 'inline-block' }}>{proj.tag}</span>
                     <h3 style={{ fontSize: '1.6rem', fontWeight: 800, margin: '0 0 10px', color: 'var(--text-heading)' }}>{proj.title}</h3>
