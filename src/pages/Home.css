@@ -280,57 +280,17 @@
   justify-content: center;
 }
 
-.about-visual-mockup {
+.about-visual-image {
   width: 100%;
-  max-width: 320px;
-  height: 320px;
-  background-color: var(--bg-secondary);
+  max-width: 420px;
+  height: 360px;
+  object-fit: cover;
+  border-radius: var(--border-radius-card);
   border: 1px solid var(--color-border);
-  border-radius: 20px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  box-shadow: var(--shadow-premium);
+  display: block;
 }
 
-.mockup-cnc-head {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  font-size: 0.75rem;
-  font-weight: 800;
-  color: var(--text-muted);
-  letter-spacing: 1px;
-}
-
-.mockup-cutter-beam {
-  width: 4px;
-  height: 60px;
-  background-color: var(--color-red);
-  box-shadow: 0 0 10px var(--color-red);
-  position: absolute;
-  top: 30%;
-  left: 45%;
-  animation: laserCut 4s infinite linear;
-}
-
-.mockup-plate-sheet {
-  width: 180px;
-  height: 180px;
-  border-radius: 12px;
-  border: 2px solid var(--color-border);
-  background-color: #ffffff;
-}
-
-@keyframes laserCut {
-  0% { transform: translate(0, 0); }
-  25% { transform: translate(30px, 0); }
-  50% { transform: translate(30px, 50px); }
-  75% { transform: translate(0, 50px); }
-  100% { transform: translate(0, 0); }
-}
 
 .about-text-content h2 {
   font-size: 2.3rem;

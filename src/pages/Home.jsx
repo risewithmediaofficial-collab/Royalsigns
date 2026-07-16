@@ -249,11 +249,7 @@ export default function Home() {
       <section className="about-white-section section-padding">
         <div className="container about-white-grid">
           <div className="about-visual-box">
-            <div className="about-visual-mockup">
-              <div className="mockup-cnc-head">CNC ROUTER CUTTING</div>
-              <div className="mockup-cutter-beam"></div>
-              <div className="mockup-plate-sheet"></div>
-            </div>
+            <img src={imgHomeProj1} alt="Royal Signs CNC Router and Fabrication" className="about-visual-image" loading="lazy" decoding="async" />
           </div>
 
           <div className="about-text-content">
