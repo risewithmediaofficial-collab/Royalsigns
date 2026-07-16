@@ -36,6 +36,8 @@ function FlipCard({
     width,
     height,
 }) {
+    const [isLoaded, setIsLoaded] = React.useState(false);
+
     return (
         <motion.div
             animate={{
@@ -69,11 +71,33 @@ function FlipCard({
                 {/* Front Face */}
                 <div
                     className="flip-card-face face-front"
-                    style={{ backfaceVisibility: "hidden" }}
+                    style={{ 
+                        backfaceVisibility: "hidden",
+                        backgroundColor: '#f3f4f6',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        position: 'relative'
+                    }}
                 >
+                    {!isLoaded && (
+                        <div style={{ position: 'absolute', inset: 0, backgroundColor: '#e5e7eb', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                            <div className="smh-card-spinner" />
+                        </div>
+                    )}
                     <img
                         src={src}
                         alt={`hero-${index}`}
+                        loading="lazy"
+                        decoding="async"
+                        onLoad={() => setIsLoaded(true)}
+                        style={{
+                            opacity: isLoaded ? 1 : 0,
+                            transition: 'opacity 0.3s ease',
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover'
+                        }}
                     />
                 </div>
 
