@@ -16,11 +16,46 @@ import IntroAnimation from '../components/ui/scroll-morph-hero';
 import DomeGallery from '../components/ui/DomeGallery';
 import './Home.css';
 
-// Image for about visual section
-import imgHomeProj1 from '../assets/royal signs/bcb90516a1333bbaefe0a9d94301ec3e.jpg.jpeg';
+// Image for about visual section loaded lazily (avoids double-bundle with glob)
+const aboutImageLoader = () => import('../assets/royal signs/bcb90516a1333bbaefe0a9d94301ec3e.jpg.jpeg');
+function useLazyImageSrc(loader) {
+  const [src, setSrc] = React.useState(null);
+  React.useEffect(() => {
+    if (!loader) return;
+    loader().then(mod => setSrc(mod.default || mod));
+  }, [loader]);
+  return src;
+}
+
+// Wrapper that accepts a loader function and renders with a spinner until ready
+function LazyImage({ loader, alt, className, style }) {
+  const src = useLazyImageSrc(loader);
+  const [loaded, setLoaded] = React.useState(false);
+  return (
+    <div style={{ position: 'relative', width: '100%', height: '100%', ...style }}>
+      {!loaded && (
+        <div style={{ position: 'absolute', inset: 0, background: '#e5e7eb', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div className="smh-card-spinner" />
+        </div>
+      )}
+      {src && (
+        <img
+          src={src}
+          alt={alt}
+          className={className}
+          loading="lazy"
+          decoding="async"
+          onLoad={() => setLoaded(true)}
+          style={{ opacity: loaded ? 1 : 0, transition: 'opacity 0.3s ease', width: '100%', height: '100%', objectFit: 'cover' }}
+        />
+      )}
+    </div>
+  );
+}
 
 
-const allImagesGlob = import.meta.glob('../assets/royal signs/*.{png,jpg,jpeg,webp}', { eager: true });
+// Lazy glob — images are NOT bundled upfront; each loads on-demand as a separate chunk
+const allImagesGlob = import.meta.glob('../assets/royal signs/*.{png,jpg,jpeg,webp}');
 const categoriesList = ['shop', 'hospital', 'school', 'corporate', 'industrial'];
 const curatedCategories = {
   'bcb90516a1333bbaefe0a9d94301ec3e.jpg.jpeg': 'shop',
@@ -37,6 +72,8 @@ const curatedCategories = {
   'IMG-20260630-WA0037.jpg.jpeg': 'corporate'
 };
 
+// Build portfolio items with lazy loader functions instead of pre-resolved URLs.
+// The LazyImage component below calls loader() the first time it mounts.
 const dynamicPortfolioItems = Object.keys(allImagesGlob)
   .filter(path => {
     const filename = path.split('/').pop();
@@ -44,12 +81,11 @@ const dynamicPortfolioItems = Object.keys(allImagesGlob)
     return !filename.startsWith('IMG_');
   })
   .map((path, index) => {
-    const src = allImagesGlob[path].default || allImagesGlob[path];
     const filename = path.split('/').pop();
     const category = curatedCategories[filename] || categoriesList[index % categoriesList.length];
     return {
       id: index + 1,
-      src,
+      loader: allImagesGlob[path],   // () => Promise<{ default: string }>
       category,
       alt: `Royal Signs Project ${index + 1}`
     };
@@ -58,6 +94,23 @@ const dynamicPortfolioItems = Object.keys(allImagesGlob)
 export default function Home() {
   const [openFaq, setOpenFaq] = useState(null);
   const [portfolioFilter, setPortfolioFilter] = useState('all');
+
+  // Resolve lazy image loaders into real src URLs for DomeGallery
+  const [resolvedPortfolioItems, setResolvedPortfolioItems] = useState([]);
+  useEffect(() => {
+    const items = portfolioFilter === 'all'
+      ? dynamicPortfolioItems
+      : dynamicPortfolioItems.filter(item => item.category === portfolioFilter);
+
+    Promise.all(
+      items.map(item =>
+        item.loader().then(mod => ({
+          ...item,
+          src: mod.default || mod
+        }))
+      )
+    ).then(setResolvedPortfolioItems);
+  }, [portfolioFilter]);
 
   // Stats counting logic
   const [experience, setExperience] = useState(0);
@@ -182,11 +235,9 @@ export default function Home() {
     }
   ];
 
-  const portfolioItems = dynamicPortfolioItems;
+  const portfolioItems = resolvedPortfolioItems;
 
-  const filteredPortfolio = portfolioFilter === 'all'
-    ? portfolioItems
-    : portfolioItems.filter(item => item.category === portfolioFilter);
+  const filteredPortfolio = portfolioItems;
 
   const processSteps = [
     { step: "01", name: "Consultation", desc: "Site survey & size measures." },
@@ -232,7 +283,7 @@ export default function Home() {
       <section className="about-white-section section-padding">
         <div className="container about-white-grid">
           <div className="about-visual-box">
-            <img src={imgHomeProj1} alt="Royal Signs CNC Router and Fabrication" className="about-visual-image" loading="lazy" decoding="async" />
+            <LazyImage loader={aboutImageLoader} alt="Royal Signs CNC Router and Fabrication" className="about-visual-image" />
           </div>
 
           <div className="about-text-content">

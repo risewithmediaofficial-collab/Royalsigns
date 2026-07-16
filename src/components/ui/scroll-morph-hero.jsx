@@ -3,30 +3,13 @@
 import React, { useState, useEffect, useMemo, useRef, useCallback } from "react";
 import { motion, useTransform, useSpring, useMotionValue } from "framer-motion";
 import royalLogo from "../../assets/Royal LOGO.png";
-
-// Local project images
-import img01 from "../../assets/home screen animation images/06d4621ee8660303b0f2fc993bca811f.jpg.jpeg";
-import img02 from "../../assets/home screen animation images/IMG-20250219-WA0003.jpg.jpeg";
-import img03 from "../../assets/home screen animation images/IMG-20250430-WA0033.jpg.jpeg";
-import img04 from "../../assets/home screen animation images/IMG-20250504-WA0160.jpg.jpeg";
-import img05 from "../../assets/home screen animation images/IMG-20250718-WA0009.jpg.jpeg";
-import img06 from "../../assets/home screen animation images/IMG-20251002-WA0001.jpg.jpeg";
-import img07 from "../../assets/home screen animation images/IMG-20251125-WA0056.jpg.jpeg";
-import img08 from "../../assets/home screen animation images/IMG-20260630-WA0036.jpg.jpeg";
-import img09 from "../../assets/home screen animation images/IMG_20240911_182941.jpg.jpeg";
-import img10 from "../../assets/home screen animation images/IMG_20241001_133114.jpg.jpeg";
-import img11 from "../../assets/home screen animation images/IMG_20250111_141505.jpg.jpeg";
-import img12 from "../../assets/home screen animation images/IMG_20250215_133506.jpg.jpeg";
-import img13 from "../../assets/home screen animation images/IMG_20250222_172003.jpg.jpeg";
-import img14 from "../../assets/home screen animation images/IMG_20250222_183019.jpg.jpeg";
-import img15 from "../../assets/home screen animation images/IMG_20250222_183033.jpg.jpeg";
-import img16 from "../../assets/home screen animation images/IMG_20250306_190139.jpg.jpeg";
-import img17 from "../../assets/home screen animation images/IMG_20250328_163740.jpg.jpeg";
-import img18 from "../../assets/home screen animation images/IMG_20250330_175255.jpg.jpeg";
-import img19 from "../../assets/home screen animation images/IMG_20250405_174030.jpg.jpeg";
-import img20 from "../../assets/home screen animation images/IMG_20250505_131119.jpg.jpeg";
-import img21 from "../../assets/home screen animation images/IMG_20260323_190849.jpg.jpeg";
 import "./scroll-morph-hero.css";
+
+// Lazy-load all hero animation images — only fetched when component mounts
+const heroImageGlob = import.meta.glob(
+  "../../assets/home screen animation images/*.{jpg,jpeg,png,webp}"
+);
+const heroImagePaths = Object.keys(heroImageGlob);
 
 function FlipCard({
     src,
@@ -114,14 +97,8 @@ function FlipCard({
     );
 }
 
-const TOTAL_IMAGES = 21;
+const TOTAL_IMAGES = heroImagePaths.length;
 const MAX_SCROLL = 1000; // Snappy 1000px virtual scroll track
-
-const IMAGES = [
-    img01, img02, img03, img04, img05, img06, img07,
-    img08, img09, img10, img11, img12, img13, img14,
-    img15, img16, img17, img18, img19, img20, img21,
-];
 
 const lerp = (start, end, t) => start * (1 - t) + end * t;
 
@@ -130,8 +107,17 @@ export default function IntroAnimation() {
     const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
     const [activeLightboxImg, setActiveLightboxImg] = useState(null);
     const containerRef = useRef(null);
+
+    // Lazily resolve image URLs — loads images in the background after mount
+    const [images, setImages] = useState([]);
+    useEffect(() => {
+        Promise.all(
+            heroImagePaths.map(path => heroImageGlob[path]().then(mod => mod.default || mod))
+        ).then(setImages);
+    }, []);
+
     const isMobileView = containerSize.width > 0 && containerSize.width < 768;
-    const displayImageCount = isMobileView ? 10 : TOTAL_IMAGES;
+    const displayImageCount = isMobileView ? 10 : Math.min(images.length, TOTAL_IMAGES);
 
     // --- Container Size ---
     useEffect(() => {
@@ -275,7 +261,7 @@ export default function IntroAnimation() {
     }, []);
 
     const scatterPositions = useMemo(() => {
-        return IMAGES.map(() => ({
+        return heroImagePaths.map(() => ({
             x: (Math.random() - 0.5) * 1500,
             y: (Math.random() - 0.5) * 1000,
             rotation: (Math.random() - 0.5) * 180,
@@ -400,7 +386,7 @@ export default function IntroAnimation() {
 
                 {/* Shuffling Cards Circle/Arc */}
                 <div className="smh-cards-container">
-                    {IMAGES.slice(0, displayImageCount).map((src, i) => {
+                    {images.slice(0, displayImageCount).map((src, i) => {
                         let target = { x: 0, y: 0, rotation: 0, scale: 1, opacity: 1 };
                         const isMobile = containerSize.width < 768;
                         const cardWidth = isMobile ? 38 : 60;
