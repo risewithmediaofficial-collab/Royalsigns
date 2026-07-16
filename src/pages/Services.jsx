@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowRight, Lightbulb, Grid, CheckSquare, Sparkles, Printer, ShieldAlert, Truck, Star } from 'lucide-react';
+import { BentoGrid, BentoCard } from '../components/ui/bento-grid';
 import './Services.css';
 
 export default function Services() {
@@ -14,13 +15,70 @@ export default function Services() {
   ];
 
   const servicesList = [
+    // Top services from the visiting card
+    {
+      id: 'acrylic-trimcap-liquid',
+      cat: 'boards',
+      title: 'Acrylic / Trimcap / Liquid Letters',
+      desc: 'Premium illuminated letter options including acrylic faces, trimcap edging, and liquid acrylic fills for high-durability glow.',
+      specs: ['Liquid acrylic technology', 'Trimcap side borders', 'Superb nighttime brightness', 'Waterproof wiring'],
+      icon: <Sparkles size={36} />,
+      bentoClass: "col-span-2 row-span-1"
+    },
+    {
+      id: 'ss-brass-letters',
+      cat: 'boards',
+      title: 'SS / Brass Letters',
+      desc: 'Rust-free luxury stainless steel (SS) and brass metal letters with option for backlit warm-white LED glowing profiles.',
+      specs: ['Grade 304 stainless steel', 'Solid polished brass', 'Back-lit halo effect option', 'Highly durable structure'],
+      icon: <Star size={36} />,
+      bentoClass: "col-span-1 row-span-1"
+    },
+    {
+      id: 'acp-elevations-work',
+      cat: 'boards',
+      title: 'ACP Elevations',
+      desc: 'Full building front cladding panels and elevations built using premium 3mm/4mm weather-resistant ACP sheets.',
+      specs: ['Aludecor & Eurobond sheets', 'Heavy-duty steel channel support', 'CNC grooving & panel alignment', 'Anti-fading paint coating'],
+      icon: <Grid size={36} />,
+      bentoClass: "col-span-1 row-span-1"
+    },
+    {
+      id: 'toughness-glass-work',
+      cat: 'boards',
+      title: 'Toughness Glass',
+      desc: 'Frameless toughened glass storefront entries, display panels, doors, and partitions for office buildings.',
+      specs: ['10mm/12mm Toughened glass', 'Heavy patch fittings & hinges', 'Safety structural framing', 'Frosted sticker layout options'],
+      icon: <CheckSquare size={36} />,
+      bentoClass: "col-span-2 row-span-1"
+    },
+    {
+      id: 'branding-fabrication-work',
+      cat: 'branding',
+      title: 'Branding Fabrication',
+      desc: 'Complete industrial-grade name board structure framing, banner posts, lightboxes, and uniform custom retail signs.',
+      specs: ['Computerized layout renderings', 'Rust-proof iron frames', 'Samsung high-power LEDs', 'Quick onsite assembly'],
+      icon: <Lightbulb size={36} />,
+      bentoClass: "col-span-2 row-span-1"
+    },
+    {
+      id: 'wallpapers-louvers-work',
+      cat: 'branding',
+      title: 'Wallpapers & Louvers',
+      desc: 'Premium custom interior wallpapers and high-finish wooden louvers to redesign corporate offices & home walls.',
+      specs: ['High-resolution mural prints', 'WPC wall paneling louvers', 'Seamless adhesive pastes', 'Modern corporate workspace looks'],
+      icon: <Printer size={36} />,
+      bentoClass: "col-span-1 row-span-1"
+    },
+    // Standard Services
     {
       id: 'led-boards',
       cat: 'boards',
       title: 'LED Sign Boards',
       desc: 'Energy-saving illuminated signs built using waterproof Samsung LED modules. Highly visible from a distance, perfect for high-traffic high street shops.',
       specs: ['Samsung LED modules', 'IP67 Waterproofing', '2-Year Warranty', 'Custom controller setups'],
-      icon: <Lightbulb size={24} className="icon-yellow" />
+      icon: <Lightbulb size={36} />,
+      bentoClass: "col-span-2 row-span-1"
     },
     {
       id: 'acp-boards',
@@ -28,7 +86,8 @@ export default function Services() {
       title: 'ACP Sign Boards',
       desc: 'Aluminum Composite Panel (ACP) backplates grooved and fitted with raised acrylic 3D lettering. Creates a highly professional matte or glossy exterior shop front.',
       specs: ['3mm Premium ACP sheets', 'Aludecor / Eurobond brand sheets', 'CNC router grooving', 'Anti-rust internal metal frame'],
-      icon: <Grid size={24} className="icon-red" />
+      icon: <Grid size={36} />,
+      bentoClass: "col-span-1 row-span-1"
     },
     {
       id: 'acrylic-letters',
@@ -36,7 +95,8 @@ export default function Services() {
       title: 'Acrylic 3D Letters',
       desc: 'Three-dimensional letters cut out of virgin acrylic sheets and bent using hot strip heaters. Includes internal LED lighting options or solid unlit letters.',
       specs: ['Imported gloss acrylics', 'Laser-cut accuracy', 'Uniform light diffusion', 'Vibrant color ranges'],
-      icon: <CheckSquare size={24} className="icon-yellow" />
+      icon: <CheckSquare size={36} />,
+      bentoClass: "col-span-1 row-span-1"
     },
     {
       id: 'neon-signs',
@@ -44,7 +104,8 @@ export default function Services() {
       title: 'Neon Sign Boards',
       desc: 'Custom flexible silicone LED neon tubes fitted on clear acrylic plates. Highly trendy for restaurant interiors, cafes, bars, and office wall graphics.',
       specs: ['12V low voltage safety', 'High-density silicone neon', 'Custom script font designs', 'Adapter and wall screws included'],
-      icon: <Sparkles size={24} className="icon-red" />
+      icon: <Sparkles size={36} />,
+      bentoClass: "col-span-2 row-span-1"
     },
     {
       id: 'flex-vinyl',
@@ -52,7 +113,8 @@ export default function Services() {
       title: 'Flex & Vinyl Printing',
       desc: 'High-speed solvent and eco-solvent printing on heavy flex canvases, star flex material, and glossy adhesive vinyl sheets for cost-effective marketing.',
       specs: ['Eco-solvent non-fade inks', 'Star flex canvas material', 'Vibrant color depth', 'Glossy & matte laminations'],
-      icon: <Printer size={24} className="icon-yellow" />
+      icon: <Printer size={36} />,
+      bentoClass: "col-span-1 row-span-1"
     },
     {
       id: 'glass-stickers',
@@ -60,7 +122,8 @@ export default function Services() {
       title: 'One-Way Vision & Frosted Glass Stickers',
       desc: 'Frosted films and micro-perforated vinyl stickers for office glass doors, partition walls, and showroom fronts to control sunlight and maintain privacy.',
       specs: ['3M frosted privacy films', 'One-way vision mesh stickers', 'Sun control UV block films', 'Custom plotter-cut vector logos'],
-      icon: <ShieldAlert size={24} className="icon-red" />
+      icon: <ShieldAlert size={36} />,
+      bentoClass: "col-span-1 row-span-1"
     },
     {
       id: 'vehicle-branding',
@@ -68,7 +131,8 @@ export default function Services() {
       title: 'Vehicle & Shop Branding',
       desc: 'Full and partial vinyl wrap stickers for delivery trucks, vans, autos, and storefronts, turning your logistics vehicles into mobile billboards.',
       specs: ['Cast wrapping vinyl sheets', 'Bubble-free adhesive film', 'Varnish coat lamination', 'Onsite vehicle application'],
-      icon: <Truck size={24} className="icon-yellow" />
+      icon: <Truck size={36} />,
+      bentoClass: "col-span-1 row-span-1"
     },
     {
       id: 'install-repair',
@@ -76,7 +140,8 @@ export default function Services() {
       title: 'Installation & Repair Services',
       desc: 'Maintenance, bulb replacements, power adapter changes, ACP replacement, and relocation of older signboards by certified installers.',
       specs: ['Secure structural anchor bolts', 'Certified power calibration', 'Emergency LED bulb replacements', 'Relocation & re-wiring'],
-      icon: <Star size={24} className="icon-red" />
+      icon: <Star size={36} />,
+      bentoClass: "col-span-3 row-span-1"
     }
   ];
 
@@ -88,12 +153,10 @@ export default function Services() {
     const event = new CustomEvent('toggle-quote-modal', { detail: { open: true } });
     window.dispatchEvent(event);
     
-    // Autofill the service selector
     setTimeout(() => {
       const selectElement = document.getElementById('modal-service');
       if (selectElement) {
         selectElement.value = serviceName;
-        // Trigger React change event
         const ev = new Event('change', { bubbles: true });
         selectElement.dispatchEvent(ev);
       }
@@ -111,6 +174,8 @@ export default function Services() {
         </div>
       </section>
 
+
+
       {/* Services Tabs Selector */}
       <section className="services-main section-padding">
         <div className="container">
@@ -126,40 +191,20 @@ export default function Services() {
             ))}
           </div>
 
-          <div className="services-list-grid grid-2">
+          <BentoGrid className="services-bento-grid">
             {filteredServices.map((service) => (
-              <div className="card service-detail-card" key={service.id}>
-                <div className="detail-card-header">
-                  <div className="detail-icon-wrap glass-panel">
-                    {service.icon}
-                  </div>
-                  <h3>{service.title}</h3>
-                </div>
-                <p className="detail-desc">{service.desc}</p>
-                
-                <div className="detail-specs">
-                  <h4>Specifications & Materials:</h4>
-                  <ul>
-                    {service.specs.map((spec, i) => (
-                      <li key={i}>
-                        <span className="dot-bullet"></span>
-                        {spec}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="detail-actions">
-                  <button 
-                    onClick={() => triggerQuoteForService(service.title)} 
-                    className="btn btn-yellow w-full"
-                  >
-                    Inquire For {service.title} <ArrowRight size={16} />
-                  </button>
-                </div>
-              </div>
+              <BentoCard
+                key={service.id}
+                name={service.title}
+                className={service.bentoClass}
+                Icon={service.icon}
+                description={service.desc}
+                cta={`Inquire for ${service.title}`}
+                onClickButton={() => triggerQuoteForService(service.title)}
+                background={null}
+              />
             ))}
-          </div>
+          </BentoGrid>
         </div>
       </section>
 

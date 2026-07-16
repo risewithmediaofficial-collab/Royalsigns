@@ -51,7 +51,19 @@ export default function Footer() {
             <li>
               <MapPin size={20} className="footer-icon-yellow" />
               <span>
-                Royal Signs, No. 13/6, Tamilar Street, Loganathan Nagar, Padmanabha Nagar, Choolaimedu, Chennai – 600094
+                <strong>Branch:</strong> #3/243 Naveen Arcade, CSB Bank Basement, Salem Highway Service Road, Krishnagiri – 635002
+              </span>
+            </li>
+            <li>
+              <MapPin size={20} className="footer-icon-yellow" style={{ opacity: 0.85 }} />
+              <span>
+                <strong>Factory:</strong> #31, Thayar Sahib Street, 1st Lane, Ellis Road, Chennai – 600002
+              </span>
+            </li>
+            <li>
+              <MapPin size={20} className="footer-icon-yellow" style={{ opacity: 0.7 }} />
+              <span>
+                <strong>Registered Office:</strong> No: 13, 6, Tamilar St, Loganathan Nagar, Padmanabha Nagar, Choolaimedu, Chennai, Tamil Nadu 600094
               </span>
             </li>
             <li>
@@ -60,7 +72,7 @@ export default function Footer() {
             </li>
             <li>
               <Mail size={18} className="footer-icon-yellow" />
-              <a href="mailto:info@royalsigns.in">info@royalsigns.in</a>
+              <a href="mailto:royalsigns1808@gmail.com">royalsigns1808@gmail.com</a>
             </li>
             <li>
               <Clock size={18} className="footer-icon-red" />

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Flame } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import royalLogo from '../assets/Royal LOGO.png';
 import './Navbar.css';
 
 export default function Navbar() {
@@ -43,10 +44,7 @@ export default function Navbar() {
     <header className={`navbar-header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container navbar-container">
         <Link to="/" className="nav-logo">
-          <Flame className="logo-icon glow-red" />
-          <span className="logo-text">
-            ROYAL<span className="logo-accent">SIGNS</span>
-          </span>
+          <img src={royalLogo} alt="Royal Signs" className="nav-logo-img" />
         </Link>
 
         {/* Desktop Navigation */}
@@ -79,6 +77,19 @@ export default function Navbar() {
 
       {/* Mobile Drawer Menu */}
       <div className={`nav-mobile-menu ${isOpen ? 'open' : ''}`}>
+        <div className="mobile-drawer-header">
+          <Link to="/" onClick={() => setIsOpen(false)} className="mobile-drawer-logo">
+            <img src={royalLogo} alt="Royal Signs" className="mobile-logo-img" />
+          </Link>
+          <button 
+            className="mobile-drawer-close" 
+            onClick={() => setIsOpen(false)}
+            aria-label="Close Menu"
+          >
+            <X size={24} />
+          </button>
+        </div>
+
         <div className="mobile-links">
           {navLinks.map((link) => (
             <Link
@@ -101,6 +112,14 @@ export default function Navbar() {
           </button>
         </div>
       </div>
+
+      {/* Backdrop Overlay for mobile drawer */}
+      {isOpen && (
+        <div 
+          className="mobile-backdrop"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
     </header>
   );
 }

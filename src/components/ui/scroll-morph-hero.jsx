@@ -2,16 +2,39 @@
 
 import React, { useState, useEffect, useMemo, useRef, useCallback } from "react";
 import { motion, useTransform, useSpring, useMotionValue } from "framer-motion";
-import "./scroll-morph-hero.css";
+import royalLogo from "../../assets/Royal LOGO.png";
 
-const IMG_WIDTH = 60;  
-const IMG_HEIGHT = 85; 
+// Local project images
+import img01 from "../../assets/home screen animation images/06d4621ee8660303b0f2fc993bca811f.jpg.jpeg";
+import img02 from "../../assets/home screen animation images/IMG-20250219-WA0003.jpg.jpeg";
+import img03 from "../../assets/home screen animation images/IMG-20250430-WA0033.jpg.jpeg";
+import img04 from "../../assets/home screen animation images/IMG-20250504-WA0160.jpg.jpeg";
+import img05 from "../../assets/home screen animation images/IMG-20250718-WA0009.jpg.jpeg";
+import img06 from "../../assets/home screen animation images/IMG-20251002-WA0001.jpg.jpeg";
+import img07 from "../../assets/home screen animation images/IMG-20251125-WA0056.jpg.jpeg";
+import img08 from "../../assets/home screen animation images/IMG-20260630-WA0036.jpg.jpeg";
+import img09 from "../../assets/home screen animation images/IMG_20240911_182941.jpg.jpeg";
+import img10 from "../../assets/home screen animation images/IMG_20241001_133114.jpg.jpeg";
+import img11 from "../../assets/home screen animation images/IMG_20250111_141505.jpg.jpeg";
+import img12 from "../../assets/home screen animation images/IMG_20250215_133506.jpg.jpeg";
+import img13 from "../../assets/home screen animation images/IMG_20250222_172003.jpg.jpeg";
+import img14 from "../../assets/home screen animation images/IMG_20250222_183019.jpg.jpeg";
+import img15 from "../../assets/home screen animation images/IMG_20250222_183033.jpg.jpeg";
+import img16 from "../../assets/home screen animation images/IMG_20250306_190139.jpg.jpeg";
+import img17 from "../../assets/home screen animation images/IMG_20250328_163740.jpg.jpeg";
+import img18 from "../../assets/home screen animation images/IMG_20250330_175255.jpg.jpeg";
+import img19 from "../../assets/home screen animation images/IMG_20250405_174030.jpg.jpeg";
+import img20 from "../../assets/home screen animation images/IMG_20250505_131119.jpg.jpeg";
+import img21 from "../../assets/home screen animation images/IMG_20260323_190849.jpg.jpeg";
+import "./scroll-morph-hero.css";
 
 function FlipCard({
     src,
     index,
     target,
     onClick,
+    width,
+    height,
 }) {
     return (
         <motion.div
@@ -29,8 +52,8 @@ function FlipCard({
             }}
             style={{
                 position: "absolute",
-                width: IMG_WIDTH,
-                height: IMG_HEIGHT,
+                width: width,
+                height: height,
                 transformStyle: "preserve-3d", 
                 perspective: "1000px",
             }}
@@ -67,30 +90,13 @@ function FlipCard({
     );
 }
 
-const TOTAL_IMAGES = 20;
+const TOTAL_IMAGES = 21;
 const MAX_SCROLL = 1000; // Snappy 1000px virtual scroll track
 
 const IMAGES = [
-    "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80",
-    "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=600&q=80",
-    "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80",
-    "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&q=80",
-    "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&q=80",
-    "https://images.unsplash.com/photo-1506765515384-028b60a970df?w=600&q=80",
-    "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80",
-    "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=600&q=80",
-    "https://images.unsplash.com/photo-1500485035595-cbe6f645feb1?w=600&q=80",
-    "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80",
-    "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80",
-    "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=600&q=80",
-    "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=600&q=80",
-    "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=600&q=80",
-    "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=600&q=80",
-    "https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?w=600&q=80",
-    "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=600&q=80",
-    "https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=600&q=80",
-    "https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?w=600&q=80",
-    "https://images.unsplash.com/photo-1496568816309-51d7c20e3b21?w=600&q=80",
+    img01, img02, img03, img04, img05, img06, img07,
+    img08, img09, img10, img11, img12, img13, img14,
+    img15, img16, img17, img18, img19, img20, img21,
 ];
 
 const lerp = (start, end, t) => start * (1 - t) + end * t;
@@ -278,14 +284,14 @@ export default function IntroAnimation() {
 
                 {/* Intro Title Overlay */}
                 <div className="smh-intro-text">
-                    <motion.h1
+                    <motion.div
                         initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
                         animate={introPhase === "circle" && morphValue < 0.5 ? { opacity: 1 - morphValue * 2, y: 0, filter: "blur(0px)" } : { opacity: 0, filter: "blur(10px)" }}
                         transition={{ duration: 1 }}
                         className="smh-logo-title"
                     >
-                        ROYAL <span style={{ color: '#D62828' }}>SIGNS</span>
-                    </motion.h1>
+                        <img src={royalLogo} alt="Royal Signs Logo" className="smh-logo-img" />
+                    </motion.div>
                     <motion.p
                         initial={{ opacity: 0 }}
                         animate={introPhase === "circle" && morphValue < 0.5 ? { opacity: 0.5 - morphValue } : { opacity: 0 }}
@@ -339,12 +345,14 @@ export default function IntroAnimation() {
                     {IMAGES.slice(0, displayImageCount).map((src, i) => {
                         let target = { x: 0, y: 0, rotation: 0, scale: 1, opacity: 1 };
                         const isMobile = containerSize.width < 768;
+                        const cardWidth = isMobile ? 38 : 60;
+                        const cardHeight = isMobile ? 54 : 85;
                         const itemCount = displayImageCount;
 
                         if (introPhase === "scatter") {
                             target = scatterPositions[i];
                         } else if (introPhase === "line") {
-                            const lineSpacing = 60;
+                            const lineSpacing = isMobile ? 40 : 60;
                             const lineTotalWidth = itemCount * lineSpacing;
                             const lineX = i * lineSpacing - lineTotalWidth / 2;
                             target = { x: lineX, y: 0, rotation: 0, scale: 1, opacity: 1 };
@@ -353,7 +361,7 @@ export default function IntroAnimation() {
 
                             // Keep circle radius larger to avoid central text collisions
                             const circleRadius = isMobile 
-                                ? Math.min(minDimension * 0.38, 140) 
+                                ? Math.min(containerSize.width * 0.45, 200) 
                                 : Math.min(minDimension * 0.40, 310);
 
                             const circleAngle = (i / Math.max(1, itemCount)) * 360;
@@ -403,6 +411,8 @@ export default function IntroAnimation() {
                                 src={src}
                                 index={i}
                                 target={target}
+                                width={cardWidth}
+                                height={cardHeight}
                                 onClick={() => setActiveLightboxImg(src)}
                             />
                         );

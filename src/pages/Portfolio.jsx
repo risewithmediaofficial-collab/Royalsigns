@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { LayoutGrid, ShoppingBag, Landmark, GraduationCap, Building2, MapPin, Calendar } from 'lucide-react';
+import { LayoutGrid, ShoppingBag, Landmark, GraduationCap, Building2, MapPin, Sparkles, Image } from 'lucide-react';
+import ScrollStack, { ScrollStackItem } from '../components/ui/ScrollStack';
 import './Portfolio.css';
 
 export default function Portfolio() {
@@ -22,7 +23,7 @@ export default function Portfolio() {
       location: "Krishnagiri Bypass Road",
       year: "2025",
       desc: "Full front elevation ACP cladding with custom illuminated warm-white LED acrylic letters, spanning 45 feet wide.",
-      bgGradient: "linear-gradient(135deg, #1e1e24 0%, #d62828 100%)"
+      icon: <ShoppingBag size={36} />
     },
     {
       id: 2,
@@ -32,7 +33,7 @@ export default function Portfolio() {
       location: "Gandhi Nagar, Krishnagiri",
       year: "2024",
       desc: "Emergency signage, entry direction boards, and double-sided green LED cross sign board for doctor clinical cabin.",
-      bgGradient: "linear-gradient(135deg, #111e25 0%, #10b981 100%)"
+      icon: <Landmark size={36} />
     },
     {
       id: 3,
@@ -42,7 +43,7 @@ export default function Portfolio() {
       location: "Rayakottai Road, Krishnagiri",
       year: "2025",
       desc: "High-grade 304 stainless steel letters with back-lit warm LEDs mounted on solid concrete gate pillar structure.",
-      bgGradient: "linear-gradient(135deg, #1c1917 0%, #f4b400 100%)"
+      icon: <GraduationCap size={36} />
     },
     {
       id: 4,
@@ -52,7 +53,7 @@ export default function Portfolio() {
       location: "Hosur Industrial Zone",
       year: "2024",
       desc: "Double pillar outdoor sign board standing 15 feet high, built with heavy structural metal channels to resist wind loads.",
-      bgGradient: "linear-gradient(135deg, #1e293b 0%, #64748b 100%)"
+      icon: <Building2 size={36} />
     },
     {
       id: 5,
@@ -62,7 +63,7 @@ export default function Portfolio() {
       location: "Gandhi Nagar, Krishnagiri",
       year: "2025",
       desc: "Custom flexible script neon letters in bright pink and cyan, mounted on transparent acrylic backing for reception backdrop.",
-      bgGradient: "linear-gradient(135deg, #2e1065 0%, #d946ef 100%)"
+      icon: <Sparkles size={36} />
     },
     {
       id: 6,
@@ -72,7 +73,7 @@ export default function Portfolio() {
       location: "Service Road, Krishnagiri",
       year: "2025",
       desc: "Branding of 3 floors including frosted privacy sticker panels on glass partitions, direction tags, and acrylic door nameplates.",
-      bgGradient: "linear-gradient(135deg, #0f172a 0%, #3b82f6 100%)"
+      icon: <LayoutGrid size={36} />
     }
   ];
 
@@ -107,40 +108,33 @@ export default function Portfolio() {
             ))}
           </div>
 
-          {/* Project List */}
-          <div className="portfolio-grid grid-3">
+          {/* Project ScrollStack */}
+          <ScrollStack useWindowScroll={true} itemDistance={30} itemScale={0.02} itemStackDistance={20} className="portfolio-scrollstack">
             {filteredProjects.map((proj) => (
-              <div className="card project-card-item" key={proj.id}>
-                {/* Visual mockup banner representing the board layout */}
-                <div 
-                  className="project-mock-banner" 
-                  style={{ background: proj.bgGradient }}
-                >
-                  <div className="mock-banner-text">
-                    <span className="mock-glow-text">{proj.title.split(' ')[0]}</span>
+              <ScrollStackItem key={proj.id} itemClassName="portfolio-stack-card">
+                <div className="stack-card-content">
+                  {/* Image Frame Placeholder */}
+                  <div className="scroll-stack-image-frame">
+                    <Image size={32} strokeWidth={1.5} />
+                    <span style={{ fontSize: '0.75rem', fontWeight: 600 }}>Project Photo</span>
+                    {/* Small category icon badge */}
+                    <div className="scroll-stack-category-badge">
+                      {proj.icon}
+                    </div>
                   </div>
-                  <span className="project-year-badge">
-                    <Calendar size={12} /> {proj.year}
-                  </span>
-                </div>
-
-                <div className="project-details">
-                  <div className="project-category-row">
-                    <span className="badge badge-red">{proj.tag}</span>
-                  </div>
-                  <h3>{proj.title}</h3>
-                  <p className="project-desc">{proj.desc}</p>
-                  
-                  <div className="project-meta-footer">
-                    <div className="meta-item">
-                      <MapPin size={14} className="icon-yellow" />
-                      <span>{proj.location}</span>
+                  <div>
+                    <span className="badge badge-red" style={{ marginBottom: '8px', display: 'inline-block' }}>{proj.tag}</span>
+                    <h3 style={{ fontSize: '1.6rem', fontWeight: 800, margin: '0 0 10px', color: 'var(--text-heading)' }}>{proj.title}</h3>
+                    <p style={{ margin: '0 0 15px', color: 'var(--text-body)', fontSize: '0.95rem', lineHeight: 1.6 }}>{proj.desc}</p>
+                    <div style={{ display: 'flex', gap: '20px', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+                      <span><strong>Year:</strong> {proj.year}</span>
+                      <span><strong>Location:</strong> {proj.location}</span>
                     </div>
                   </div>
                 </div>
-              </div>
+              </ScrollStackItem>
             ))}
-          </div>
+          </ScrollStack>
         </div>
       </section>
     </div>

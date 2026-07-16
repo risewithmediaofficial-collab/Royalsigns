@@ -1,0 +1,57 @@
+/* Reusable UI Button variants styled using the design language */
+
+.btn-default {
+  background-color: var(--color-red);
+  color: #ffffff;
+}
+
+.btn-default:hover {
+  background-color: var(--color-red-hover);
+}
+
+.btn-destructive {
+  background-color: #ef4444;
+  color: #ffffff;
+}
+
+.btn-destructive:hover {
+  background-color: #dc2626;
+}
+
+.btn-outline {
+  border: 1px solid var(--color-border);
+  background-color: transparent;
+  color: var(--text-heading);
+}
+
+.btn-outline:hover {
+  background-color: var(--bg-secondary);
+}
+
+.btn-secondary {
+  background-color: var(--color-yellow);
+  color: var(--text-heading);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-yellow-hover, #e0a300);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: var(--text-heading);
+}
+
+.btn-ghost:hover {
+  background-color: var(--bg-secondary);
+}
+
+.btn-link {
+  background-color: transparent;
+  color: var(--color-red);
+  text-decoration: underline;
+}
+
+.btn-link:hover {
+  color: var(--color-red-hover);
+}

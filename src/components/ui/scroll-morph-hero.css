@@ -38,13 +38,17 @@
 }
 
 .smh-logo-title {
-  font-family: var(--font-heading);
-  font-size: 3.1rem; /* Perfectly sized to fit cleanly within circle diameter */
-  font-weight: 800;
-  line-height: 1.1;
-  color: var(--text-heading);
-  text-transform: uppercase;
-  letter-spacing: -1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.smh-logo-img {
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.10));
 }
 
 .smh-logo-subtext {
@@ -225,7 +229,11 @@
 
 @media (max-width: 768px) {
   .smh-center-container {
-    transform: translateY(-20px);
+    transform: translateY(10px);
+  }
+  
+  .smh-logo-img {
+    width: 140px !important;
   }
   
   .smh-logo-title {
@@ -233,8 +241,9 @@
   }
   
   .smh-logo-subtext {
-    font-size: 0.7rem;
-    max-width: 250px;
+    font-size: 0.65rem;
+    max-width: 200px;
+    margin-top: 8px;
   }
   
   .smh-active-content-wrapper {

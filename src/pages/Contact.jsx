@@ -70,14 +70,34 @@ export default function Contact() {
                   <MapPin size={22} className="icon-yellow" />
                 </div>
                 <div>
-                  <h4>Workshop Address</h4>
-                  <p>Royal Signs, No. 13/6, Tamilar Street, Loganathan Nagar, Padmanabha Nagar, Choolaimedu, Chennai – 600094</p>
+                  <h4>Branch Address</h4>
+                  <p>#3/243 Naveen Arcade, CSB Bank Basement, Salem Highway Service Road, Krishnagiri – 635002</p>
                 </div>
               </li>
 
               <li>
                 <div className="info-icon-circle">
-                  <Phone size={20} className="icon-red" />
+                  <MapPin size={22} className="icon-red" />
+                </div>
+                <div>
+                  <h4>Factory Address</h4>
+                  <p>#31, Thayar Sahib Street, 1st Lane, Ellis Road, Chennai – 600002</p>
+                </div>
+              </li>
+
+              <li>
+                <div className="info-icon-circle">
+                  <MapPin size={22} className="icon-yellow" style={{ opacity: 0.8 }} />
+                </div>
+                <div>
+                  <h4>Registered Office</h4>
+                  <p>No: 13, 6, Tamilar St, Loganathan Nagar, Padmanabha Nagar, Choolaimedu, Chennai, Tamil Nadu 600094</p>
+                </div>
+              </li>
+
+              <li>
+                <div className="info-icon-circle">
+                  <Phone size={20} className="icon-yellow" />
                 </div>
                 <div>
                   <h4>Call Our Desk</h4>
@@ -89,11 +109,11 @@ export default function Contact() {
 
               <li>
                 <div className="info-icon-circle">
-                  <Mail size={20} className="icon-yellow" />
+                  <Mail size={20} className="icon-red" />
                 </div>
                 <div>
                   <h4>Email Inquiries</h4>
-                  <p><a href="mailto:info@royalsigns.in" className="link-hover">info@royalsigns.in</a></p>
+                  <p><a href="mailto:royalsigns1808@gmail.com" className="link-hover">royalsigns1808@gmail.com</a></p>
                 </div>
               </li>
 

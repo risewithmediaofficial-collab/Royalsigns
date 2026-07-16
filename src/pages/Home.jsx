@@ -5,6 +5,12 @@ import {
   CheckSquare, FileText, CheckCircle2, ChevronDown, Phone, Mail, MapPin, 
   Clock, Landmark, Building2, Wrench 
 } from 'lucide-react';
+import {
+  IconShieldCheck, IconSparkles, IconTruck, IconHeartHandshake,
+  IconBulb, IconGridDots, IconSquareCheck, IconFileText,
+  IconBuildingArch, IconBuildingStore, IconGlassFull,
+  IconTool, IconCurrencyDollar
+} from '@tabler/icons-react';
 import BeforeAfterSlider from '../components/BeforeAfterSlider';
 import IntroAnimation from '../components/ui/scroll-morph-hero';
 import './Home.css';
@@ -51,55 +57,55 @@ export default function Home() {
       id: 1,
       title: "LED Sign Boards",
       desc: "Vibrant energy-saving illuminated storefront branding.",
-      icon: <Lightbulb size={26} />
+      icon: <IconBulb size={28} stroke={1.5} />,
     },
     {
       id: 2,
       title: "ACP Boards",
       desc: "Premium grooved composite cladding with elevated text.",
-      icon: <Grid size={26} />
+      icon: <IconGridDots size={28} stroke={1.5} />,
     },
     {
       id: 3,
       title: "Acrylic Boards",
       desc: "Crystal clear polished acrylic sheets with glossy aesthetics.",
-      icon: <CheckSquare size={26} />
+      icon: <IconSquareCheck size={28} stroke={1.5} />,
     },
     {
       id: 4,
       title: "3D Letter Boards",
       desc: "Raised metal, stainless steel (SS), or mild steel letters.",
-      icon: <Landmark size={26} />
+      icon: <IconBuildingArch size={28} stroke={1.5} />,
     },
     {
       id: 5,
       title: "Neon Signs",
       desc: "Vibrant customized LED neon script tubes for trendy spots.",
-      icon: <Sparkles size={26} />
+      icon: <IconSparkles size={28} stroke={1.5} />,
     },
     {
       id: 6,
       title: "Vehicle Branding",
       desc: "Full and partial cast vinyl wrapping for commercial fleets.",
-      icon: <Truck size={26} />
+      icon: <IconTruck size={28} stroke={1.5} />,
     },
     {
       id: 7,
       title: "Wall Graphics",
       desc: "Custom high-quality wallpaper prints for corporate interiors.",
-      icon: <Building2 size={26} />
+      icon: <IconBuildingStore size={28} stroke={1.5} />,
     },
     {
       id: 8,
       title: "Glass Films",
       desc: "3M frosted window screens and privacy one-way stickers.",
-      icon: <ShieldCheck size={26} />
+      icon: <IconGlassFull size={28} stroke={1.5} />,
     },
     {
       id: 9,
       title: "Flex Printing",
       desc: "High-speed solvent banner prints for outdoor promotion.",
-      icon: <FileText size={26} />
+      icon: <IconFileText size={28} stroke={1.5} />,
     }
   ];
 
@@ -107,32 +113,32 @@ export default function Home() {
     {
       title: "Premium Materials",
       desc: "We use original 3mm non-fading ACP panels, waterproof Samsung LED modules, and pure virgin acrylics.",
-      icon: <ShieldCheck size={24} className="icon-red" />
+      icon: <IconShieldCheck size={26} stroke={1.5} />
     },
     {
       title: "Creative Designs",
       desc: "In-house graphic artists model custom 3D computer renderings to demonstrate exact signage layouts.",
-      icon: <Sparkles size={24} className="icon-red" />
+      icon: <IconSparkles size={26} stroke={1.5} />
     },
     {
       title: "Fast Delivery",
       desc: "Equipped with automated laser benders and heavy CNC routers, delivering boards within 5 to 7 days.",
-      icon: <Truck size={24} className="icon-red" />
+      icon: <IconTruck size={26} stroke={1.5} />
     },
     {
       title: "Expert Installation",
       desc: "Certified heights technicians secure signages with structural anchor brackets and waterproof wiring.",
-      icon: <Wrench size={24} className="icon-red" />
+      icon: <IconTool size={26} stroke={1.5} />
     },
     {
       title: "Affordable Pricing",
       desc: "Direct procurement of raw components enables wholesale rates without compromising component durability.",
-      icon: <CheckCircle2 size={24} className="icon-red" />
+      icon: <IconCurrencyDollar size={26} stroke={1.5} />
     },
     {
       title: "After Sales Support",
       desc: "We stand behind our work, providing on-call repairs, transformer swap surveys, and light upgrades.",
-      icon: <HeartHandshake size={24} className="icon-red" />
+      icon: <IconHeartHandshake size={26} stroke={1.5} />
     }
   ];
 
@@ -238,23 +244,49 @@ export default function Home() {
             <h2>Our Custom Branding Solutions</h2>
             <p>Sleek design layouts, premium materials, and flawless installation services.</p>
           </div>
+        </div>
 
-          <div className="services-white-grid">
-            {services.map((srv) => (
-              <div className="card service-white-card" key={srv.id}>
-                <div className="service-icon-row">
-                  <div className="icon-circle-box">{srv.icon}</div>
+        <div className="services-hover-grid">
+          {services.map((srv, index) => {
+            const colFirst = index % 4 === 0;
+            const rowFirst = index < 4;
+            const rowSecond = index >= 4;
+            return (
+              <div
+                key={srv.id}
+                className={[
+                  'service-feature-card',
+                  colFirst ? 'col-first' : '',
+                  rowFirst ? 'row-first' : '',
+                  rowSecond ? 'row-second' : '',
+                ].join(' ')}
+              >
+                {/* Hover gradient overlay */}
+                <div className="sfc-hover-bg" />
+
+                {/* Icon */}
+                <div className="sfc-icon">
+                  {srv.icon}
                 </div>
-                <h3>{srv.title}</h3>
-                <p>{srv.desc}</p>
-                <div className="service-card-action">
+
+                {/* Title with accent bar */}
+                <div className="sfc-title-row">
+                  <div className="sfc-accent-bar" />
+                  <span className="sfc-title">{srv.title}</span>
+                </div>
+
+                {/* Description */}
+                <p className="sfc-desc">{srv.desc}</p>
+
+                {/* Learn more link */}
+                <div className="sfc-link">
                   <Link to="/services" className="arrow-link">
                     Learn More <ArrowRight size={14} />
                   </Link>
                 </div>
               </div>
-            ))}
-          </div>
+            );
+          })}
         </div>
       </section>
 
@@ -278,16 +310,42 @@ export default function Home() {
             <h2>Engineered For Long Durability</h2>
             <p>From computerized layout designs to physical scaffolding mounts, we deliver excellence.</p>
           </div>
+        </div>
 
-          <div className="why-choose-list-grid grid-3">
-            {chooseReasons.map((reason, idx) => (
-              <div className="card why-choose-card-item" key={idx}>
-                <div className="why-icon-wrap">{reason.icon}</div>
-                <h3>{reason.title}</h3>
-                <p>{reason.desc}</p>
+        <div className="why-choose-hover-grid">
+          {chooseReasons.map((reason, idx) => {
+            const colFirst = idx % 3 === 0;
+            const rowFirst = idx < 3;
+            const rowSecond = idx >= 3;
+            return (
+              <div
+                key={idx}
+                className={[
+                  'why-feature-card',
+                  colFirst ? 'wcol-first' : '',
+                  rowFirst ? 'wrow-first' : '',
+                  rowSecond ? 'wrow-second' : '',
+                ].join(' ')}
+              >
+                {/* Hover gradient overlay */}
+                <div className="wfc-hover-bg" />
+
+                {/* Icon */}
+                <div className="wfc-icon">
+                  {reason.icon}
+                </div>
+
+                {/* Title with accent bar */}
+                <div className="wfc-title-row">
+                  <div className="wfc-accent-bar" />
+                  <span className="wfc-title">{reason.title}</span>
+                </div>
+
+                {/* Description */}
+                <p className="wfc-desc">{reason.desc}</p>
               </div>
-            ))}
-          </div>
+            );
+          })}
         </div>
       </section>
 

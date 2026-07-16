@@ -4,19 +4,19 @@
   --text-heading: #1f2937;
   --text-body: #4b5563;
   --text-muted: #6b7280;
-  
-  --color-red: #d62828;
-  --color-red-hover: #b91c1c;
+
+  --color-red: #ff0000;
+  --color-red-hover: #ff0000;
   --color-yellow: #f4b400;
   --color-yellow-hover: #d97706;
   --color-border: #e5e7eb;
-  
+
   --font-heading: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
-  
+
   --shadow-premium: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
   --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  
+
   --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   --border-radius-card: 20px;
 }
@@ -34,17 +34,21 @@
   width: 8px;
   height: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--bg-secondary);
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--color-border);
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-red);
 }
 
+html,
 body {
   background-color: var(--bg-primary);
   color: var(--text-body);
@@ -52,10 +56,16 @@ body {
   font-size: 16px;
   line-height: 1.6;
   overflow-x: hidden;
+  width: 100%;
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   color: var(--text-heading);
   font-weight: 700;
@@ -68,7 +78,10 @@ a {
   transition: var(--transition);
 }
 
-button, input, textarea, select {
+button,
+input,
+textarea,
+select {
   font-family: inherit;
   outline: none;
 }
@@ -78,7 +91,7 @@ button, input, textarea, select {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 48px;
 }
 
 .section-padding {
@@ -91,12 +104,29 @@ button, input, textarea, select {
   }
 }
 
-.text-center { text-align: center; }
-.flex { display: flex; }
-.grid { display: grid; }
-.items-center { align-items: center; }
-.justify-between { justify-content: space-between; }
-.justify-center { justify-content: center; }
+.text-center {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
 
 /* Section Header */
 .section-header {
@@ -106,12 +136,14 @@ button, input, textarea, select {
   margin-left: auto;
   margin-right: auto;
 }
+
 .section-header h2 {
   font-size: 2.5rem;
   font-weight: 800;
   color: var(--text-heading);
   margin-bottom: 15px;
 }
+
 .section-header p {
   color: var(--text-muted);
   font-size: 1.1rem;
@@ -131,7 +163,8 @@ button, input, textarea, select {
   padding: 14px 32px;
   font-weight: 600;
   font-size: 0.95rem;
-  border-radius: 9999px; /* Pill style */
+  border-radius: 9999px;
+  /* Pill style */
   cursor: pointer;
   transition: var(--transition);
   border: 1px solid transparent;
@@ -144,6 +177,7 @@ button, input, textarea, select {
   background-color: var(--color-red);
   color: #ffffff;
 }
+
 .btn-red:hover {
   background-color: var(--color-red-hover);
   transform: translateY(-2px);
@@ -156,6 +190,7 @@ button, input, textarea, select {
   color: var(--color-red);
   border: 2px solid var(--color-red);
 }
+
 .btn-outline:hover {
   background-color: var(--color-red);
   color: #ffffff;
@@ -167,6 +202,7 @@ button, input, textarea, select {
   background-color: var(--color-yellow);
   color: #1f2937;
 }
+
 .btn-yellow:hover {
   background-color: var(--color-yellow-hover);
   transform: translateY(-2px);
@@ -177,6 +213,7 @@ button, input, textarea, select {
   color: var(--text-heading);
   border: 1px solid var(--color-border);
 }
+
 .btn-secondary:hover {
   background-color: #ffffff;
   border-color: var(--text-heading);
@@ -207,11 +244,13 @@ button, input, textarea, select {
   border-radius: 9999px;
   margin-bottom: 15px;
 }
+
 .badge-red {
   background-color: rgba(214, 40, 40, 0.06);
   color: var(--color-red);
   border: 1px solid rgba(214, 40, 40, 0.15);
 }
+
 .badge-yellow {
   background-color: rgba(244, 180, 0, 0.08);
   color: var(--color-yellow-hover);
@@ -223,6 +262,7 @@ button, input, textarea, select {
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 }
+
 .grid-2 {
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
@@ -233,8 +273,11 @@ button, input, textarea, select {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 @media (max-width: 768px) {
-  .grid-3, .grid-2 {
+
+  .grid-3,
+  .grid-2 {
     grid-template-columns: 1fr;
     gap: 24px;
   }
@@ -250,4 +293,68 @@ button, input, textarea, select {
   border-inline: none;
   max-width: none;
   text-align: left;
+}
+
+/* Global Responsive Overrides for Grids, Hover Columns, & Timelines */
+@media (max-width: 992px) {
+  .services-hover-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .service-feature-card {
+    border-left: 1px solid var(--color-border) !important;
+    border-bottom: 1px solid var(--color-border) !important;
+  }
+  .why-choose-hover-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .why-feature-card {
+    border-left: 1px solid var(--color-border) !important;
+    border-bottom: 1px solid var(--color-border) !important;
+  }
+  .about-white-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  .about-visual-mockup {
+    margin: 0 auto 30px !important;
+    transform: scale(0.95) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-hover-grid,
+  .why-choose-hover-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .service-feature-card,
+  .why-feature-card {
+    border-right: none !important;
+    border-left: none !important;
+  }
+  .process-card-row {
+    flex-direction: column !important;
+    gap: 15px !important;
+  }
+  .process-line-connector {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 24px !important;
+  }
+  .page-header h1 {
+    font-size: 2.2rem !important;
+  }
+  .section-header h2 {
+    font-size: 1.8rem !important;
+  }
+  .about-visual-mockup {
+    height: 250px !important;
+  }
+  .mockup-plate-sheet {
+    width: 140px !important;
+    height: 140px !important;
+  }
 }

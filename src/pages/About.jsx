@@ -1,5 +1,6 @@
 import React from 'react';
-import { Compass, Eye, ShieldCheck, Hammer, Sparkles, Layers, Sliders, CheckCircle2 } from 'lucide-react';
+import { Compass, Eye, ShieldCheck, Hammer, Sparkles, Layers, Sliders, CheckCircle2, ArrowRight } from 'lucide-react';
+import { FlippingCard } from '../components/ui/FlippingCard';
 import './About.css';
 
 export default function About() {
@@ -76,23 +77,62 @@ export default function About() {
         </div>
       </section>
 
-      {/* Vision & Mission Core */}
+      {/* Vision & Mission Core — FlippingCard */}
       <section className="vision-mission-section section-padding">
-        <div className="container grid-2">
-          <div className="card vision-card">
-            <Eye size={40} className="icon-yellow" />
-            <h3>Our Vision</h3>
-            <p>
-              To become a trusted name in premium signage and branding by creating striking, durable, and innovative solutions that elevate businesses with lasting visual impact.
-            </p>
+        <div className="container">
+          <div className="section-header text-center">
+            <span className="badge badge-yellow">Our Foundation</span>
+            <h2>Vision &amp; Mission</h2>
+            <p>Hover over each card to discover what drives us every day.</p>
           </div>
+          <div className="flip-cards-grid-2">
+            {/* Vision Card */}
+            <FlippingCard
+              width={520}
+              height={280}
+              frontContent={
+                <div style={{ display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', height:'100%', padding:'36px 30px', textAlign:'center' }}>
+                  <Eye size={48} style={{ color:'var(--color-yellow)', marginBottom:'18px' }} />
+                  <h3 style={{ fontFamily:'var(--font-heading)', fontSize:'1.4rem', fontWeight:800, color:'var(--text-heading)', marginBottom:'10px' }}>Our Vision</h3>
+                  <p style={{ fontSize:'0.9rem', color:'var(--text-muted)' }}>Hover to read our vision →</p>
+                </div>
+              }
+              backContent={
+                <>
+                  <span className="fc-back-tag">VISION</span>
+                  <p className="fc-back-desc">
+                    To become a trusted name in premium signage and branding by creating striking, durable, and innovative solutions that elevate businesses with lasting visual impact.
+                  </p>
+                  <button className="fc-back-btn">
+                    Learn More <ArrowRight size={14} />
+                  </button>
+                </>
+              }
+            />
 
-          <div className="card mission-card">
-            <ShieldCheck size={40} className="icon-red" />
-            <h3>Our Mission</h3>
-            <p>
-              To deliver precision-engineered signage and branding solutions using premium materials, expert craftsmanship, and flawless execution. We are committed to quality, reliability, and a seamless experience from design to installation.
-            </p>
+            {/* Mission Card */}
+            <FlippingCard
+              width={520}
+              height={280}
+              frontContent={
+                <div style={{ display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', height:'100%', padding:'36px 30px', textAlign:'center' }}>
+                  <ShieldCheck size={48} style={{ color:'var(--color-red)', marginBottom:'18px' }} />
+                  <h3 style={{ fontFamily:'var(--font-heading)', fontSize:'1.4rem', fontWeight:800, color:'var(--text-heading)', marginBottom:'10px' }}>Our Mission</h3>
+                  <p style={{ fontSize:'0.9rem', color:'var(--text-muted)' }}>Hover to read our mission →</p>
+                </div>
+              }
+              backContent={
+                <>
+                  <span className="fc-back-tag">MISSION</span>
+                  <p className="fc-back-desc">
+                    To deliver precision-engineered signage and branding solutions using premium materials, expert craftsmanship, and flawless execution — committed to quality from design to installation.
+                  </p>
+                  <button className="fc-back-btn">
+                    Our Services <ArrowRight size={14} />
+                  </button>
+                </>
+              }
+            />
           </div>
         </div>
       </section>

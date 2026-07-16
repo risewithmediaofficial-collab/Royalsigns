@@ -1,0 +1,173 @@
+/* ============================================================
+   FlippingCard — 3D hover flip animation (plain CSS)
+   ============================================================ */
+
+.fc-perspective {
+  perspective: 1000px;
+  width: var(--fc-width, 320px);
+  height: var(--fc-height, 300px);
+  display: inline-block;
+}
+
+.fc-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 20px;
+}
+
+/* Flip on hover */
+.fc-perspective:hover .fc-inner {
+  transform: rotateY(180deg);
+}
+
+/* Shared face styles — NO overflow:hidden here, it breaks preserve-3d! */
+.fc-face {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  background-color: #ffffff;
+}
+
+/* Front — visible by default */
+.fc-front {
+  transform: rotateY(0deg);
+  overflow: hidden; /* overflow ok on the front face */
+}
+
+/* Back — hidden until flipped, counter-rotated 180deg */
+.fc-back {
+  transform: rotateY(180deg);
+  overflow: hidden;
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  border-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 28px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+}
+
+
+/* ==============================
+   Convenience inner layout classes
+   ============================== */
+
+/* Front face helpers */
+.fc-front-img {
+  width: 100%;
+  height: 55%;
+  object-fit: cover;
+  border-radius: 16px 16px 0 0;
+  display: block;
+}
+
+.fc-front-body {
+  padding: 20px 22px 18px;
+}
+
+.fc-front-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 8px;
+}
+
+.fc-front-desc {
+  font-size: 0.875rem;
+  color: var(--text-body);
+  line-height: 1.55;
+}
+
+/* Back face helpers */
+.fc-back-icon {
+  margin-bottom: 18px;
+  color: var(--color-yellow);
+}
+
+.fc-back-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.fc-back-desc {
+  font-size: 0.875rem;
+  color: #d1d5db;
+  line-height: 1.65;
+  margin-bottom: 22px;
+}
+
+.fc-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--color-red);
+  color: #ffffff;
+  border: none;
+  border-radius: 9999px;
+  padding: 10px 22px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  font-family: var(--font-heading);
+}
+
+.fc-back-btn:hover {
+  background-color: var(--color-red-hover);
+  transform: translateY(-2px);
+}
+
+.fc-back-tag {
+  display: inline-block;
+  background-color: rgba(244, 180, 0, 0.15);
+  color: var(--color-yellow);
+  border: 1px solid rgba(244, 180, 0, 0.3);
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  margin-bottom: 14px;
+  letter-spacing: 0.04em;
+}
+
+/* ==============================
+   Grids that use FlippingCard
+   ============================== */
+.flip-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 28px;
+  justify-items: center;
+}
+
+.flip-cards-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  justify-items: center;
+}
+
+@media (max-width: 768px) {
+  .flip-cards-grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .fc-perspective {
+    width: 100% !important;
+    max-width: 380px;
+  }
+}
