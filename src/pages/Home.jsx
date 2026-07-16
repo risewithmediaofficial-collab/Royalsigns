@@ -13,51 +13,47 @@ import {
 } from '@tabler/icons-react';
 import BeforeAfterSlider from '../components/BeforeAfterSlider';
 import IntroAnimation from '../components/ui/scroll-morph-hero';
+import DomeGallery from '../components/ui/DomeGallery';
 import './Home.css';
 
-// Project showcase images for the home installation grid
+// Image for about visual section
 import imgHomeProj1 from '../assets/royal signs/bcb90516a1333bbaefe0a9d94301ec3e.jpg.jpeg';
-import imgHomeProj2 from '../assets/royal signs/IMG-20241023-WA0106.jpg.jpeg';
-import imgHomeProj3 from '../assets/royal signs/IMG-20251125-WA0056.jpg.jpeg';
-import imgHomeProj4 from '../assets/royal signs/IMG-20251002-WA0000.jpg.jpeg';
-import imgHomeProj5 from '../assets/royal signs/IMG-20241023-WA0135.jpg.jpeg';
-import imgHomeProj6 from '../assets/royal signs/IMG-20250718-WA0009.jpg.jpeg';
-import imgHomeProj7 from '../assets/royal signs/IMG-20250327-WA0094.jpg.jpeg';
-import imgHomeProj8 from '../assets/royal signs/IMG-20250504-WA0160.jpg.jpeg';
-import imgHomeProj9 from '../assets/royal signs/IMG-20251028-WA0009.jpg.jpeg';
-import imgHomeProj10 from '../assets/royal signs/IMG-20251206-WA0040.jpg.jpeg';
-import imgHomeProj11 from '../assets/royal signs/IMG-20251224-WA0013.jpg.jpeg';
-import imgHomeProj12 from '../assets/royal signs/IMG-20260630-WA0037.jpg.jpeg';
 
 
-// Helper component for dynamic lazy-loaded home projects
-function HomeGalleryImage({ src, alt }) {
-  const [isLoaded, setIsLoaded] = useState(false);
-  return (
-    <div style={{ position: 'relative', width: '100%', height: '100%', overflow: 'hidden' }}>
-      {!isLoaded && (
-        <div style={{ position: 'absolute', inset: 0, backgroundColor: '#e5e7eb', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <div className="smh-card-spinner" />
-        </div>
-      )}
-      <img
-        src={src}
-        alt={alt}
-        loading="lazy"
-        decoding="async"
-        onLoad={() => setIsLoaded(true)}
-        style={{
-          opacity: isLoaded ? 1 : 0,
-          transition: 'opacity 0.3s ease',
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          display: 'block'
-        }}
-      />
-    </div>
-  );
-}
+const allImagesGlob = import.meta.glob('../assets/royal signs/*.{png,jpg,jpeg,webp}', { eager: true });
+const categoriesList = ['shop', 'hospital', 'school', 'corporate', 'industrial'];
+const curatedCategories = {
+  'bcb90516a1333bbaefe0a9d94301ec3e.jpg.jpeg': 'shop',
+  'IMG-20241023-WA0106.jpg.jpeg': 'hospital',
+  'IMG-20251125-WA0056.jpg.jpeg': 'school',
+  'IMG-20251002-WA0000.jpg.jpeg': 'shop',
+  'IMG-20241023-WA0135.jpg.jpeg': 'corporate',
+  'IMG-20250718-WA0009.jpg.jpeg': 'industrial',
+  'IMG-20250327-WA0094.jpg.jpeg': 'shop',
+  'IMG-20250504-WA0160.jpg.jpeg': 'corporate',
+  'IMG-20251028-WA0009.jpg.jpeg': 'hospital',
+  'IMG-20251206-WA0040.jpg.jpeg': 'shop',
+  'IMG-20251224-WA0013.jpg.jpeg': 'school',
+  'IMG-20260630-WA0037.jpg.jpeg': 'corporate'
+};
+
+const dynamicPortfolioItems = Object.keys(allImagesGlob)
+  .filter(path => {
+    const filename = path.split('/').pop();
+    // Exclude camera images starting with IMG_ (with underscore)
+    return !filename.startsWith('IMG_');
+  })
+  .map((path, index) => {
+    const src = allImagesGlob[path].default || allImagesGlob[path];
+    const filename = path.split('/').pop();
+    const category = curatedCategories[filename] || categoriesList[index % categoriesList.length];
+    return {
+      id: index + 1,
+      src,
+      category,
+      alt: `Royal Signs Project ${index + 1}`
+    };
+  });
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState(null);
@@ -186,20 +182,7 @@ export default function Home() {
     }
   ];
 
-  const portfolioItems = [
-    { id: 1, title: "Lalitha Jewellery", category: "shop", label: "Gold Finish SS Letters", col: "span-2", image: imgHomeProj1 },
-    { id: 2, title: "City Multispeciality", category: "hospital", label: "Backlit emergency signage", col: "", image: imgHomeProj2 },
-    { id: 3, title: "Oakridge Public School", category: "school", label: "SS Letter Frontage", col: "", image: imgHomeProj3 },
-    { id: 4, title: "Gourmet Cafe Neon", category: "shop", label: "Silicone Neon Backdrop", col: "span-2", image: imgHomeProj4 },
-    { id: 5, title: "Metro Tech Hub Entrance", category: "corporate", label: "ACP Cladding Fascia", col: "", image: imgHomeProj5 },
-    { id: 6, title: "SIPCOT Cast Steel Plant", category: "industrial", label: "Structural Pylon Board", col: "", image: imgHomeProj6 },
-    { id: 7, title: "Retail Showroom Fascia", category: "shop", label: "LED Acrylic Letters", col: "", image: imgHomeProj7 },
-    { id: 8, title: "Commercial Complex Board", category: "corporate", label: "ACP & LED Combo Board", col: "span-2", image: imgHomeProj8 },
-    { id: 9, title: "Medical Clinic Signage", category: "hospital", label: "Green Cross LED Board", col: "", image: imgHomeProj9 },
-    { id: 10, title: "Shop Front Name Board", category: "shop", label: "Flex Backlit Board", col: "", image: imgHomeProj10 },
-    { id: 11, title: "Institution Entry Gate", category: "school", label: "Steel & ACP Gate", col: "span-2", image: imgHomeProj11 },
-    { id: 12, title: "Hotel Lobby Branding", category: "corporate", label: "Neon & Metallic Signs", col: "", image: imgHomeProj12 }
-  ];
+  const portfolioItems = dynamicPortfolioItems;
 
   const filteredPortfolio = portfolioFilter === 'all'
     ? portfolioItems
@@ -444,24 +427,13 @@ export default function Home() {
             </button>
           </div>
 
-          {/* Masonry Grid */}
-          <div className="portfolio-masonry-grid">
-            {filteredPortfolio.map((item) => (
-              <div 
-                className={`masonry-item-wrapper ${item.col}`} 
-                key={item.id}
-              >
-                <div 
-                  className="masonry-thumbnail" 
-                >
-                  <HomeGalleryImage src={item.image} alt={item.title} />
-                  <div className="masonry-overlay-info">
-                    <h4>{item.title}</h4>
-                    <p>{item.label}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
+          {/* Dome Gallery Container */}
+          <div className="portfolio-dome-container">
+            <DomeGallery 
+              images={filteredPortfolio.map(item => ({ src: item.src, alt: item.alt }))}
+              grayscale={false}
+              overlayBlurColor="#ffffff"
+            />
           </div>
         </div>
       </section>

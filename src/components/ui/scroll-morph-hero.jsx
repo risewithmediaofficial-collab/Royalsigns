@@ -419,7 +419,7 @@ export default function IntroAnimation() {
 
                             // Keep circle radius larger to avoid central text collisions
                             const circleRadius = isMobile 
-                                ? Math.min(containerSize.width * 0.28, 90) 
+                                ? Math.min(containerSize.width * 0.40, 145) 
                                 : Math.min(minDimension * 0.40, 310);
 
                             const circleAngle = (i / Math.max(1, itemCount)) * 360;

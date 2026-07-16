@@ -715,6 +715,20 @@
   border-color: var(--text-heading);
 }
 
+/* Dome Gallery Container */
+.portfolio-dome-container {
+  width: 100%;
+  height: 600px;
+  position: relative;
+  margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+  .portfolio-dome-container {
+    height: 480px;
+  }
+}
+
 /* Masonry grid mockup */
 .portfolio-masonry-grid {
   display: grid;
