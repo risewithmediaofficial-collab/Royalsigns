@@ -301,9 +301,43 @@ export default function IntroAnimation() {
 
     const contentOpacity = useTransform(smoothMorph, [0.8, 1], [0, 1]);
     const contentY = useTransform(smoothMorph, [0.8, 1], [20, 0]);
+    const statsOpacity = useTransform(smoothMorph, [0, 0.45], [1, 0]);
+
+    const cornerStats = [
+        { label: "Projects Completed", value: "680+", positionClass: "top-left" },
+        { label: "Signages Installed", value: "4,299+", positionClass: "top-right" },
+        { label: "ACP Elevation Works", value: "75+", positionClass: "bottom-left" },
+        { label: "Premium Interiors", value: "34+", positionClass: "bottom-right" }
+    ];
+
+    const showStats = introPhase === "circle";
 
     return (
         <div ref={containerRef} className="smh-wrapper">
+            {/* Desktop-only Corner Stats Cards that fade out on scroll morph */}
+            {showStats && !isMobileView && (
+                <div className="smh-corner-stats-container">
+                    {cornerStats.map((stat, idx) => (
+                        <motion.div
+                            key={idx}
+                            style={{ opacity: statsOpacity }}
+                            initial={{ scale: 0, opacity: 0, y: stat.positionClass.includes("top") ? -40 : 40 }}
+                            animate={{ scale: 1, opacity: 1, y: 0 }}
+                            transition={{ 
+                                type: "spring", 
+                                stiffness: 180, 
+                                damping: 14,
+                                delay: idx * 0.12 + 0.2
+                            }}
+                            className={`smh-corner-card ${stat.positionClass}`}
+                        >
+                            <span className="smh-corner-value">{stat.value}</span>
+                            <span className="smh-corner-label">{stat.label}</span>
+                        </motion.div>
+                    ))}
+                </div>
+            )}
+
             <div className="smh-center-container">
 
                 {/* Intro Title Overlay */}
@@ -385,7 +419,7 @@ export default function IntroAnimation() {
 
                             // Keep circle radius larger to avoid central text collisions
                             const circleRadius = isMobile 
-                                ? Math.min(containerSize.width * 0.45, 200) 
+                                ? Math.min(containerSize.width * 0.28, 90) 
                                 : Math.min(minDimension * 0.40, 310);
 
                             const circleAngle = (i / Math.max(1, itemCount)) * 360;

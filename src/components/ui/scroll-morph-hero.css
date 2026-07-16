@@ -283,3 +283,93 @@
 @keyframes smh-spin {
   to { transform: rotate(360deg); }
 }
+
+/* Corner Stats Cards Container & Styling */
+.smh-corner-stats-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 12;
+}
+
+.smh-corner-card {
+  position: absolute;
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 20px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  width: 160px;
+  text-align: center;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+
+.smh-corner-card:hover {
+  transform: translateY(-6px) scale(1.04) !important;
+  box-shadow: 0 12px 36px rgba(214, 40, 40, 0.08), 0 4px 12px rgba(0,0,0,0.02);
+}
+
+.smh-corner-card.top-left {
+  top: 18%;
+  left: 6%;
+  border-left: 4px solid var(--color-red);
+}
+
+.smh-corner-card.top-right {
+  top: 18%;
+  right: 6%;
+  border-right: 4px solid var(--color-yellow);
+}
+
+.smh-corner-card.bottom-left {
+  bottom: 18%;
+  left: 6%;
+  border-left: 4px solid var(--color-yellow);
+}
+
+.smh-corner-card.bottom-right {
+  bottom: 18%;
+  right: 6%;
+  border-right: 4px solid var(--color-red);
+}
+
+.smh-corner-value {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 850;
+  color: var(--text-heading);
+  line-height: 1.1;
+  background: linear-gradient(135deg, var(--text-heading) 40%, var(--color-red) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.smh-corner-label {
+  font-size: 0.7rem;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+@media (max-width: 1200px) {
+  .smh-corner-card {
+    width: 140px;
+    padding: 12px 14px;
+  }
+  .smh-corner-value {
+    font-size: 1.5rem;
+  }
+  .smh-corner-label {
+    font-size: 0.65rem;
+  }
+}
+
