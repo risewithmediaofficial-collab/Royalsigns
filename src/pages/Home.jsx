@@ -15,6 +15,43 @@ import BeforeAfterSlider from '../components/BeforeAfterSlider';
 import IntroAnimation from '../components/ui/scroll-morph-hero';
 import './Home.css';
 
+// Project showcase images for the home installation grid
+import imgHomeProj1 from '../assets/royal signs/bcb90516a1333bbaefe0a9d94301ec3e.jpg.jpeg';
+import imgHomeProj2 from '../assets/royal signs/IMG-20241023-WA0106.jpg.jpeg';
+import imgHomeProj3 from '../assets/royal signs/IMG-20251125-WA0056.jpg.jpeg';
+import imgHomeProj4 from '../assets/royal signs/IMG-20251002-WA0000.jpg.jpeg';
+import imgHomeProj5 from '../assets/royal signs/IMG-20241023-WA0135.jpg.jpeg';
+import imgHomeProj6 from '../assets/royal signs/IMG-20250718-WA0009.jpg.jpeg';
+
+// Helper component for dynamic lazy-loaded home projects
+function HomeGalleryImage({ src, alt }) {
+  const [isLoaded, setIsLoaded] = useState(false);
+  return (
+    <div style={{ position: 'relative', width: '100%', height: '100%', overflow: 'hidden' }}>
+      {!isLoaded && (
+        <div style={{ position: 'absolute', inset: 0, backgroundColor: '#e5e7eb', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div className="smh-card-spinner" />
+        </div>
+      )}
+      <img
+        src={src}
+        alt={alt}
+        loading="lazy"
+        decoding="async"
+        onLoad={() => setIsLoaded(true)}
+        style={{
+          opacity: isLoaded ? 1 : 0,
+          transition: 'opacity 0.3s ease',
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          display: 'block'
+        }}
+      />
+    </div>
+  );
+}
+
 export default function Home() {
   const [openFaq, setOpenFaq] = useState(null);
   const [portfolioFilter, setPortfolioFilter] = useState('all');
@@ -143,12 +180,12 @@ export default function Home() {
   ];
 
   const portfolioItems = [
-    { id: 1, title: "Lalitha Jewellery", category: "shop", label: "Gold Finish SS Letters", col: "span-2", bgGradient: "linear-gradient(135deg, #fef08a 0%, #facc15 100%)" },
-    { id: 2, title: "City Multispeciality", category: "hospital", label: "Backlit emergency signage", col: "", bgGradient: "linear-gradient(135deg, #a7f3d0 0%, #059669 100%)" },
-    { id: 3, title: "Oakridge Public School", category: "school", label: "SS Letter Frontage", col: "", bgGradient: "linear-gradient(135deg, #fbcfe8 0%, #db2777 100%)" },
-    { id: 4, title: "Gourmet Cafe Neon", category: "restaurant", label: "Silicone Neon Backdrop", col: "span-2", bgGradient: "linear-gradient(135deg, #c084fc 0%, #7e22ce 100%)" },
-    { id: 5, title: "Metro Tech Hub Entrance", category: "corporate", label: "ACP Cladding Fascia", col: "", bgGradient: "linear-gradient(135deg, #93c5fd 0%, #2563eb 100%)" },
-    { id: 6, title: "SIPCOT Cast Steel Plant", category: "industrial", label: "Structural Pylon Board", col: "", bgGradient: "linear-gradient(135deg, #e2e8f0 0%, #475569 100%)" }
+    { id: 1, title: "Lalitha Jewellery", category: "shop", label: "Gold Finish SS Letters", col: "span-2", image: imgHomeProj1 },
+    { id: 2, title: "City Multispeciality", category: "hospital", label: "Backlit emergency signage", col: "", image: imgHomeProj2 },
+    { id: 3, title: "Oakridge Public School", category: "school", label: "SS Letter Frontage", col: "", image: imgHomeProj3 },
+    { id: 4, title: "Gourmet Cafe Neon", category: "shop", label: "Silicone Neon Backdrop", col: "span-2", image: imgHomeProj4 },
+    { id: 5, title: "Metro Tech Hub Entrance", category: "corporate", label: "ACP Cladding Fascia", col: "", image: imgHomeProj5 },
+    { id: 6, title: "SIPCOT Cast Steel Plant", category: "industrial", label: "Structural Pylon Board", col: "", image: imgHomeProj6 }
   ];
 
   const filteredPortfolio = portfolioFilter === 'all'
@@ -407,8 +444,8 @@ export default function Home() {
               >
                 <div 
                   className="masonry-thumbnail" 
-                  style={{ background: item.bgGradient }}
                 >
+                  <HomeGalleryImage src={item.image} alt={item.title} />
                   <div className="masonry-overlay-info">
                     <h4>{item.title}</h4>
                     <p>{item.label}</p>
