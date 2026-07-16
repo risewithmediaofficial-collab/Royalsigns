@@ -19,14 +19,8 @@ export default defineConfig({
             return 'vendor';
           }
         },
-        // Images go into assets/images/ so they're easy to identify
-        assetFileNames(assetInfo) {
-          const ext = assetInfo.name?.split('.').pop()?.toLowerCase();
-          if (['jpg', 'jpeg', 'png', 'webp', 'gif', 'svg'].includes(ext)) {
-            return 'assets/images/[name]-[hash][extname]';
-          }
-          return 'assets/[name]-[hash][extname]';
-        },
+        // All assets (images, fonts, etc.) under assets/
+        assetFileNames: 'assets/[name]-[hash][extname]',
       },
     },
   },
