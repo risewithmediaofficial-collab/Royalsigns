@@ -113,3 +113,33 @@
   color: var(--text-body);
   max-width: 600px;
 }
+
+/* Industry Thumbnail Strip */
+.industry-thumb-strip {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.industry-thumb {
+  width: 90px;
+  height: 70px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 2px solid var(--color-border);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.industry-thumb:hover {
+  border-color: var(--color-red);
+  transform: scale(1.05);
+}
+
+@media (max-width: 576px) {
+  .industry-thumb {
+    width: 70px;
+    height: 55px;
+  }
+}
+

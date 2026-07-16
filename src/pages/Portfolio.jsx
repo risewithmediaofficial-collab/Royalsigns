@@ -6,10 +6,17 @@ import './Portfolio.css';
 // Project images from assets
 import imgProj1 from '../assets/royal signs/06d4621ee8660303b0f2fc993bca811f.jpg.jpeg';
 import imgProj2 from '../assets/royal signs/IMG-20241023-WA0084.jpg.jpeg';
-import imgProj3 from '../assets/royal signs/IMG_20250111_141505.jpg.jpeg';
+import imgProj3 from '../assets/royal signs/IMG-20241023-WA0128.jpg.jpeg';
 import imgProj4 from '../assets/royal signs/IMG-20250718-WA0009.jpg.jpeg';
 import imgProj5 from '../assets/royal signs/IMG-20251002-WA0001.jpg.jpeg';
 import imgProj6 from '../assets/royal signs/IMG-20241023-WA0071.jpg.jpeg';
+import imgProj7 from '../assets/royal signs/IMG-20250327-WA0090.jpg.jpeg';
+import imgProj8 from '../assets/royal signs/IMG-20250327-WA0093.jpg.jpeg';
+import imgProj9 from '../assets/royal signs/IMG-20250504-WA0154.jpg.jpeg';
+import imgProj10 from '../assets/royal signs/IMG-20251028-WA0006.jpg.jpeg';
+import imgProj11 from '../assets/royal signs/IMG-20251206-WA0038.jpg.jpeg';
+import imgProj12 from '../assets/royal signs/IMG-20251219-WA0009.jpg.jpeg';
+
 
 // Subcomponent for responsive fast-loading portfolio image
 function PortfolioCardImage({ src, categoryIcon }) {
@@ -67,9 +74,9 @@ export default function Portfolio() {
     },
     {
       id: 2,
-      title: "Krishnagiri Medical Centre Gates",
+      title: "Krishnagiri Medical Centre",
       category: "healthcare",
-      tag: "Directional Glow Boards & Main LED",
+      tag: "Directional Glow Boards & LED",
       location: "Gandhi Nagar, Krishnagiri",
       year: "2024",
       desc: "Emergency signage, entry direction boards, and double-sided green LED cross sign board for doctor clinical cabin.",
@@ -78,12 +85,12 @@ export default function Portfolio() {
     },
     {
       id: 3,
-      title: "Narayana Public School Entrance",
+      title: "School Entrance Arch Board",
       category: "education",
-      tag: "SS 3D Metal Letters",
-      location: "Rayakottai Road, Krishnagiri",
-      year: "2025",
-      desc: "High-grade 304 stainless steel letters with back-lit warm LEDs mounted on solid concrete gate pillar structure.",
+      tag: "Illuminated Name Board",
+      location: "Krishnagiri",
+      year: "2024",
+      desc: "Bold illuminated name board with custom LED modules mounted on the school entrance arch for high visibility.",
       icon: <GraduationCap size={36} />,
       image: imgProj3
     },
@@ -119,8 +126,75 @@ export default function Portfolio() {
       desc: "Branding of 3 floors including frosted privacy sticker panels on glass partitions, direction tags, and acrylic door nameplates.",
       icon: <LayoutGrid size={36} />,
       image: imgProj6
+    },
+    {
+      id: 7,
+      title: "Commercial Shop Signage",
+      category: "retail",
+      tag: "LED Backlit Acrylic Letters",
+      location: "Krishnagiri Town",
+      year: "2025",
+      desc: "Vibrant LED backlit acrylic letter board with premium ACP backing for a high-visibility commercial retail establishment.",
+      icon: <ShoppingBag size={36} />,
+      image: imgProj7
+    },
+    {
+      id: 8,
+      title: "Business Centre Name Board",
+      category: "industrial",
+      tag: "3D Channel Letter Board",
+      location: "Krishnagiri",
+      year: "2025",
+      desc: "Custom 3D raised channel letters with LED illumination for a professional business centre entrance facade.",
+      icon: <Building2 size={36} />,
+      image: imgProj8
+    },
+    {
+      id: 9,
+      title: "Pharmacy & Medical Shop",
+      category: "healthcare",
+      tag: "Green LED Pharmacy Board",
+      location: "Krishnagiri",
+      year: "2025",
+      desc: "Standard pharmacy green-cross LED display combined with custom illuminated name board for maximum customer visibility.",
+      icon: <Landmark size={36} />,
+      image: imgProj9
+    },
+    {
+      id: 10,
+      title: "Retail Store Flex Board",
+      category: "retail",
+      tag: "Backlit Flex & LED Board",
+      location: "Krishnagiri Market",
+      year: "2025",
+      desc: "Large format backlit flex board with custom design and LED strip lighting for high-impact storefront presence.",
+      icon: <ShoppingBag size={36} />,
+      image: imgProj10
+    },
+    {
+      id: 11,
+      title: "Educational Institution Gate",
+      category: "education",
+      tag: "Steel & ACP Gate Board",
+      location: "Krishnagiri District",
+      year: "2025",
+      desc: "Heavy-duty ACP and steel frame gate board for educational institution with bold lettering and weather-resistant finish.",
+      icon: <GraduationCap size={36} />,
+      image: imgProj11
+    },
+    {
+      id: 12,
+      title: "Clinic & Diagnostic Centre",
+      category: "healthcare",
+      tag: "LED Signage & Branding",
+      location: "Krishnagiri",
+      year: "2025",
+      desc: "Complete signage package for clinic including LED name board, direction signs, and window vinyl branding.",
+      icon: <Landmark size={36} />,
+      image: imgProj12
     }
   ];
+
 
   const filteredProjects = filter === 'all'
     ? projects

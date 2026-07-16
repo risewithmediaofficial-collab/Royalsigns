@@ -22,6 +22,13 @@ import imgHomeProj3 from '../assets/royal signs/IMG-20251125-WA0056.jpg.jpeg';
 import imgHomeProj4 from '../assets/royal signs/IMG-20251002-WA0000.jpg.jpeg';
 import imgHomeProj5 from '../assets/royal signs/IMG-20241023-WA0135.jpg.jpeg';
 import imgHomeProj6 from '../assets/royal signs/IMG-20250718-WA0009.jpg.jpeg';
+import imgHomeProj7 from '../assets/royal signs/IMG-20250327-WA0094.jpg.jpeg';
+import imgHomeProj8 from '../assets/royal signs/IMG-20250504-WA0160.jpg.jpeg';
+import imgHomeProj9 from '../assets/royal signs/IMG-20251028-WA0009.jpg.jpeg';
+import imgHomeProj10 from '../assets/royal signs/IMG-20251206-WA0040.jpg.jpeg';
+import imgHomeProj11 from '../assets/royal signs/IMG-20251224-WA0013.jpg.jpeg';
+import imgHomeProj12 from '../assets/royal signs/IMG-20260630-WA0037.jpg.jpeg';
+
 
 // Helper component for dynamic lazy-loaded home projects
 function HomeGalleryImage({ src, alt }) {
@@ -80,8 +87,8 @@ export default function Home() {
     };
 
     animateStat("11", setExperience);
-    animateStat("673", setProjects);
-    animateStat("4291", setSignages);
+    animateStat("680", setProjects);
+    animateStat("4299", setSignages);
     animateStat("75", setAcpWorks);
   }, []);
   const clientLogos = [
@@ -185,7 +192,13 @@ export default function Home() {
     { id: 3, title: "Oakridge Public School", category: "school", label: "SS Letter Frontage", col: "", image: imgHomeProj3 },
     { id: 4, title: "Gourmet Cafe Neon", category: "shop", label: "Silicone Neon Backdrop", col: "span-2", image: imgHomeProj4 },
     { id: 5, title: "Metro Tech Hub Entrance", category: "corporate", label: "ACP Cladding Fascia", col: "", image: imgHomeProj5 },
-    { id: 6, title: "SIPCOT Cast Steel Plant", category: "industrial", label: "Structural Pylon Board", col: "", image: imgHomeProj6 }
+    { id: 6, title: "SIPCOT Cast Steel Plant", category: "industrial", label: "Structural Pylon Board", col: "", image: imgHomeProj6 },
+    { id: 7, title: "Retail Showroom Fascia", category: "shop", label: "LED Acrylic Letters", col: "", image: imgHomeProj7 },
+    { id: 8, title: "Commercial Complex Board", category: "corporate", label: "ACP & LED Combo Board", col: "span-2", image: imgHomeProj8 },
+    { id: 9, title: "Medical Clinic Signage", category: "hospital", label: "Green Cross LED Board", col: "", image: imgHomeProj9 },
+    { id: 10, title: "Shop Front Name Board", category: "shop", label: "Flex Backlit Board", col: "", image: imgHomeProj10 },
+    { id: 11, title: "Institution Entry Gate", category: "school", label: "Steel & ACP Gate", col: "span-2", image: imgHomeProj11 },
+    { id: 12, title: "Hotel Lobby Branding", category: "corporate", label: "Neon & Metallic Signs", col: "", image: imgHomeProj12 }
   ];
 
   const filteredPortfolio = portfolioFilter === 'all'
@@ -219,7 +232,7 @@ export default function Home() {
       {/* Trusted Clients Slider */}
       <section className="trusted-clients-section">
         <div className="container">
-          <p className="trusted-title text-center">TRUSTED BY 673+ PROJECTS ACROSS CHENNAI & KRISHNAGIRI</p>
+          <p className="trusted-title text-center">TRUSTED BY 680+ PROJECTS ACROSS CHENNAI &amp; KRISHNAGIRI</p>
           <div className="logos-slider-marquee">
             <div className="logos-track">
               {clientLogos.concat(clientLogos).map((logo, index) => (

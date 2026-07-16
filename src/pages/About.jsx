@@ -63,16 +63,49 @@ export default function About() {
           </div>
 
           <div className="story-text">
-            <h2>Premium Signage & Branding Solutions with Professional Craftsmanship</h2>
+            <h2>Premium Signage &amp; Branding Solutions with Professional Craftsmanship</h2>
             <p>
               At Royal Signs, we specialize in delivering complete signage and branding solutions with professional craftsmanship and premium quality. Our expertise includes acrylic letters, trim cap letters, LED signages, ACP elevations, glazing works, unipoles, uniform fabrication, and a wide range of custom branding solutions tailored for businesses of all sizes.
             </p>
             <p>
-              With 11+ years of industry experience, we have successfully completed 673+ projects, 4,291+ signages, and 75+ ACP elevation works. From concept and design to fabrication and on-site installation, we provide end-to-end solutions that ensure quality, durability, and outstanding visual appeal.
+              With 11+ years of industry experience, we have successfully completed <strong>680+ projects</strong>, <strong>4,299+ signages</strong>, <strong>75+ ACP elevation works</strong>, and <strong>34+ interior projects</strong>. From concept and design to fabrication and on-site installation, we provide end-to-end solutions that ensure quality, durability, and outstanding visual appeal.
             </p>
             <p>
               Whether you are looking to enhance your shop, office, showroom, restaurant, hospital, educational institution, or corporate workspace, our team creates signage that strengthens your brand identity and gives your business a premium, professional appearance.
             </p>
+            <div className="story-stats-grid">
+              <div className="story-stat">
+                <span className="stat-number">680+</span>
+                <span className="stat-label">Projects</span>
+              </div>
+              <div className="story-stat">
+                <span className="stat-number">4,299+</span>
+                <span className="stat-label">Signages</span>
+              </div>
+              <div className="story-stat">
+                <span className="stat-number">75+</span>
+                <span className="stat-label">Elevations</span>
+              </div>
+              <div className="story-stat">
+                <span className="stat-number">34+</span>
+                <span className="stat-label">Interiors</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Inspirational Quote Section */}
+      <section className="quote-section section-padding">
+        <div className="container">
+          <div className="about-quote-box glass-panel">
+            <div className="quote-mark">&ldquo;</div>
+            <blockquote className="about-quote-text">
+              Value what you have...<br />
+              <em>It's Someone else's Dream...</em>
+            </blockquote>
+            <div className="quote-divider"></div>
+            <p className="quote-sub">This is the spirit that drives every sign we craft — pride, purpose, and passion for your brand.</p>
           </div>
         </div>
       </section>
