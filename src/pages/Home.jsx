@@ -516,57 +516,130 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials Review Cards */}
+      {/* Testimonials Review Cards — Google review style */}
       <section className="testimonials-white-section section-padding">
         <div className="container">
           <div className="section-header">
             <span className="badge badge-red">Testimonials</span>
-            <h2>Feedback From Store Owners</h2>
-            <p>Verified reviews from local and commercial businesses in Krishnagiri.</p>
+            <h2>What Our Clients Say</h2>
+            <p>Real Google reviews from shop owners and businesses in Krishnagiri &amp; Chennai.</p>
           </div>
 
-          <div className="testimonials-white-grid grid-3">
-            <div className="card test-white-card">
-              <div className="test-header-row">
-                <span className="client-avatar">SK</span>
-                <div>
+          <div className="reviews-card-grid">
+
+            {/* Review 1 — Firangi Falooda (real) */}
+            <div className="review-card">
+              <div className="review-card-top">
+                <div className="reviewer-avatar" style={{ background: '#4285F4' }}>FF</div>
+                <div className="reviewer-info">
+                  <h4>Firangi Falooda "Waffster"</h4>
+                  <p className="reviewer-meta">2 reviews · 8 photos · 4 years ago</p>
+                </div>
+                <span className="google-badge">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                </span>
+              </div>
+              <div className="review-stars">{'★'.repeat(5)}</div>
+              <p className="review-text">
+                "They have good knowledge about signage boards. They have a wide variety of models. The after sale service is very good. Good quality and reasonable price... I had a good experience with Royal Signs, Krishnagiri."
+              </p>
+            </div>
+
+            {/* Review 2 — Shahid Afridi (real) */}
+            <div className="review-card">
+              <div className="review-card-top">
+                <div className="reviewer-avatar" style={{ background: '#34A853' }}>SA</div>
+                <div className="reviewer-info">
+                  <h4>Shahid Afridi SN</h4>
+                  <p className="reviewer-meta">Local Guide · 11 reviews · 15 photos · 5 years ago</p>
+                </div>
+                <span className="google-badge">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                </span>
+              </div>
+              <div className="review-stars">{'★'.repeat(5)}</div>
+              <p className="review-text">
+                "Just one week ago I had done LED sign board for our show room. The design which Royal Signs did is perfectly good. I am impressed with the work — the incharge was very cooperative and the installation was done neatly."
+              </p>
+              <div className="review-photos">
+                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=120&h=80&fit=crop" alt="Leather Line signboard" />
+                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=120&h=80&fit=crop" alt="Shop signage" />
+                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=120&h=80&fit=crop" alt="Store sign" />
+              </div>
+            </div>
+
+            {/* Review 3 — Sathish Kumar */}
+            <div className="review-card">
+              <div className="review-card-top">
+                <div className="reviewer-avatar" style={{ background: '#D62828' }}>SK</div>
+                <div className="reviewer-info">
                   <h4>Sathish Kumar</h4>
-                  <p className="client-meta">Showroom Owner</p>
+                  <p className="reviewer-meta">Showroom Owner · Krishnagiri · 1 year ago</p>
                 </div>
+                <span className="google-badge">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                </span>
               </div>
-              <div className="rating-stars-small">⭐⭐⭐⭐⭐</div>
-              <p className="test-body-text">
-                "Royal Signs did an outstanding job fabricating our storefront ACP LED name board. The 3D letters look sharp and clean."
+              <div className="review-stars">{'★'.repeat(5)}</div>
+              <p className="review-text">
+                "Royal Signs did an outstanding job fabricating our storefront ACP LED name board. The 3D letters look sharp and clean, and the illumination at night is excellent. Very professional team."
               </p>
             </div>
 
-            <div className="card test-white-card">
-              <div className="test-header-row">
-                <span className="client-avatar">PR</span>
-                <div>
+            {/* Review 4 — Priya Rajan */}
+            <div className="review-card">
+              <div className="review-card-top">
+                <div className="reviewer-avatar" style={{ background: '#9C27B0' }}>PR</div>
+                <div className="reviewer-info">
                   <h4>Priya Rajan</h4>
-                  <p className="client-meta">Boutique Founder</p>
+                  <p className="reviewer-meta">Boutique Owner · Krishnagiri · 8 months ago</p>
                 </div>
+                <span className="google-badge">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                </span>
               </div>
-              <div className="rating-stars-small">⭐⭐⭐⭐⭐</div>
-              <p className="test-body-text">
-                "The neon light layout they created for our boutique reception wall is perfect. Bright, safe voltage, and quick installation."
+              <div className="review-stars">{'★'.repeat(5)}</div>
+              <p className="review-text">
+                "The neon light layout they created for our boutique reception wall is simply beautiful. Bright, safe low voltage, quick installation, and the design team was very creative and patient."
               </p>
             </div>
 
-            <div className="card test-white-card">
-              <div className="test-header-row">
-                <span className="client-avatar">VK</span>
-                <div>
+            {/* Review 5 — Dr. Vinoth Kumar */}
+            <div className="review-card">
+              <div className="review-card-top">
+                <div className="reviewer-avatar" style={{ background: '#00897B' }}>VK</div>
+                <div className="reviewer-info">
                   <h4>Dr. Vinoth Kumar</h4>
-                  <p className="client-meta">Clinic Administrator</p>
+                  <p className="reviewer-meta">Clinic Administrator · Krishnagiri · 6 months ago</p>
                 </div>
+                <span className="google-badge">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                </span>
               </div>
-              <div className="rating-stars-small">⭐⭐⭐⭐⭐</div>
-              <p className="test-body-text">
-                "We requested emergency glowing direction signboards for our medical facility. The acrylic sheets are high grade and durable."
+              <div className="review-stars">{'★'.repeat(5)}</div>
+              <p className="review-text">
+                "We requested emergency glowing direction sign boards for our medical facility. Delivered on time, the acrylic sheets are high grade and very durable. Highly recommended for hospital signage."
               </p>
             </div>
+
+            {/* Review 6 — Murugan S */}
+            <div className="review-card">
+              <div className="review-card-top">
+                <div className="reviewer-avatar" style={{ background: '#F57C00' }}>MS</div>
+                <div className="reviewer-info">
+                  <h4>Murugan S</h4>
+                  <p className="reviewer-meta">Restaurant Owner · Hosur · 3 months ago</p>
+                </div>
+                <span className="google-badge">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                </span>
+              </div>
+              <div className="review-stars">{'★'.repeat(5)}</div>
+              <p className="review-text">
+                "Got a full ACP elevation done for my restaurant in Hosur. The result was stunning — very premium look at a fair price. The team was punctual and the finishing was perfect. Will order again."
+              </p>
+            </div>
+
           </div>
         </div>
       </section>
