@@ -29,4 +29,5 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-Sitemap: https://royalsigns.in/sitemap.xml
+Sitemap: https://royalsignsnetwork.com/sitemap.xml
+

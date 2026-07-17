@@ -148,56 +148,56 @@ export default function Home() {
   const services = [
     {
       id: 1,
-      title: "LED Sign Boards",
-      desc: "Vibrant energy-saving illuminated storefront branding.",
+      title: "Acrylic / Trimcap / Liquid Letters",
+      desc: "Premium illuminated letter options with acrylic faces, trimcap edging & liquid fills.",
       icon: <IconBulb size={28} stroke={1.5} />,
     },
     {
       id: 2,
-      title: "ACP Boards",
-      desc: "Premium grooved composite cladding with elevated text.",
+      title: "SS / Brass Letters",
+      desc: "Rust-free stainless steel & brass letters with backlit warm-white LED profiles.",
       icon: <IconGridDots size={28} stroke={1.5} />,
     },
     {
       id: 3,
-      title: "Acrylic Boards",
-      desc: "Crystal clear polished acrylic sheets with glossy aesthetics.",
+      title: "ACP Elevations",
+      desc: "Full building front cladding with premium 3mm weather-resistant ACP sheets.",
       icon: <IconSquareCheck size={28} stroke={1.5} />,
     },
     {
       id: 4,
-      title: "3D Letter Boards",
-      desc: "Raised metal, stainless steel (SS), or mild steel letters.",
+      title: "Toughness Glass",
+      desc: "Frameless toughened glass storefronts, doors, and office partitions.",
       icon: <IconBuildingArch size={28} stroke={1.5} />,
     },
     {
       id: 5,
-      title: "Neon Signs",
-      desc: "Vibrant customized LED neon script tubes for trendy spots.",
+      title: "Branding Fabrication",
+      desc: "Industrial-grade name board structures, lightboxes & custom retail signage.",
       icon: <IconSparkles size={28} stroke={1.5} />,
     },
     {
       id: 6,
-      title: "Vehicle Branding",
-      desc: "Full and partial cast vinyl wrapping for commercial fleets.",
+      title: "Wallpapers & Louvers",
+      desc: "Custom interior wallpapers and high-finish WPC louvers for offices & homes.",
       icon: <IconTruck size={28} stroke={1.5} />,
     },
     {
       id: 7,
-      title: "Wall Graphics",
-      desc: "Custom high-quality wallpaper prints for corporate interiors.",
+      title: "LED Sign Boards",
+      desc: "Energy-saving illuminated signs with waterproof Samsung LED modules.",
       icon: <IconBuildingStore size={28} stroke={1.5} />,
     },
     {
       id: 8,
-      title: "Glass Films",
-      desc: "3M frosted window screens and privacy one-way stickers.",
+      title: "Neon Sign Boards",
+      desc: "Flexible LED neon tubes on acrylic — trending for cafes, hotels & offices.",
       icon: <IconGlassFull size={28} stroke={1.5} />,
     },
     {
       id: 9,
-      title: "Flex Printing",
-      desc: "High-speed solvent banner prints for outdoor promotion.",
+      title: "Flex & Vinyl Printing",
+      desc: "High-speed solvent banner prints and vinyl wraps for outdoor promotion.",
       icon: <IconFileText size={28} stroke={1.5} />,
     }
   ];
@@ -627,7 +627,7 @@ export default function Home() {
                 </li>
                 <li>
                   <Mail size={18} className="icon-red" />
-                  <a href="mailto:info@royalsigns.in">info@royalsigns.in</a>
+                  <a href="mailto:info@royalsignsnetwork.com">info@royalsignsnetwork.com</a>
                 </li>
                 <li>
                   <Clock size={18} className="icon-red" />
@@ -688,3 +688,4 @@ export default function Home() {
     </div>
   );
 }
+
