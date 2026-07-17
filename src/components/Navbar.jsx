@@ -41,7 +41,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className={`navbar-header ${isScrolled ? 'scrolled' : ''}`}>
+    <header className={`navbar-header ${isScrolled ? 'scrolled' : ''} ${isOpen ? 'menu-open' : ''}`}>
       <div className="container navbar-container">
         <Link to="/" className="nav-logo">
           <img src={royalLogo} alt="Royal Signs" className="nav-logo-img" />

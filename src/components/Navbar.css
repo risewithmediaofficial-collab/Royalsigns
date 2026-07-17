@@ -118,12 +118,19 @@
   color: var(--color-red);
 }
 
+/* Hide the hamburger toggle when menu is open — close btn inside menu handles it */
+.navbar-header.menu-open .mobile-toggle {
+  display: none !important;
+}
+
 /* ── Full-screen mobile menu ── */
 .nav-mobile-menu {
   position: fixed;
-  inset: 0;                          /* full viewport */
-  width: 100vw;
-  height: 100vh;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
   background-color: #ffffff;
   z-index: 1001;
   padding: 0;
