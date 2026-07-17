@@ -5,7 +5,7 @@
 }
 
 .main-content-layout {
-  padding-top: 85px; /* offset for sticky glass navbar */
+  padding-top: 85px;
   flex-grow: 1;
 }
 
@@ -15,8 +15,4 @@
   }
 }
 
-@media (max-width: 768px) {
-  .main-content-layout {
-    padding-bottom: 60px; /* offset so mobile action bar doesn't overlap content */
-  }
-}
+/* removed padding-bottom: 60px — sticky action bar was removed */

@@ -5,8 +5,8 @@
   --text-body: #4b5563;
   --text-muted: #6b7280;
 
-  --color-red: #ff0000;
-  --color-red-hover: #ff0000;
+  --color-red: #D62828;
+  --color-red-hover: #b91c1c;
   --color-yellow: #f4b400;
   --color-yellow-hover: #d97706;
   --color-border: #e5e7eb;
@@ -17,7 +17,7 @@
   --shadow-premium: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
   --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 
-  --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   --border-radius-card: 20px;
 }
 
@@ -91,16 +91,25 @@ select {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 48px;
+  padding: 0 40px;
 }
 
 .section-padding {
-  padding: 100px 0;
+  padding: 72px 0;
+}
+
+@media (max-width: 992px) {
+  .container {
+    padding: 0 28px;
+  }
 }
 
 @media (max-width: 768px) {
   .section-padding {
-    padding: 70px 0;
+    padding: 48px 0;
+  }
+  .container {
+    padding: 0 20px;
   }
 }
 
@@ -130,7 +139,7 @@ select {
 
 /* Section Header */
 .section-header {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   text-align: center;
   max-width: 600px;
   margin-left: auto;
@@ -138,20 +147,26 @@ select {
 }
 
 .section-header h2 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 800;
   color: var(--text-heading);
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
 .section-header p {
   color: var(--text-muted);
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 @media (max-width: 768px) {
+  .section-header {
+    margin-bottom: 28px;
+  }
   .section-header h2 {
-    font-size: 2rem;
+    font-size: 1.75rem;
+  }
+  .section-header p {
+    font-size: 0.9rem;
   }
 }
 
@@ -341,20 +356,10 @@ select {
 }
 
 @media (max-width: 480px) {
-  .container {
-    padding: 0 24px !important;
-  }
   .page-header h1 {
-    font-size: 2.2rem !important;
+    font-size: 2rem !important;
   }
   .section-header h2 {
-    font-size: 1.8rem !important;
-  }
-  .about-visual-mockup {
-    height: 250px !important;
-  }
-  .mockup-plate-sheet {
-    width: 140px !important;
-    height: 140px !important;
+    font-size: 1.6rem !important;
   }
 }

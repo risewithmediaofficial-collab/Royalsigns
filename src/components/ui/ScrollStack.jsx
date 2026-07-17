@@ -13,13 +13,30 @@ function useIsMobile() {
   return isMobile;
 }
 
-// On mobile: plain wrapper div — no animation, no height constraint, full content visible
+// On mobile: card with slide-in animation via IntersectionObserver
 export const ScrollStackItem = ({ children, itemClassName = '' }) => {
   const isMobile = useIsMobile();
+  const ref = useRef(null);
+
+  useEffect(() => {
+    if (!isMobile || !ref.current) return;
+    const el = ref.current;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.classList.add('scroll-stack-mobile-visible');
+          observer.unobserve(el);
+        }
+      },
+      { threshold: 0.12 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [isMobile]);
 
   if (isMobile) {
     return (
-      <div className={`scroll-stack-card-mobile ${itemClassName}`.trim()}>
+      <div ref={ref} className={`scroll-stack-card-mobile ${itemClassName}`.trim()}>
         {children}
       </div>
     );
@@ -28,10 +45,7 @@ export const ScrollStackItem = ({ children, itemClassName = '' }) => {
   return (
     <div
       className={`scroll-stack-card relative w-full my-8 p-12 rounded-[40px] shadow-[0_0_30px_rgba(0,0,0,0.1)] box-border origin-top will-change-transform ${itemClassName}`.trim()}
-      style={{
-        backfaceVisibility: 'hidden',
-        transformStyle: 'preserve-3d'
-      }}
+      style={{ backfaceVisibility: 'hidden', transformStyle: 'preserve-3d' }}
     >
       {children}
     </div>

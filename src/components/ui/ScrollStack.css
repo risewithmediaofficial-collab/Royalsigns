@@ -116,25 +116,37 @@
 .scroll-stack-mobile-list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
   width: 100%;
-  padding: 8px 0 40px;
+  padding: 4px 0 32px;
 }
 
+/* Mobile card — starts invisible, slides up when in view */
 .scroll-stack-card-mobile {
   background: #ffffff;
   border: 1px solid var(--color-border);
   border-radius: 20px;
-  padding: 20px 18px;
+  padding: 20px 16px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.06);
   width: 100%;
   box-sizing: border-box;
+  /* Initial hidden state */
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Triggered by IntersectionObserver */
+.scroll-stack-card-mobile.scroll-stack-mobile-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .scroll-stack-card-mobile .stack-card-content {
   flex-direction: column;
   align-items: flex-start;
-  gap: 16px;
+  gap: 14px;
 }
 
 .scroll-stack-card-mobile .scroll-stack-image-frame {

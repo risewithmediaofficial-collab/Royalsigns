@@ -229,7 +229,7 @@
 
 /* Trusted Clients slider marquee */
 .trusted-clients-section {
-  padding: 40px 0;
+  padding: 28px 0;
   border-bottom: 1px solid var(--color-border);
   background-color: var(--bg-secondary);
 }
