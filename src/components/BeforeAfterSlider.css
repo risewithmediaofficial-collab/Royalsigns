@@ -128,6 +128,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  white-space: nowrap;
 }
 
 .board-icon-day {
@@ -140,6 +141,7 @@
   color: var(--text-muted);
   letter-spacing: 4px;
   margin-top: 5px;
+  white-space: nowrap;
 }
 
 .board-screws .screw {
@@ -181,6 +183,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  white-space: nowrap;
 }
 
 .board-icon-night {
@@ -200,6 +203,7 @@
   letter-spacing: 4px;
   margin-top: 5px;
   text-shadow: 0 0 5px rgba(244, 180, 0, 0.8);
+  white-space: nowrap;
 }
 
 .board-night .glow-dot {
@@ -287,21 +291,83 @@
 }
 
 @media (max-width: 576px) {
+  .slider-wrapper {
+    margin: 24px auto;
+  }
+
+  .slider-labels {
+    font-size: 0.78rem;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .slider-label-item {
+    padding: 6px 14px;
+    font-size: 0.75rem;
+    letter-spacing: 0.3px;
+  }
+
   .slider-container {
-    height: 280px;
+    height: 320px;
     border-radius: 16px;
   }
+
+  /* Make mock board fill nicely on mobile */
+  .mock-board {
+    padding: 20px 16px;
+  }
+
   .board-frame {
-    height: 120px;
-    padding: 10px;
+    width: 85%;
+    height: 150px;
+    border-radius: 10px;
+    padding: 12px;
   }
-  .board-day .board-logo,
+
+  /* Day board typography */
+  .board-day .board-logo {
+    font-size: 1.9rem;
+    gap: 7px;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+  }
+
+  .board-day .board-sub {
+    font-size: 0.62rem;
+    letter-spacing: 2.5px;
+    margin-top: 4px;
+    white-space: nowrap;
+  }
+
+  /* Night board typography */
   .board-night .board-logo {
-    font-size: 1.6rem !important;
+    font-size: 1.9rem;
+    gap: 7px;
+    white-space: nowrap;
+    flex-wrap: nowrap;
   }
-  .board-day .board-sub,
-  .board-night .board-sub {
-    font-size: 0.75rem !important;
-    letter-spacing: 2px;
+
+  .sub-glow {
+    font-size: 0.62rem !important;
+    letter-spacing: 2.5px;
+    margin-top: 4px;
+    white-space: nowrap;
+  }
+
+  /* Shrink scaffolding on mobile */
+  .scaffolding {
+    width: 200px;
+    height: 70px;
+  }
+
+  .handle-button {
+    width: 38px;
+    height: 38px;
+    font-size: 9px;
+  }
+
+  .slider-instruction {
+    font-size: 0.8rem;
+    margin-top: 12px;
   }
 }
