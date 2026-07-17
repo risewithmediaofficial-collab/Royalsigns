@@ -613,21 +613,33 @@ export default function Home() {
 
           <div className="contact-white-grid">
             <div className="contact-details-side">
-              <h3>Workshop Office</h3>
-              <p className="office-sub">Stop by or contact our team for assistance.</p>
+              <h3>Our Locations</h3>
+              <p className="office-sub">Visit us or reach out — we're happy to help.</p>
               
               <ul className="details-list-bullets">
                 <li>
-                  <MapPin size={20} className="icon-red" />
-                  <span>Naveen Arcade Building, Service Road, Gandhi Nagar, Krishnagiri, Tamil Nadu 635002</span>
+                  <MapPin size={20} className="icon-red" style={{ marginTop: 2 }} />
+                  <span><strong>Branch:</strong> #3/243, Naveen Arcade, CSB Bank Basement, Salem Highway Service Road, Krishnagiri – 635002</span>
+                </li>
+                <li>
+                  <MapPin size={20} className="icon-red" style={{ marginTop: 2, opacity: 0.8 }} />
+                  <span><strong>Factory:</strong> #31, Thayar Sahib Street, 1st Lane, Ellis Road, Chennai – 600002</span>
+                </li>
+                <li>
+                  <MapPin size={20} className="icon-red" style={{ marginTop: 2, opacity: 0.65 }} />
+                  <span><strong>Reg. Office:</strong> No: 13, 6, Tamilar St, Loganathan Nagar, Padmanabha Nagar, Choolaimedu, Chennai – 600094</span>
                 </li>
                 <li>
                   <Phone size={18} className="icon-red" />
-                  <a href="tel:+919876543210">+91 98765 43210</a>
+                  <span>
+                    <a href="tel:+919791378755">+91 97913 78755</a>
+                    {' / '}
+                    <a href="tel:+917845008323">+91 78450 08323</a>
+                  </span>
                 </li>
                 <li>
                   <Mail size={18} className="icon-red" />
-                  <a href="mailto:info@royalsignsnetwork.com">info@royalsignsnetwork.com</a>
+                  <a href="mailto:royalsigns1808@gmail.com">royalsigns1808@gmail.com</a>
                 </li>
                 <li>
                   <Clock size={18} className="icon-red" />

@@ -384,7 +384,7 @@ const ScrollStack = ({
 
   return (
     <div className={containerClassName} ref={scrollerRef} style={containerStyles}>
-      <div className="scroll-stack-inner pt-[10vh] px-4 pb-[30rem] min-h-screen">
+      <div className="scroll-stack-inner pt-[10vh] px-4 pb-[8rem] min-h-screen">
         {children}
         <div className="scroll-stack-end w-full h-px" />
       </div>
