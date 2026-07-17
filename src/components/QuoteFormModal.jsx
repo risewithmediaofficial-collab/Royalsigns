@@ -32,18 +32,27 @@ export default function QuoteFormModal() {
     return () => window.removeEventListener('toggle-quote-modal', handleToggle);
   }, []);
 
-  // Lock body scroll when modal is open
+  // Lock body scroll when modal is open — iOS safe
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
-      document.body.style.touchAction = 'none';
+      const scrollY = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = '100%';
+      document.body.style.overflowY = 'scroll';
     } else {
-      document.body.style.overflow = '';
-      document.body.style.touchAction = '';
+      const scrollY = document.body.style.top;
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      document.body.style.overflowY = '';
+      if (scrollY) window.scrollTo(0, parseInt(scrollY || '0') * -1);
     }
     return () => {
-      document.body.style.overflow = '';
-      document.body.style.touchAction = '';
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      document.body.style.overflowY = '';
     };
   }, [isOpen]);
 
@@ -90,9 +99,10 @@ export default function QuoteFormModal() {
         onClick={(e) => e.stopPropagation()}
       >
         <button className="modal-close-btn" onClick={() => setIsOpen(false)}>
-          <X size={24} />
+          <X size={20} />
         </button>
 
+        <div className="modal-scroll-inner">
         {!isSubmitted ? (
           <>
             <div className="modal-header">
@@ -197,6 +207,7 @@ export default function QuoteFormModal() {
             </button>
           </div>
         )}
+        </div>
       </div>
     </div>
   );
