@@ -43,7 +43,8 @@ export default function Navbar() {
   const mobileMenu = ReactDOM.createPortal(
     <div
       className={`nav-mobile-menu ${isOpen ? 'open' : ''}`}
-      aria-hidden={!isOpen}
+      // Use inert instead of aria-hidden — prevents focus trap and accessibility warnings
+      {...(!isOpen ? { inert: '' } : {})}
     >
       {/* Header row */}
       <div className="mobile-drawer-header">

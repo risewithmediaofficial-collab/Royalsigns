@@ -28,20 +28,22 @@ function IndustryCardImage({ src, categoryIcon }) {
           <div className="smh-card-spinner" />
         </div>
       )}
-      <img
-        src={src}
-        alt="Industry sector work"
-        loading="lazy"
-        decoding="async"
-        onLoad={() => setIsLoaded(true)}
-        style={{
-          opacity: isLoaded ? 1 : 0,
-          transition: 'opacity 0.3s ease',
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover'
-        }}
-      />
+      {src ? (
+        <img
+          src={src}
+          alt="Industry sector work"
+          loading="lazy"
+          decoding="async"
+          onLoad={() => setIsLoaded(true)}
+          style={{
+            opacity: isLoaded ? 1 : 0,
+            transition: 'opacity 0.3s ease',
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover'
+          }}
+        />
+      ) : null}
       <div className="scroll-stack-category-badge">
         {categoryIcon}
       </div>

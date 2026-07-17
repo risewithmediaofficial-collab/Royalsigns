@@ -68,20 +68,23 @@ function FlipCard({
                             <div className="smh-card-spinner" />
                         </div>
                     )}
-                    <img
-                        src={src}
-                        alt={`hero-${index}`}
-                        loading="lazy"
-                        decoding="async"
-                        onLoad={() => setIsLoaded(true)}
-                        style={{
-                            opacity: isLoaded ? 1 : 0,
-                            transition: 'opacity 0.3s ease',
-                            width: '100%',
-                            height: '100%',
-                            objectFit: 'cover'
-                        }}
-                    />
+                    {/* Only render img when src is truthy — prevents empty src console error */}
+                    {src ? (
+                        <img
+                            src={src}
+                            alt={`hero-${index}`}
+                            loading="lazy"
+                            decoding="async"
+                            onLoad={() => setIsLoaded(true)}
+                            style={{
+                                opacity: isLoaded ? 1 : 0,
+                                transition: 'opacity 0.3s ease',
+                                width: '100%',
+                                height: '100%',
+                                objectFit: 'cover'
+                            }}
+                        />
+                    ) : null}
                 </div>
 
                 {/* Back Face */}
@@ -322,6 +325,23 @@ export default function IntroAnimation() {
                         </motion.div>
                     ))}
                 </div>
+            )}
+
+            {/* Mobile-only stats strip — shown once circle phase starts */}
+            {showStats && isMobileView && (
+                <motion.div
+                    className="smh-mobile-stats-strip"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ type: "spring", stiffness: 160, damping: 18, delay: 0.3 }}
+                >
+                    {cornerStats.map((stat, idx) => (
+                        <div key={idx} className="smh-mobile-stat-item">
+                            <span className="smh-mobile-stat-value">{stat.value}</span>
+                            <span className="smh-mobile-stat-label">{stat.label}</span>
+                        </div>
+                    ))}
+                </motion.div>
             )}
 
             <div className="smh-center-container">
