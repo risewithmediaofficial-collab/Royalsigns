@@ -10,17 +10,23 @@
   width: 100%;
   background-color: var(--bg-primary);
   border-bottom: 1px solid var(--color-border);
+  overflow: hidden;
+  z-index: 1;
+  isolation: isolate; /* contain Framer Motion stacking contexts */
 }
 
 @media (max-width: 992px) {
   .hero-animation-section {
     height: calc(100vh - 75px);
+    overflow: hidden;
   }
 }
 
 @media (max-width: 768px) {
   .hero-animation-section {
-    height: calc(100vh - 75px - 60px);
+    /* subtract navbar (75px) + sticky bar (0 — removed) */
+    height: calc(100vh - 75px);
+    overflow: hidden;
   }
 }
 

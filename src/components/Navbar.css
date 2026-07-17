@@ -37,7 +37,7 @@
   color: var(--text-heading);
 }
 
-/* "Change Your Style" — black text */
+/* "Change Your Style" — black */
 .nav-slogan {
   font-size: 0.72rem;
   font-style: italic;
@@ -110,61 +110,61 @@
   cursor: pointer;
   padding: 5px;
   transition: var(--transition);
-  z-index: 1002; /* above the fullscreen overlay */
-  position: relative;
 }
 
 .mobile-toggle:hover {
   color: var(--color-red);
 }
 
-/* Hide the hamburger toggle when menu is open — close btn inside menu handles it */
+/* Hide hamburger when fullscreen menu is open */
 .navbar-header.menu-open .mobile-toggle {
   display: none !important;
 }
 
-/* ── Full-screen mobile menu ── */
+/* ── Full-screen mobile menu ──
+   z-index 99999 beats every Framer Motion / GSAP stacking context */
 .nav-mobile-menu {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  max-width: 100vw;
-  overflow-x: hidden;
-  background-color: #ffffff;
-  z-index: 1001;
-  padding: 0;
+  background: #ffffff;
+  z-index: 99999;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  /* hidden by default */
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              visibility 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(-8px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
 }
 
 .nav-mobile-menu.open {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+  transform: translateY(0);
 }
 
-/* Header row inside fullscreen menu */
+/* Top header row */
 .mobile-drawer-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 22px 28px;
+  padding: 20px 24px;
   border-bottom: 1px solid var(--color-border);
-  width: 100%;
   flex-shrink: 0;
+  background: #ffffff;
 }
 
 .mobile-drawer-logo {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 2px;
+  gap: 3px;
 }
 
 .mobile-logo-img {
@@ -177,17 +177,16 @@
   font-size: 0.68rem;
   font-style: italic;
   font-weight: 500;
-  color: #111827;          /* black like desktop */
+  color: #111827;
   letter-spacing: 0.8px;
   display: block;
-  opacity: 0.8;
 }
 
-/* Large, prominent close button */
+/* Prominent ✕ close button */
 .mobile-drawer-close {
-  background: var(--bg-secondary);
-  border: 1px solid var(--color-border);
-  color: var(--text-heading);
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  color: #111827;
   cursor: pointer;
   width: 44px;
   height: 44px;
@@ -195,80 +194,54 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
   flex-shrink: 0;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
-.mobile-drawer-close:hover {
-  background: var(--color-red);
+.mobile-drawer-close:active {
+  background: #D62828;
   color: #ffffff;
-  border-color: var(--color-red);
-  transform: rotate(90deg);
+  border-color: #D62828;
 }
 
-/* Nav links area — fills remaining height, centred */
+/* Links fill remaining space */
 .mobile-links {
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 8px 28px 28px;
   gap: 0;
-  flex: 1;
-  padding: 12px 28px 32px;
   overflow-y: auto;
+  background: #ffffff;
 }
 
+/* Each nav link — no animation, always visible once menu opens */
 .mobile-link {
-  font-size: 1.5rem;
+  font-size: 1.45rem;
   font-weight: 800;
-  color: var(--text-heading);
-  padding: 16px 0;
-  border-bottom: 1px solid var(--color-border);
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              color 0.2s ease,
-              padding-left 0.2s ease;
-  display: flex;
-  align-items: center;
+  color: #111827;
+  padding: 15px 0;
+  border-bottom: 1px solid #e5e7eb;
+  display: block;
+  text-decoration: none;
+  transition: color 0.15s ease, padding-left 0.15s ease;
 }
-
-.nav-mobile-menu.open .mobile-link {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Stagger */
-.nav-mobile-menu.open .mobile-link:nth-child(1) { transition-delay: 0.06s; }
-.nav-mobile-menu.open .mobile-link:nth-child(2) { transition-delay: 0.10s; }
-.nav-mobile-menu.open .mobile-link:nth-child(3) { transition-delay: 0.14s; }
-.nav-mobile-menu.open .mobile-link:nth-child(4) { transition-delay: 0.18s; }
-.nav-mobile-menu.open .mobile-link:nth-child(5) { transition-delay: 0.22s; }
-.nav-mobile-menu.open .mobile-link:nth-child(6) { transition-delay: 0.26s; }
 
 .mobile-link:hover,
 .mobile-link.active {
-  color: var(--color-red);
-  padding-left: 12px;
-  border-bottom-color: var(--color-red);
+  color: #D62828;
+  padding-left: 10px;
 }
 
 .mobile-quote-btn {
   width: 100%;
-  margin-top: 20px;
-  transform: translateY(16px);
-  opacity: 0;
-  transition: opacity 0.4s ease 0.3s, transform 0.4s ease 0.3s;
+  margin-top: 24px;
   font-size: 1rem !important;
   padding: 14px 0 !important;
 }
 
-.nav-mobile-menu.open .mobile-quote-btn {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* No backdrop needed for fullscreen — menu IS the overlay */
+/* No separate backdrop — fullscreen menu is the overlay */
 .mobile-backdrop {
   display: none;
 }
