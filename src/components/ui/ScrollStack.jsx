@@ -258,6 +258,9 @@ const ScrollStack = ({
 
       lenis.on('scroll', handleScroll);
 
+      // Also listen to native scroll for mobile Safari fallback
+      window.addEventListener('scroll', handleScroll, { passive: true });
+
       const raf = time => {
         lenis.raf(time);
         animationFrameRef.current = requestAnimationFrame(raf);
@@ -333,6 +336,7 @@ const ScrollStack = ({
     return () => {
       window.removeEventListener('resize', recalculateOffsets);
       window.removeEventListener('load', recalculateOffsets);
+      window.removeEventListener('scroll', handleScroll);
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);
       }
