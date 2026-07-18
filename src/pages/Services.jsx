@@ -27,9 +27,9 @@ export default function Services() {
     {
       id: 'ss-brass-letters',
       cat: 'boards',
-      title: 'SS / Brass Letters',
-      desc: 'Rust-free luxury stainless steel (SS) and brass metal letters with option for backlit warm-white LED glowing profiles.',
-      specs: ['Grade 304 stainless steel', 'Solid polished brass', 'Back-lit halo effect option', 'Highly durable structure'],
+      title: 'SS / Brass / Metal Letters',
+      desc: 'Rust-free luxury stainless steel (SS), brass, and aluminum metal letters with option for backlit warm-white LED glowing profiles.',
+      specs: ['Grade 304 stainless steel', 'Solid polished brass & metals', 'Back-lit halo effect option', 'Highly durable structure'],
       icon: <Star size={28} />,
       bentoClass: "col-span-1 row-span-1"
     },
@@ -122,6 +122,33 @@ export default function Services() {
       specs: ['Secure structural anchor bolts', 'Certified power calibration', 'Emergency LED bulb replacements', 'Relocation & re-wiring'],
       icon: <Star size={28} />,
       bentoClass: "col-span-1 row-span-1"
+    },
+    {
+      id: 'unipoles',
+      cat: 'boards',
+      title: 'Unipoles',
+      desc: 'Heavy-duty outdoor unipole advertising billboards designed to withstand extreme weather and deliver maximum visibility.',
+      specs: ['Reinforced steel structures', 'Double-sided display panels', 'High-altitude visibility', 'Wind-load certified fabrication'],
+      icon: <Grid size={28} />,
+      bentoClass: "col-span-1 row-span-1"
+    },
+    {
+      id: 'led-video-walls',
+      cat: 'boards',
+      title: 'LED Video Walls & Scrolling Boards',
+      desc: 'Premium indoor and outdoor dynamic LED video walls, display screens, and programmable multi-color scrolling message boards.',
+      specs: ['Ultra-bright SMD panels', 'Synchronized video playback', 'Programmable text scrolling', 'WiFi/App controlled interfaces'],
+      icon: <Sparkles size={28} />,
+      bentoClass: "col-span-1 row-span-1"
+    },
+    {
+      id: 'concept-signages',
+      cat: 'boards',
+      title: 'Concept Signages',
+      desc: 'Custom-made creative and conceptual signboards tailormade to capture unique brand identities through custom engineering and premium materials.',
+      specs: ['Bespoke designer mockups', 'Architectural materials combo', 'Unique spatial installations', 'Custom dynamic illumination'],
+      icon: <Lightbulb size={28} />,
+      bentoClass: "col-span-1 row-span-1"
     }
   ];
 
@@ -160,8 +187,18 @@ export default function Services() {
       <section className="branch-info-strip">
         <div className="container branch-info-grid">
           <div className="branch-info-item">
-            <span className="branch-label">BRANCH</span>
+            <span className="branch-label">OFFICE</span>
+            <p>No: 13, 6, Tamilar St, Loganathan Nagar, Padmanabha Nagar, Choolaimedu, Chennai – 600094</p>
+          </div>
+          <div className="branch-divider" />
+          <div className="branch-info-item">
+            <span className="branch-label">BRANCH (KRISHNAGIRI)</span>
             <p>#3/243, Naveen Arcade, CSB Bank Basement, Salem Highway Service Road, KRISHNAGIRI – 635002</p>
+          </div>
+          <div className="branch-divider" />
+          <div className="branch-info-item">
+            <span className="branch-label">BRANCH (BENGALURU)</span>
+            <p>DR G Nagar, 1st Main Rd, 2nd Stage, Rajagopala Nagar, Peenya, Bengaluru, Karnataka 560091</p>
           </div>
           <div className="branch-divider" />
           <div className="branch-info-item">

@@ -164,11 +164,14 @@ export default function QuoteFormModal() {
                   onChange={handleChange}
                 >
                   <option value="LED Sign Boards">LED Sign Boards</option>
-                  <option value="ACP Sign Boards">ACP Sign Boards</option>
-                  <option value="Acrylic Sign Boards">Acrylic Sign Boards</option>
-                  <option value="3D Letter Boards">3D Letter Boards</option>
+                  <option value="ACP Elevations">ACP Elevations</option>
+                  <option value="SS / Brass / Metal Letters">SS / Brass / Metal Letters</option>
+                  <option value="Acrylic / Trimcap / Liquid Letters">Acrylic / Trimcap / Liquid Letters</option>
+                  <option value="Unipoles">Unipoles</option>
+                  <option value="LED Video Walls & Scrolling Boards">LED Video Walls & Scrolling Boards</option>
+                  <option value="Concept Signages">Concept Signages</option>
                   <option value="Neon Sign Boards">Neon Sign Boards</option>
-                  <option value="Branding & Flex/Vinyl Printing">Branding & Flex/Vinyl Printing</option>
+                  <option value="Flex & Vinyl Printing">Flex & Vinyl Printing</option>
                   <option value="Vehicle & Shop Branding">Vehicle & Shop Branding</option>
                   <option value="Repair & Maintenance">Repair & Maintenance</option>
                 </select>

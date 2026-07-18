@@ -28,7 +28,8 @@
 .nav-logo {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
   gap: 2px;
   font-family: var(--font-heading);
   font-size: 1.45rem;
@@ -40,16 +41,16 @@
 /* "Change Your Style" — black */
 .nav-slogan {
   font-size: 0.72rem;
-  font-style: italic;
-  font-weight: 500;
+  font-style: normal;
+  font-weight: 700;
   color: #111827;
   letter-spacing: 0.8px;
   line-height: 1;
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
 .nav-logo-img {
-  height: 44px;
+  height: 52px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -159,21 +160,22 @@
 .mobile-drawer-logo {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
   gap: 3px;
   text-decoration: none;
 }
 
 .mobile-logo-img {
-  height: 40px;
+  height: 46px;
   width: auto;
   object-fit: contain;
 }
 
 .mobile-slogan {
   font-size: 0.68rem;
-  font-style: italic;
-  font-weight: 500;
+  font-style: normal;
+  font-weight: 700;
   color: #111827;
   letter-spacing: 0.8px;
 }

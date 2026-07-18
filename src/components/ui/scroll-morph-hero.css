@@ -17,7 +17,8 @@
   align-items: center;
   justify-content: center;
   perspective: 1000px;
-  transform: translateY(-20px); /* pull animation up closer to navbar */
+  transform: translateY(25px);
+  /* shift animation down to clear sticky navbar and center it */
 }
 
 /* Scattered / Circle state text */
@@ -39,8 +40,20 @@
 
 .smh-logo-title {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.smh-logo-slogan {
+  font-size: 0.82rem;
+  font-style: normal;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: 0.8px;
+  line-height: 1;
+  margin-top: 4px;
+  opacity: 0.95;
 }
 
 .smh-logo-img {
@@ -48,17 +61,17 @@
   max-width: 100%;
   height: auto;
   object-fit: contain;
-  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.10));
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.10));
 }
 
 .smh-logo-subtext {
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.2em;
-  color: var(--text-body); 
+  color: var(--text-body);
   text-transform: uppercase;
   margin-top: 12px;
-  max-width: 320px; 
+  max-width: 320px;
   line-height: 1.45;
 }
 
@@ -108,7 +121,8 @@
 .smh-btn-row {
   display: flex;
   gap: 16px;
-  pointer-events: auto; /* enables clicks on CTA buttons */
+  pointer-events: auto;
+  /* enables clicks on CTA buttons */
   justify-content: center;
 }
 
@@ -229,42 +243,43 @@
 
 @media (max-width: 768px) {
   .smh-center-container {
-    transform: translateY(-10px); /* pull up on mobile too */
+    transform: translateY(15px);
+    /* shift animation down slightly on mobile */
   }
-  
+
   .smh-logo-img {
     width: 140px !important;
   }
-  
+
   .smh-logo-title {
     font-size: 2.1rem;
   }
-  
+
   .smh-logo-subtext {
     font-size: 0.65rem;
     max-width: 200px;
     margin-top: 8px;
   }
-  
+
   .smh-active-content-wrapper {
     top: 5%;
   }
-  
+
   .smh-active-content-inner h2 {
     font-size: 2.2rem;
   }
-  
+
   .smh-active-content-inner p {
     font-size: 0.95rem;
   }
-  
+
   .smh-btn-row {
     flex-direction: column;
     gap: 12px;
     width: 100%;
     align-items: center;
   }
-  
+
   .smh-btn-row .btn {
     width: 100%;
     max-width: 250px;
@@ -281,7 +296,9 @@
 }
 
 @keyframes smh-spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Corner Stats Cards Container & Styling */
@@ -313,29 +330,29 @@
 
 .smh-corner-card:hover {
   transform: translateY(-6px) scale(1.04) !important;
-  box-shadow: 0 12px 36px rgba(214, 40, 40, 0.08), 0 4px 12px rgba(0,0,0,0.02);
+  box-shadow: 0 12px 36px rgba(214, 40, 40, 0.08), 0 4px 12px rgba(0, 0, 0, 0.02);
 }
 
 .smh-corner-card.top-left {
-  top: 18%;
+  top: 22%;
   left: 6%;
   border-left: 4px solid var(--color-red);
 }
 
 .smh-corner-card.top-right {
-  top: 18%;
+  top: 22%;
   right: 6%;
   border-right: 4px solid var(--color-yellow);
 }
 
 .smh-corner-card.bottom-left {
-  bottom: 18%;
+  bottom: 22%;
   left: 6%;
   border-left: 4px solid var(--color-yellow);
 }
 
 .smh-corner-card.bottom-right {
-  bottom: 18%;
+  bottom: 22%;
   right: 6%;
   border-right: 4px solid var(--color-red);
 }
@@ -360,14 +377,38 @@
   margin-top: 4px;
 }
 
+.smh-corner-card.middle-left {
+  top: 50%;
+  left: 6%;
+  transform: translateY(-50%) !important;
+  border-left: 4px solid var(--color-yellow);
+}
+
+.smh-corner-card.middle-right {
+  top: 50%;
+  right: 6%;
+  transform: translateY(-50%) !important;
+  border-right: 4px solid var(--color-red);
+}
+
+.smh-corner-card.middle-left:hover {
+  transform: translateY(-50%) !important;
+}
+
+.smh-corner-card.middle-right:hover {
+  transform: translateY(-50%) !important;
+}
+
 @media (max-width: 1200px) {
   .smh-corner-card {
     width: 140px;
     padding: 12px 14px;
   }
+
   .smh-corner-value {
     font-size: 1.5rem;
   }
+
   .smh-corner-label {
     font-size: 0.65rem;
   }
@@ -384,10 +425,10 @@
   justify-content: space-around;
   align-items: center;
   padding: 10px 12px;
-  background: rgba(255,255,255,0.82);
+  background: rgba(255, 255, 255, 0.82);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(0,0,0,0.06);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
   gap: 4px;
 }
 
@@ -397,8 +438,9 @@
   align-items: center;
   flex: 1;
   padding: 6px 4px;
-  border-right: 1px solid rgba(0,0,0,0.08);
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
 }
+
 .smh-mobile-stat-item:last-child {
   border-right: none;
 }
@@ -421,4 +463,3 @@
   margin-top: 2px;
   line-height: 1.2;
 }
-

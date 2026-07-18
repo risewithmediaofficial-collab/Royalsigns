@@ -189,13 +189,20 @@ function ScrollStackDesktop({
     const scaleEndPositionPx = parsePercentage(scaleEndPosition, containerHeight);
     const endElementTop = endElementOffsetRef.current;
 
+    // Calculate dynamic pinEnd to stop the cards strictly before the footer
+    const lastCard = cardsRef.current[cardsRef.current.length - 1];
+    const lastCardHeight = lastCard ? lastCard.offsetHeight : 380;
+    const totalStackOffset = itemStackDistance * (cardsRef.current.length - 1);
+    const safetyMargin = 40; // 40px safe margin before the footer
+    const targetPinEnd = endElementTop - lastCardHeight - stackPositionPx - totalStackOffset - safetyMargin;
+
     cardsRef.current.forEach((card, i) => {
       if (!card) return;
       const cardTop = cardOffsetsRef.current[i] ?? getElementOffset(card);
       const triggerStart = cardTop - stackPositionPx - itemStackDistance * i;
       const triggerEnd = cardTop - scaleEndPositionPx;
       const pinStart = triggerStart;
-      const pinEnd = endElementTop - containerHeight / 2;
+      const pinEnd = Math.max(triggerStart, targetPinEnd);
 
       const scaleProgress = calculateProgress(scrollTop, triggerStart, triggerEnd);
       const targetScale = baseScale + i * itemScale;
@@ -305,7 +312,7 @@ function ScrollStackDesktop({
 
   return (
     <div className={containerClassName} ref={scrollerRef}>
-      <div className="scroll-stack-inner pt-[10vh] px-4 pb-[8rem] min-h-screen">
+      <div className="scroll-stack-inner pt-[10vh] px-4 pb-[50vh] min-h-screen">
         {children}
         <div className="scroll-stack-end w-full h-px" />
       </div>

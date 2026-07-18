@@ -3,7 +3,7 @@ import { MessageCircle } from 'lucide-react';
 import './FloatButtons.css';
 
 export default function FloatButtons() {
-  const whatsappUrl = "https://wa.me/919876543210?text=Hi%20Royal%20Signs%2C%20I%20am%20interested%20in%20getting%20a%20quotation%20for%20a%20custom%20sign%20board.";
+  const whatsappUrl = "https://wa.me/919791378755?text=Hi%20Royal%20Signs%2C%20I%20am%20interested%20in%20getting%20a%20quotation%20for%20a%20custom%20sign%20board.";
 
   return (
     <>

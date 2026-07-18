@@ -70,8 +70,8 @@ export default function Contact() {
                   <MapPin size={22} className="icon-yellow" />
                 </div>
                 <div>
-                  <h4>Branch Address</h4>
-                  <p>#3/243 Naveen Arcade, CSB Bank Basement, Salem Highway Service Road, Krishnagiri – 635002</p>
+                  <h4>Office Address</h4>
+                  <p>No: 13, 6, Tamilar St, Loganathan Nagar, Padmanabha Nagar, Choolaimedu, Chennai, Tamil Nadu 600094</p>
                 </div>
               </li>
 
@@ -80,18 +80,28 @@ export default function Contact() {
                   <MapPin size={22} className="icon-red" />
                 </div>
                 <div>
-                  <h4>Factory Address</h4>
-                  <p>#31, Thayar Sahib Street, 1st Lane, Ellis Road, Chennai – 600002</p>
+                  <h4>Branch Address (Krishnagiri)</h4>
+                  <p>#3/243 Naveen Arcade, CSB Bank Basement, Salem Highway Service Road, Krishnagiri – 635002</p>
                 </div>
               </li>
 
               <li>
                 <div className="info-icon-circle">
-                  <MapPin size={22} className="icon-yellow" style={{ opacity: 0.8 }} />
+                  <MapPin size={22} className="icon-yellow" style={{ opacity: 0.9 }} />
                 </div>
                 <div>
-                  <h4>Registered Office</h4>
-                  <p>No: 13, 6, Tamilar St, Loganathan Nagar, Padmanabha Nagar, Choolaimedu, Chennai, Tamil Nadu 600094</p>
+                  <h4>Branch Address (Bengaluru)</h4>
+                  <p>DR G Nagar, 1st Main Rd, 2nd Stage, Rajagopala Nagar, Peenya, Bengaluru, Karnataka 560091</p>
+                </div>
+              </li>
+
+              <li>
+                <div className="info-icon-circle">
+                  <MapPin size={22} className="icon-red" style={{ opacity: 0.8 }} />
+                </div>
+                <div>
+                  <h4>Factory Address</h4>
+                  <p>#31, Thayar Sahib Street, 1st Lane, Ellis Road, Chennai – 600002</p>
                 </div>
               </li>
 

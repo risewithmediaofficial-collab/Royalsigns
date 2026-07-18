@@ -50,7 +50,7 @@ export default function Navbar() {
       <div className="mobile-drawer-header">
         <Link to="/" onClick={() => setIsOpen(false)} className="mobile-drawer-logo">
           <img src={royalLogo} alt="Royal Signs" className="mobile-logo-img" />
-          <span className="mobile-slogan"><em>Change Your Style</em></span>
+          <span className="mobile-slogan">Change Your Style</span>
         </Link>
         <button
           className="mobile-drawer-close"
@@ -90,7 +90,7 @@ export default function Navbar() {
         <div className="container navbar-container">
           <Link to="/" className="nav-logo">
             <img src={royalLogo} alt="Royal Signs" className="nav-logo-img" />
-            <span className="nav-slogan"><em>Change Your Style</em></span>
+            <span className="nav-slogan">Change Your Style</span>
           </Link>
 
           {/* Desktop nav */}

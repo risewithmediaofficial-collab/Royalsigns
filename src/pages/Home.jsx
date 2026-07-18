@@ -154,8 +154,8 @@ export default function Home() {
     },
     {
       id: 2,
-      title: "SS / Brass Letters",
-      desc: "Rust-free stainless steel & brass letters with backlit warm-white LED profiles.",
+      title: "SS / Brass / Metal Letters",
+      desc: "Rust-free stainless steel, brass & metal letters with backlit warm-white LED profiles.",
       icon: <IconGridDots size={28} stroke={1.5} />,
     },
     {
@@ -692,15 +692,19 @@ export default function Home() {
               <ul className="details-list-bullets">
                 <li>
                   <MapPin size={20} className="icon-red" style={{ marginTop: 2 }} />
-                  <span><strong>Branch:</strong> #3/243, Naveen Arcade, CSB Bank Basement, Salem Highway Service Road, Krishnagiri – 635002</span>
+                  <span><strong>Office:</strong> No: 13, 6, Tamilar St, Loganathan Nagar, Padmanabha Nagar, Choolaimedu, Chennai – 600094</span>
+                </li>
+                <li>
+                  <MapPin size={20} className="icon-red" style={{ marginTop: 2, opacity: 0.9 }} />
+                  <span><strong>Branch (Krishnagiri):</strong> #3/243, Naveen Arcade, CSB Bank Basement, Salem Highway Service Road, Krishnagiri – 635002</span>
                 </li>
                 <li>
                   <MapPin size={20} className="icon-red" style={{ marginTop: 2, opacity: 0.8 }} />
-                  <span><strong>Factory:</strong> #31, Thayar Sahib Street, 1st Lane, Ellis Road, Chennai – 600002</span>
+                  <span><strong>Branch (Bengaluru):</strong> DR G Nagar, 1st Main Rd, 2nd Stage, Rajagopala Nagar, Peenya, Bengaluru, Karnataka 560091</span>
                 </li>
                 <li>
-                  <MapPin size={20} className="icon-red" style={{ marginTop: 2, opacity: 0.65 }} />
-                  <span><strong>Reg. Office:</strong> No: 13, 6, Tamilar St, Loganathan Nagar, Padmanabha Nagar, Choolaimedu, Chennai – 600094</span>
+                  <MapPin size={20} className="icon-red" style={{ marginTop: 2, opacity: 0.7 }} />
+                  <span><strong>Factory:</strong> #31, Thayar Sahib Street, 1st Lane, Ellis Road, Chennai – 600002</span>
                 </li>
                 <li>
                   <Phone size={18} className="icon-red" />

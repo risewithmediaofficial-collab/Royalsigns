@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail, Clock, Flame, Star } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Star } from 'lucide-react';
+import royalLogo from '../assets/Royal LOGO.png';
 import './Footer.css';
 
 export default function Footer() {
@@ -12,8 +13,7 @@ export default function Footer() {
         {/* About & Reviews Column */}
         <div className="footer-col brand-col">
           <Link to="/" className="footer-logo">
-            <Flame className="logo-icon glow-red" />
-            <span className="logo-text">ROYAL<span className="logo-accent">SIGNS</span></span>
+            <img src={royalLogo} alt="Royal Signs" className="footer-logo-img" />
           </Link>
           <p className="footer-desc">
             Premium signage and branding solutions with professional craftsmanship and quality materials. We serve businesses across Chennai and Krishnagiri.
@@ -51,24 +51,33 @@ export default function Footer() {
             <li>
               <MapPin size={20} className="footer-icon-yellow" />
               <span>
-                <strong>Branch:</strong> #3/243 Naveen Arcade, CSB Bank Basement, Salem Highway Service Road, Krishnagiri – 635002
+                <strong>Office:</strong> No: 13, 6, Tamilar St, Loganathan Nagar, Padmanabha Nagar, Choolaimedu, Chennai, Tamil Nadu 600094
               </span>
             </li>
             <li>
-              <MapPin size={20} className="footer-icon-yellow" style={{ opacity: 0.85 }} />
+              <MapPin size={20} className="footer-icon-yellow" style={{ opacity: 0.9 }} />
               <span>
-                <strong>Factory:</strong> #31, Thayar Sahib Street, 1st Lane, Ellis Road, Chennai – 600002
+                <strong>Branch (Krishnagiri):</strong> #3/243 Naveen Arcade, CSB Bank Basement, Salem Highway Service Road, Krishnagiri – 635002
+              </span>
+            </li>
+            <li>
+              <MapPin size={20} className="footer-icon-yellow" style={{ opacity: 0.8 }} />
+              <span>
+                <strong>Branch (Bengaluru):</strong> DR G Nagar, 1st Main Rd, 2nd Stage, Rajagopala Nagar, Peenya, Bengaluru, Karnataka 560091
               </span>
             </li>
             <li>
               <MapPin size={20} className="footer-icon-yellow" style={{ opacity: 0.7 }} />
               <span>
-                <strong>Registered Office:</strong> No: 13, 6, Tamilar St, Loganathan Nagar, Padmanabha Nagar, Choolaimedu, Chennai, Tamil Nadu 600094
+                <strong>Factory:</strong> #31, Thayar Sahib Street, 1st Lane, Ellis Road, Chennai – 600002
               </span>
             </li>
             <li>
               <Phone size={18} className="footer-icon-red" />
-              <a href="tel:+919791378755">+91 97913 78755</a>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <a href="tel:+919791378755">+91 97913 78755</a>
+                <a href="tel:+917845008323">+91 78450 08323</a>
+              </div>
             </li>
             <li>
               <Mail size={18} className="footer-icon-yellow" />

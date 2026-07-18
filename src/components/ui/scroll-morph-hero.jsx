@@ -120,7 +120,7 @@ export default function IntroAnimation() {
     }, []);
 
     const isMobileView = containerSize.width > 0 && containerSize.width < 768;
-    const displayImageCount = isMobileView ? 10 : Math.min(images.length, TOTAL_IMAGES);
+    const displayImageCount = isMobileView ? 8 : Math.min(images.length, 14);
 
     // --- Container Size ---
     useEffect(() => {
@@ -276,6 +276,24 @@ export default function IntroAnimation() {
     const [morphValue, setMorphValue] = useState(0);
     const [rotateValue, setRotateValue] = useState(0);
     const [parallaxValue, setParallaxValue] = useState(0);
+    const [autoRotate, setAutoRotate] = useState(0);
+
+    const isMorphedRef = useRef(false);
+    useEffect(() => {
+        isMorphedRef.current = morphValue >= 1;
+    }, [morphValue]);
+
+    useEffect(() => {
+        let frame;
+        const tick = () => {
+            if (!isMorphedRef.current) {
+                setAutoRotate(prev => (prev + 0.25) % 360);
+            }
+            frame = requestAnimationFrame(tick);
+        };
+        frame = requestAnimationFrame(tick);
+        return () => cancelAnimationFrame(frame);
+    }, []);
 
     useEffect(() => {
         const unsubscribeMorph = smoothMorph.on("change", setMorphValue);
@@ -295,8 +313,17 @@ export default function IntroAnimation() {
     const cornerStats = [
         { label: "Projects Completed", value: "680+", positionClass: "top-left" },
         { label: "Signages Installed", value: "4,299+", positionClass: "top-right" },
+        { label: "Google Rating", value: "4.7 ★", positionClass: "middle-left" },
+        { label: "Years Experience", value: "11+", positionClass: "middle-right" },
         { label: "ACP Elevation Works", value: "75+", positionClass: "bottom-left" },
         { label: "Premium Interiors", value: "34+", positionClass: "bottom-right" }
+    ];
+
+    const mobileStats = [
+        { label: "Google Rating", value: "4.7 ★" },
+        { label: "Experience", value: "11+ Years" },
+        { label: "Projects Done", value: "680+" },
+        { label: "Signages", value: "4,299+" }
     ];
 
     const showStats = introPhase === "circle";
@@ -310,7 +337,7 @@ export default function IntroAnimation() {
                         <motion.div
                             key={idx}
                             style={{ opacity: statsOpacity }}
-                            initial={{ scale: 0, opacity: 0, y: stat.positionClass.includes("top") ? -40 : 40 }}
+                            initial={{ scale: 0, opacity: 0, y: stat.positionClass.includes("top") ? -40 : stat.positionClass.includes("bottom") ? 40 : 0 }}
                             animate={{ scale: 1, opacity: 1, y: 0 }}
                             transition={{ 
                                 type: "spring", 
@@ -335,7 +362,7 @@ export default function IntroAnimation() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ type: "spring", stiffness: 160, damping: 18, delay: 0.3 }}
                 >
-                    {cornerStats.map((stat, idx) => (
+                    {mobileStats.map((stat, idx) => (
                         <div key={idx} className="smh-mobile-stat-item">
                             <span className="smh-mobile-stat-value">{stat.value}</span>
                             <span className="smh-mobile-stat-label">{stat.label}</span>
@@ -355,6 +382,7 @@ export default function IntroAnimation() {
                         className="smh-logo-title"
                     >
                         <img src={royalLogo} alt="Royal Signs Logo" className="smh-logo-img" />
+                        <span className="smh-logo-slogan">Change Your Style</span>
                     </motion.div>
                     <motion.p
                         initial={{ opacity: 0 }}
@@ -423,12 +451,12 @@ export default function IntroAnimation() {
                         } else {
                             const minDimension = Math.min(containerSize.width, containerSize.height);
 
-                            // Keep circle radius larger to avoid central text collisions
+                            // Keep circle radius balanced to clear top navbar & bottom screen, and create elegant spacing
                             const circleRadius = isMobile 
                                 ? Math.min(containerSize.width * 0.40, 145) 
-                                : Math.min(minDimension * 0.40, 310);
+                                : Math.min(minDimension * 0.35, 275);
 
-                            const circleAngle = (i / Math.max(1, itemCount)) * 360;
+                            const circleAngle = (i / Math.max(1, itemCount)) * 360 + autoRotate;
                             const circleRad = (circleAngle * Math.PI) / 180;
                             const circlePos = {
                                 x: Math.cos(circleRad) * circleRadius,
