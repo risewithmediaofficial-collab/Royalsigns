@@ -243,8 +243,8 @@
 
 @media (max-width: 768px) {
   .smh-center-container {
-    transform: translateY(15px);
-    /* shift animation down slightly on mobile */
+    transform: translateY(-45px);
+    /* shift animation up on mobile to reduce white space below navbar */
   }
 
   .smh-logo-img {
@@ -365,6 +365,7 @@
   line-height: 1.1;
   background: linear-gradient(135deg, var(--text-heading) 40%, var(--color-red) 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
