@@ -15,15 +15,14 @@ export default function Services() {
   ];
 
   const servicesList = [
-    // Top services from the visiting card
     {
       id: 'acrylic-trimcap-liquid',
       cat: 'boards',
       title: 'Acrylic / Trimcap / Liquid Letters',
       desc: 'Premium illuminated letter options including acrylic faces, trimcap edging, and liquid acrylic fills for high-durability glow.',
       specs: ['Liquid acrylic technology', 'Trimcap side borders', 'Superb nighttime brightness', 'Waterproof wiring'],
-      icon: <Sparkles size={36} />,
-      bentoClass: "col-span-2 row-span-1"
+      icon: <Sparkles size={28} />,
+      bentoClass: "col-span-1 row-span-1"
     },
     {
       id: 'ss-brass-letters',
@@ -31,7 +30,7 @@ export default function Services() {
       title: 'SS / Brass Letters',
       desc: 'Rust-free luxury stainless steel (SS) and brass metal letters with option for backlit warm-white LED glowing profiles.',
       specs: ['Grade 304 stainless steel', 'Solid polished brass', 'Back-lit halo effect option', 'Highly durable structure'],
-      icon: <Star size={36} />,
+      icon: <Star size={28} />,
       bentoClass: "col-span-1 row-span-1"
     },
     {
@@ -40,7 +39,7 @@ export default function Services() {
       title: 'ACP Elevations',
       desc: 'Full building front cladding panels and elevations built using premium 3mm/4mm weather-resistant ACP sheets.',
       specs: ['Aludecor & Eurobond sheets', 'Heavy-duty steel channel support', 'CNC grooving & panel alignment', 'Anti-fading paint coating'],
-      icon: <Grid size={36} />,
+      icon: <Grid size={28} />,
       bentoClass: "col-span-1 row-span-1"
     },
     {
@@ -49,17 +48,17 @@ export default function Services() {
       title: 'Toughness Glass',
       desc: 'Frameless toughened glass storefront entries, display panels, doors, and partitions for office buildings.',
       specs: ['10mm/12mm Toughened glass', 'Heavy patch fittings & hinges', 'Safety structural framing', 'Frosted sticker layout options'],
-      icon: <CheckSquare size={36} />,
-      bentoClass: "col-span-2 row-span-1"
+      icon: <CheckSquare size={28} />,
+      bentoClass: "col-span-1 row-span-1"
     },
     {
       id: 'branding-fabrication-work',
       cat: 'branding',
       title: 'Branding Fabrication',
       desc: 'Complete industrial-grade name board structure framing, banner posts, lightboxes, and uniform custom retail signs.',
-      specs: ['Computerized layout renderings', 'Rust-proof iron frames', 'Samsung high-power LEDs', 'Quick onsite assembly'],
-      icon: <Lightbulb size={36} />,
-      bentoClass: "col-span-2 row-span-1"
+      specs: ['Computerized layout renderings', 'Rust-proof iron frames', 'high-power LEDs', 'Quick onsite assembly'],
+      icon: <Lightbulb size={28} />,
+      bentoClass: "col-span-1 row-span-1"
     },
     {
       id: 'wallpapers-louvers-work',
@@ -67,81 +66,62 @@ export default function Services() {
       title: 'Wallpapers & Louvers',
       desc: 'Premium custom interior wallpapers and high-finish wooden louvers to redesign corporate offices & home walls.',
       specs: ['High-resolution mural prints', 'WPC wall paneling louvers', 'Seamless adhesive pastes', 'Modern corporate workspace looks'],
-      icon: <Printer size={36} />,
+      icon: <Printer size={28} />,
       bentoClass: "col-span-1 row-span-1"
     },
-    // Standard Services
     {
       id: 'led-boards',
       cat: 'boards',
       title: 'LED Sign Boards',
-      desc: 'Energy-saving illuminated signs built using waterproof Samsung LED modules. Highly visible from a distance, perfect for high-traffic high street shops.',
-      specs: ['Samsung LED modules', 'IP67 Waterproofing', '2-Year Warranty', 'Custom controller setups'],
-      icon: <Lightbulb size={36} />,
-      bentoClass: "col-span-2 row-span-1"
-    },
-    {
-      id: 'acp-boards',
-      cat: 'boards',
-      title: 'ACP Sign Boards',
-      desc: 'Aluminum Composite Panel (ACP) backplates grooved and fitted with raised acrylic 3D lettering. Creates a highly professional matte or glossy exterior shop front.',
-      specs: ['3mm Premium ACP sheets', 'Aludecor / Eurobond brand sheets', 'CNC router grooving', 'Anti-rust internal metal frame'],
-      icon: <Grid size={36} />,
-      bentoClass: "col-span-1 row-span-1"
-    },
-    {
-      id: 'acrylic-letters',
-      cat: 'boards',
-      title: 'Acrylic 3D Letters',
-      desc: 'Three-dimensional letters cut out of virgin acrylic sheets and bent using hot strip heaters. Includes internal LED lighting options or solid unlit letters.',
-      specs: ['Imported gloss acrylics', 'Laser-cut accuracy', 'Uniform light diffusion', 'Vibrant color ranges'],
-      icon: <CheckSquare size={36} />,
+      desc: 'Energy-saving illuminated signs built using waterproof LED modules, perfect for high-traffic shops.',
+      specs: ['LED modules', 'IP67 Waterproofing', '1.5-Year Warranty (depends on LED model)', 'Custom controller setups'],
+      icon: <Lightbulb size={28} />,
       bentoClass: "col-span-1 row-span-1"
     },
     {
       id: 'neon-signs',
       cat: 'boards',
       title: 'Neon Sign Boards',
-      desc: 'Custom flexible silicone LED neon tubes fitted on clear acrylic plates. Highly trendy for restaurant interiors, cafes, bars, and office wall graphics.',
+      desc: 'Custom flexible silicone LED neon tubes on acrylic plates. Trendy for restaurants, cafes, and office walls.',
       specs: ['12V low voltage safety', 'High-density silicone neon', 'Custom script font designs', 'Adapter and wall screws included'],
-      icon: <Sparkles size={36} />,
-      bentoClass: "col-span-2 row-span-1"
+      icon: <Sparkles size={28} />,
+      bentoClass: "col-span-1 row-span-1"
     },
     {
       id: 'flex-vinyl',
       cat: 'printing',
       title: 'Flex & Vinyl Printing',
-      desc: 'High-speed solvent and eco-solvent printing on heavy flex canvases, star flex material, and glossy adhesive vinyl sheets for cost-effective marketing.',
+      desc: 'High-speed solvent printing on heavy flex canvases and adhesive vinyl for cost-effective outdoor marketing.',
       specs: ['Eco-solvent non-fade inks', 'Star flex canvas material', 'Vibrant color depth', 'Glossy & matte laminations'],
-      icon: <Printer size={36} />,
+      icon: <Printer size={28} />,
       bentoClass: "col-span-1 row-span-1"
     },
     {
       id: 'glass-stickers',
       cat: 'branding',
-      title: 'One-Way Vision & Frosted Glass Stickers',
-      desc: 'Frosted films and micro-perforated vinyl stickers for office glass doors, partition walls, and showroom fronts to control sunlight and maintain privacy.',
+      title: 'Glass Films & Stickers',
+      desc: 'Frosted films and one-way vision stickers for office glass doors, partition walls, and showroom fronts.',
       specs: ['3M frosted privacy films', 'One-way vision mesh stickers', 'Sun control UV block films', 'Custom plotter-cut vector logos'],
-      icon: <ShieldAlert size={36} />,
+      icon: <ShieldAlert size={28} />,
       bentoClass: "col-span-1 row-span-1"
     },
     {
       id: 'vehicle-branding',
       cat: 'branding',
       title: 'Vehicle & Shop Branding',
-      desc: 'Full and partial vinyl wrap stickers for delivery trucks, vans, autos, and storefronts, turning your logistics vehicles into mobile billboards.',
+      desc: 'Full and partial vinyl wraps for delivery trucks, vans, autos, and storefronts — mobile billboards for your brand.',
       specs: ['Cast wrapping vinyl sheets', 'Bubble-free adhesive film', 'Varnish coat lamination', 'Onsite vehicle application'],
-      icon: <Truck size={36} />,
+      icon: <Truck size={28} />,
       bentoClass: "col-span-1 row-span-1"
     },
     {
       id: 'install-repair',
       cat: 'install',
-      title: 'Installation & Repair Services',
-      desc: 'Maintenance, bulb replacements, power adapter changes, ACP replacement, and relocation of older signboards by certified installers.',
+      title: 'Installation & Repair',
+      desc: 'Maintenance, LED replacements, adapter changes, ACP panel replacement, and signboard relocation by certified installers.',
       specs: ['Secure structural anchor bolts', 'Certified power calibration', 'Emergency LED bulb replacements', 'Relocation & re-wiring'],
-      icon: <Star size={36} />,
-      bentoClass: "col-span-3 row-span-1"
+      icon: <Star size={28} />,
+      bentoClass: "col-span-1 row-span-1"
     }
   ];
 
@@ -152,7 +132,7 @@ export default function Services() {
   const triggerQuoteForService = (serviceName) => {
     const event = new CustomEvent('toggle-quote-modal', { detail: { open: true } });
     window.dispatchEvent(event);
-    
+
     setTimeout(() => {
       const selectElement = document.getElementById('modal-service');
       if (selectElement) {
@@ -175,6 +155,21 @@ export default function Services() {
       </section>
 
 
+
+      {/* Branch & Factory Info Strip */}
+      <section className="branch-info-strip">
+        <div className="container branch-info-grid">
+          <div className="branch-info-item">
+            <span className="branch-label">BRANCH</span>
+            <p>#3/243, Naveen Arcade, CSB Bank Basement, Salem Highway Service Road, KRISHNAGIRI – 635002</p>
+          </div>
+          <div className="branch-divider" />
+          <div className="branch-info-item">
+            <span className="branch-label">FACTORY</span>
+            <p>#31, Thayar Sahib Street, 1st Lane, Ellis Road, Chennai – 600002</p>
+          </div>
+        </div>
+      </section>
 
       {/* Services Tabs Selector */}
       <section className="services-main section-padding">
@@ -222,7 +217,7 @@ export default function Services() {
               <h3>What is the typical production timeline?</h3>
               <p>For standard ACP and Acrylic name boards, fabrication takes 5 to 7 working days after design layout approval. Complex double-sided illuminated pylon displays can take up to 10 days.</p>
             </div>
-            
+
             <div className="card faq-card">
               <h3>Do you provide design assistance?</h3>
               <p>Yes! We have an in-house design team that creates 2D and 3D computer renderings. Once you confirm the order, design mockups are created free of cost.</p>
@@ -230,12 +225,12 @@ export default function Services() {
 
             <div className="card faq-card">
               <h3>Are the LED signboards weather-resistant?</h3>
-              <p>Absolutely. We use outdoor-grade IP67 waterproof Samsung LED modules, weather-sealed power adapters, and anti-corrosive metal framing. All joints are sealed with silicone sealant to prevent rain seepage.</p>
+              <p>Absolutely. We use outdoor-grade IP67 waterproof LED modules, weather-sealed power adapters, and anti-corrosive metal framing. All joints are sealed with silicone sealant to prevent rain seepage.</p>
             </div>
 
             <div className="card faq-card">
               <h3>Is there any warranty on illuminated boards?</h3>
-              <p>Yes, we provide 1 to 2 years replacement warranty on LED modules and power adapters/transformers depending on the material configuration chosen.</p>
+              <p>Yes, we provide a 1.5-year replacement warranty on LED modules (depending on the LED model) and power adapters/transformers.</p>
             </div>
           </div>
         </div>

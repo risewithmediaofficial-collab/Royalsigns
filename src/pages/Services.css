@@ -193,3 +193,61 @@
   }
 }
 
+
+/* Branch & Factory Info Strip */
+.branch-info-strip {
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding: 20px 0;
+}
+
+.branch-info-grid {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  justify-content: center;
+}
+
+.branch-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: 340px;
+  text-align: center;
+}
+
+.branch-label {
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: var(--color-red);
+  text-transform: uppercase;
+}
+
+.branch-info-item p {
+  font-size: 0.82rem;
+  color: var(--text-body);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.branch-divider {
+  width: 1px;
+  height: 40px;
+  background-color: var(--color-border);
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .branch-info-grid {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+  .branch-divider {
+    width: 40px;
+    height: 1px;
+  }
+}

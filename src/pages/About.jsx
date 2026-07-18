@@ -26,7 +26,7 @@ export default function About() {
     {
       num: "04",
       title: "LED Illumination Assembly",
-      desc: "We embed energy-efficient Samsung LED modules with waterproof wiring harnesses inside the channel letters.",
+      desc: "We embed energy-efficient LED modules with waterproof wiring harnesses inside the channel letters.",
       icon: <Sparkles size={24} className="icon-red" />
     },
     {
@@ -124,10 +124,10 @@ export default function About() {
               width={520}
               height={280}
               frontContent={
-                <div style={{ display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', height:'100%', padding:'36px 30px', textAlign:'center' }}>
-                  <Eye size={48} style={{ color:'var(--color-yellow)', marginBottom:'18px' }} />
-                  <h3 style={{ fontFamily:'var(--font-heading)', fontSize:'1.4rem', fontWeight:800, color:'var(--text-heading)', marginBottom:'10px' }}>Our Vision</h3>
-                  <p style={{ fontSize:'0.9rem', color:'var(--text-muted)' }}>Hover to read our vision →</p>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%', padding: '36px 30px', textAlign: 'center' }}>
+                  <Eye size={48} style={{ color: 'var(--color-yellow)', marginBottom: '18px' }} />
+                  <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.4rem', fontWeight: 800, color: 'var(--text-heading)', marginBottom: '10px' }}>Our Vision</h3>
+                  <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>Hover to read our vision →</p>
                 </div>
               }
               backContent={
@@ -148,10 +148,10 @@ export default function About() {
               width={520}
               height={280}
               frontContent={
-                <div style={{ display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', height:'100%', padding:'36px 30px', textAlign:'center' }}>
-                  <ShieldCheck size={48} style={{ color:'var(--color-red)', marginBottom:'18px' }} />
-                  <h3 style={{ fontFamily:'var(--font-heading)', fontSize:'1.4rem', fontWeight:800, color:'var(--text-heading)', marginBottom:'10px' }}>Our Mission</h3>
-                  <p style={{ fontSize:'0.9rem', color:'var(--text-muted)' }}>Hover to read our mission →</p>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%', padding: '36px 30px', textAlign: 'center' }}>
+                  <ShieldCheck size={48} style={{ color: 'var(--color-red)', marginBottom: '18px' }} />
+                  <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.4rem', fontWeight: 800, color: 'var(--text-heading)', marginBottom: '10px' }}>Our Mission</h3>
+                  <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>Hover to read our mission →</p>
                 </div>
               }
               backContent={
@@ -211,7 +211,7 @@ export default function About() {
           <div className="grid-3 guarantee-grid">
             <div className="guarantee-item">
               <CheckCircle2 className="icon-yellow" size={24} />
-              <span>Original Samsung LEDs</span>
+              <span>Original LEDs</span>
             </div>
             <div className="guarantee-item">
               <CheckCircle2 className="icon-red" size={24} />

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ShoppingBag, Landmark, GraduationCap, Building2, ShieldAlert, Coffee, ArrowRight } from 'lucide-react';
+import { ShoppingBag, Landmark, GraduationCap, Building2, ShieldAlert, Coffee, ArrowRight, Utensils, School, TreePalm, Hotel } from 'lucide-react';
 import ScrollStack, { ScrollStackItem } from '../components/ui/ScrollStack';
 import './Industries.css';
 
@@ -16,6 +16,23 @@ import imgInd9 from '../assets/royal signs/IMG-20251028-WA0007.jpg.jpeg';
 import imgInd10 from '../assets/royal signs/IMG-20251028-WA0008.jpg.jpeg';
 import imgInd11 from '../assets/royal signs/IMG-20251219-WA0010.jpg.jpeg';
 import imgInd12 from '../assets/royal signs/IMG-20250613-WA0023.jpg.jpeg';
+
+// New Industry images from assets
+import imgCafeMain from '../assets/royal signs/IMG_20250222_183029.jpg.jpeg';
+import imgCafeExtra1 from '../assets/royal signs/IMG_20250222_183033.jpg.jpeg';
+import imgCafeExtra2 from '../assets/royal signs/IMG-20251206-WA0040.jpg.jpeg';
+
+import imgRestMain from '../assets/royal signs/IMG-20250905-WA0027.jpg.jpeg';
+import imgRestExtra1 from '../assets/royal signs/IMG-20250909-WA0063.jpg.jpeg';
+import imgRestExtra2 from '../assets/royal signs/IMG-20250504-WA0154.jpg.jpeg';
+
+import imgCollMain from '../assets/royal signs/IMG_20260130_161425.jpg.jpeg';
+import imgCollExtra1 from '../assets/royal signs/IMG_20260130_161432.jpg.jpeg';
+import imgCollExtra2 from '../assets/royal signs/IMG_20260130_161438.jpg.jpeg';
+
+import imgResMain from '../assets/royal signs/IMG-20260630-WA0037.jpg.jpeg';
+import imgResExtra1 from '../assets/royal signs/IMG-20260617-WA0041.jpg.jpeg';
+import imgResExtra2 from '../assets/royal signs/IMG_20260713_155258.jpg.jpeg';
 
 
 // Subcomponent for responsive fast-loading industry image
@@ -75,16 +92,56 @@ export default function Industries() {
     },
     {
       id: 3,
-      title: "Education & Schools",
-      icon: <GraduationCap size={36} />,
-      tagline: "Heavy-duty outdoor institutional structures",
-      solution: "Massive stainless steel (SS) or mild steel (MS) channel letters, laser-welded and fitted with backlights. Designed to withstand wind loads on open campus entry pillars.",
-      commonService: "SS/MS 3D Letter Boards",
+      title: "Schools & Academies",
+      icon: <School size={36} />,
+      tagline: "Safe, welcoming campus directional layouts",
+      solution: "Main gate monument pillar signs, classroom identification door plates, directory map stands, playground safety signs, and colorful wall mural prints.",
+      commonService: "Directional & Door Signs",
       image: imgInd3,
       extraImages: [imgInd11, imgInd12]
     },
     {
       id: 4,
+      title: "Colleges & Universities",
+      icon: <GraduationCap size={36} />,
+      tagline: "Monumental architectural structures & block letters",
+      solution: "Giant stainless steel (SS) and metal channel lettering, double-sided pylon road signs, large-scale campus directory maps, and department name boards.",
+      commonService: "SS/MS Monument Signage",
+      image: imgCollMain,
+      extraImages: [imgCollExtra1, imgCollExtra2]
+    },
+    {
+      id: 5,
+      title: "Cafes & Coffee Shops",
+      icon: <Coffee size={36} />,
+      tagline: "Chic, glowing neon scripts & window signs",
+      solution: "Eye-catching custom LED neon scripts, acrylic light boxes, warm backlit signs, and menu boards that create a cozy, photogenic ambiance for modern cafe interiors.",
+      commonService: "Neon & Acrylic Signs",
+      image: imgCafeMain,
+      extraImages: [imgCafeExtra1, imgCafeExtra2]
+    },
+    {
+      id: 6,
+      title: "Restaurants & Fine Dining",
+      icon: <Utensils size={36} />,
+      tagline: "Grand entrance facade & digital menu displays",
+      solution: "High-end ACP 3D illuminated frontages, dual-sided projecting lightboxes, elegant laser-cut metal lettering, and warm interior glow signage to establish premium culinary branding.",
+      commonService: "ACP Facade & 3D Letters",
+      image: imgRestMain,
+      extraImages: [imgRestExtra1, imgRestExtra2]
+    },
+    {
+      id: 7,
+      title: "Resorts & Luxury Retreats",
+      icon: <TreePalm size={36} />,
+      tagline: "Rustic wood finishes & elegant lighting paths",
+      solution: "High-durability outdoor signage using warm backlighting, composite wood-textured panels, custom direction arrows, and sleek spa/pool area instructions.",
+      commonService: "Rustic & Backlit Signs",
+      image: imgResMain,
+      extraImages: [imgResExtra1, imgResExtra2]
+    },
+    {
+      id: 8,
       title: "Corporate Offices",
       icon: <Building2 size={36} />,
       tagline: "Professional internal frosted branding",
@@ -94,7 +151,7 @@ export default function Industries() {
       extraImages: [imgInd7, imgInd9]
     },
     {
-      id: 5,
+      id: 9,
       title: "Factories & Warehouses",
       icon: <ShieldAlert size={36} />,
       tagline: "Heavy-gauge warning & hazard indicators",
@@ -104,9 +161,9 @@ export default function Industries() {
       extraImages: [imgInd10, imgInd8]
     },
     {
-      id: 6,
+      id: 10,
       title: "Hospitality & Hotels",
-      icon: <Coffee size={36} />,
+      icon: <Hotel size={36} />,
       tagline: "Sleek, warm-lit aesthetic environments",
       solution: "Custom gold finish metal signs, warm-white backlit acrylic panels, custom script handwriting neon layouts for restaurant walls, and brass room door digits.",
       commonService: "Neon & Metallic Signage",

@@ -44,7 +44,7 @@ export default function Navbar() {
     <div
       className={`nav-mobile-menu ${isOpen ? 'open' : ''}`}
       // Use inert instead of aria-hidden — prevents focus trap and accessibility warnings
-      {...(!isOpen ? { inert: '' } : {})}
+      {...(!isOpen ? { inert: true } : {})}
     >
       {/* Header row */}
       <div className="mobile-drawer-header">

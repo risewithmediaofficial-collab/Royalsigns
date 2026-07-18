@@ -6,7 +6,7 @@
   display: grid;
   width: 100%;
   grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 22rem;
+  grid-auto-rows: auto;   /* auto-height: card fits content */
   gap: 16px;
 }
 
@@ -24,6 +24,7 @@
               0 12px 24px rgba(0, 0, 0, 0.04);
   transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1),
               box-shadow 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  min-height: 180px;  /* sensible min so cards don't collapse */
 }
 
 .bento-card:hover {
@@ -61,13 +62,12 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding: 32px;
-  margin-top: auto;
+  padding: 28px 28px 16px;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .bento-card:hover .bento-info-panel {
-  transform: translateY(-40px);
+  transform: translateY(-8px);
 }
 
 .bento-icon-wrapper {
@@ -98,16 +98,12 @@
 
 /* Action / CTA bottom container */
 .bento-action-panel {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 24px 32px;
+  position: relative;
+  padding: 0 28px 24px;
   z-index: 3;
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .bento-card:hover .bento-action-panel {
@@ -193,12 +189,12 @@
     grid-column: span 1 / span 1;
   }
   .bento-card {
-    height: 320px;
+    height: auto;
   }
   .bento-info-panel {
-    padding: 24px;
+    padding: 20px 20px 12px;
   }
   .bento-action-panel {
-    padding: 16px 24px;
+    padding: 0 20px 18px;
   }
 }

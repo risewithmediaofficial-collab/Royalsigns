@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  ArrowRight, ShieldCheck, Sparkles, Truck, HeartHandshake, Lightbulb, Grid, 
-  CheckSquare, FileText, CheckCircle2, ChevronDown, Phone, Mail, MapPin, 
-  Clock, Landmark, Building2, Wrench 
+import {
+  ArrowRight, ShieldCheck, Sparkles, Truck, HeartHandshake, Lightbulb, Grid,
+  CheckSquare, FileText, CheckCircle2, ChevronDown, Phone, Mail, MapPin,
+  Clock, Landmark, Building2, Wrench
 } from 'lucide-react';
 import {
   IconShieldCheck, IconSparkles, IconTruck, IconHeartHandshake,
@@ -141,7 +141,7 @@ export default function Home() {
     animateStat("75", setAcpWorks);
   }, []);
   const clientLogos = [
-    "TVS Motors", "Adayar Ananda Bhavan", "Apollo Pharmacy", 
+    "TVS Motors", "Adayar Ananda Bhavan", "Apollo Pharmacy",
     "HDFC Bank", "Vasanth & Co", "Lotus Hotels", "Royal Inn"
   ];
 
@@ -185,7 +185,7 @@ export default function Home() {
     {
       id: 7,
       title: "LED Sign Boards",
-      desc: "Energy-saving illuminated signs with waterproof Samsung LED modules.",
+      desc: "Energy-saving illuminated signs with waterproof LED modules.",
       icon: <IconBuildingStore size={28} stroke={1.5} />,
     },
     {
@@ -205,7 +205,7 @@ export default function Home() {
   const chooseReasons = [
     {
       title: "Premium Materials",
-      desc: "We use original 3mm non-fading ACP panels, waterproof Samsung LED modules, and pure virgin acrylics.",
+      desc: "We use original 3mm non-fading ACP panels, waterproof LED modules, and pure virgin acrylics.",
       icon: <IconShieldCheck size={26} stroke={1.5} />
     },
     {
@@ -248,7 +248,7 @@ export default function Home() {
   ];
 
   const faqs = [
-    { q: "How long does a sign board last?", a: "With original Samsung LEDs, waterproof power adapters, and virgin acrylics, our signboards operate optimally for 5 to 7+ years with minimal maintenance." },
+    { q: "How long does a sign board last?", a: "With original LEDs, waterproof power adapters, and virgin acrylics, our signboards operate optimally for 5 to 7+ years with minimal maintenance." },
     { q: "Do you provide custom design layout assistance?", a: "Yes, once an order is registered, our designers render custom 2D/3D templates showing your brand colors and nighttime illumination views for final consent." },
     { q: "What is your typical production timeframe?", a: "Standard boards take 5 to 7 working days. Bulk corporate branding projects or large structural pylons are scheduled between 10 to 14 days." },
     { q: "Do you provide repair support for existing boards?", a: "Yes! We replace burnt adapters, swap dimmed LED modules, fix loose wiring, and re-clack older weather-damaged ACP sections." }
@@ -256,7 +256,7 @@ export default function Home() {
 
   return (
     <div className="home-page-white">
-      
+
       {/* Circle Animation Hero Section */}
       <section className="hero-animation-section">
         <IntroAnimation />
@@ -292,7 +292,7 @@ export default function Home() {
             <p>
               At Royal Signs, we specialize in delivering complete signage and branding solutions with professional craftsmanship and premium quality. From acrylic letters and LED signages to ACP elevations, glazing works, and unipoles, we create signage that strengthens brand identity and adds a premium, professional appearance.
             </p>
-            
+
             {/* Stats list with animated counters */}
             <div className="stats-list-grid">
               <div className="stat-card">
@@ -376,7 +376,7 @@ export default function Home() {
           <div className="section-header">
             <span className="badge badge-red">LED Glow Test</span>
             <h2>Illumination Comparison</h2>
-            <p>See our signs during the day (unlit) and at night (Samsung LED modules illuminated).</p>
+            <p>See our signs during the day (unlit) and at night (LED modules illuminated).</p>
           </div>
           <BeforeAfterSlider />
         </div>
@@ -440,38 +440,38 @@ export default function Home() {
 
           {/* Filters */}
           <div className="portfolio-filters-white">
-            <button 
-              onClick={() => setPortfolioFilter('all')} 
+            <button
+              onClick={() => setPortfolioFilter('all')}
               className={`filter-white-btn ${portfolioFilter === 'all' ? 'active' : ''}`}
             >
               All Works
             </button>
-            <button 
-              onClick={() => setPortfolioFilter('shop')} 
+            <button
+              onClick={() => setPortfolioFilter('shop')}
               className={`filter-white-btn ${portfolioFilter === 'shop' ? 'active' : ''}`}
             >
               Shops
             </button>
-            <button 
-              onClick={() => setPortfolioFilter('hospital')} 
+            <button
+              onClick={() => setPortfolioFilter('hospital')}
               className={`filter-white-btn ${portfolioFilter === 'hospital' ? 'active' : ''}`}
             >
               Hospital
             </button>
-            <button 
-              onClick={() => setPortfolioFilter('school')} 
+            <button
+              onClick={() => setPortfolioFilter('school')}
               className={`filter-white-btn ${portfolioFilter === 'school' ? 'active' : ''}`}
             >
               School
             </button>
-            <button 
-              onClick={() => setPortfolioFilter('corporate')} 
+            <button
+              onClick={() => setPortfolioFilter('corporate')}
               className={`filter-white-btn ${portfolioFilter === 'corporate' ? 'active' : ''}`}
             >
               Corporate
             </button>
-            <button 
-              onClick={() => setPortfolioFilter('industrial')} 
+            <button
+              onClick={() => setPortfolioFilter('industrial')}
               className={`filter-white-btn ${portfolioFilter === 'industrial' ? 'active' : ''}`}
             >
               Industrial
@@ -480,7 +480,7 @@ export default function Home() {
 
           {/* Dome Gallery Container */}
           <div className="portfolio-dome-container">
-            <DomeGallery 
+            <DomeGallery
               images={filteredPortfolio.map(item => ({ src: item.src, alt: item.alt }))}
               grayscale={false}
               overlayBlurColor="#ffffff"
@@ -502,7 +502,7 @@ export default function Home() {
             <div className="process-connecting-line">
               <div className="active-glow-line"></div>
             </div>
-            
+
             <div className="process-steps-row">
               {processSteps.map((stp, idx) => (
                 <div className="step-horizontal-item" key={idx}>
@@ -536,7 +536,7 @@ export default function Home() {
                   <p className="reviewer-meta">2 reviews · 8 photos · 4 years ago</p>
                 </div>
                 <span className="google-badge">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" /><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" /><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05" /><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335" /></svg>
                 </span>
               </div>
               <div className="review-stars">{'★'.repeat(5)}</div>
@@ -554,7 +554,7 @@ export default function Home() {
                   <p className="reviewer-meta">Local Guide · 11 reviews · 15 photos · 5 years ago</p>
                 </div>
                 <span className="google-badge">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" /><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" /><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05" /><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335" /></svg>
                 </span>
               </div>
               <div className="review-stars">{'★'.repeat(5)}</div>
@@ -577,7 +577,7 @@ export default function Home() {
                   <p className="reviewer-meta">Showroom Owner · Krishnagiri · 1 year ago</p>
                 </div>
                 <span className="google-badge">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" /><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" /><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05" /><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335" /></svg>
                 </span>
               </div>
               <div className="review-stars">{'★'.repeat(5)}</div>
@@ -595,7 +595,7 @@ export default function Home() {
                   <p className="reviewer-meta">Boutique Owner · Krishnagiri · 8 months ago</p>
                 </div>
                 <span className="google-badge">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" /><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" /><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05" /><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335" /></svg>
                 </span>
               </div>
               <div className="review-stars">{'★'.repeat(5)}</div>
@@ -613,7 +613,7 @@ export default function Home() {
                   <p className="reviewer-meta">Clinic Administrator · Krishnagiri · 6 months ago</p>
                 </div>
                 <span className="google-badge">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" /><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" /><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05" /><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335" /></svg>
                 </span>
               </div>
               <div className="review-stars">{'★'.repeat(5)}</div>
@@ -631,7 +631,7 @@ export default function Home() {
                   <p className="reviewer-meta">Restaurant Owner · Hosur · 3 months ago</p>
                 </div>
                 <span className="google-badge">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" /><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" /><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05" /><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335" /></svg>
                 </span>
               </div>
               <div className="review-stars">{'★'.repeat(5)}</div>
@@ -655,12 +655,12 @@ export default function Home() {
 
           <div className="faq-accordion-box">
             {faqs.map((faq, index) => (
-              <div 
-                className={`accordion-item ${openFaq === index ? 'active' : ''}`} 
+              <div
+                className={`accordion-item ${openFaq === index ? 'active' : ''}`}
                 key={index}
               >
-                <button 
-                  className="accordion-header-btn" 
+                <button
+                  className="accordion-header-btn"
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
                 >
                   <span>{faq.q}</span>
@@ -688,7 +688,7 @@ export default function Home() {
             <div className="contact-details-side">
               <h3>Our Locations</h3>
               <p className="office-sub">Visit us or reach out — we're happy to help.</p>
-              
+
               <ul className="details-list-bullets">
                 <li>
                   <MapPin size={20} className="icon-red" style={{ marginTop: 2 }} />
@@ -722,11 +722,11 @@ export default function Home() {
             </div>
 
             <div className="card inline-form-card">
-              <form 
+              <form
                 onSubmit={(e) => {
                   e.preventDefault();
                   alert("Thank you! Your quote request has been sent successfully.");
-                }} 
+                }}
                 className="form-inline-elements"
               >
                 <div className="form-group">
@@ -758,13 +758,13 @@ export default function Home() {
           </div>
 
           <div className="map-iframe-white-wrap">
-            <iframe 
+            <iframe
               title="Royal Signs Location Iframe"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3899.9678122678857!2d78.2173489!3d12.518625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bac16e911252033%3A0xe54fb0ce0cecb52b!2sNaveen%20Arcade%2C%20Gandhi%20Nagar%2C%20Krishnagiri%2C%20Tamil%20Nadu%20635002!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
-              width="100%" 
-              height="350" 
-              style={{ border: 0, display: 'block', borderRadius: '20px' }} 
-              allowFullScreen="" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3899.9678122678857!2d78.2173489!3d12.518625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bac16e911252033%3A0xe54fb0ce0cecb52b!2sNaveen%20Arcade%2C%20Gandhi%20Nagar%2C%20Krishnagiri%2C%20Tamil%20Nadu%20635002!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+              width="100%"
+              height="350"
+              style={{ border: 0, display: 'block', borderRadius: '20px' }}
+              allowFullScreen=""
               loading="lazy"
             ></iframe>
           </div>
