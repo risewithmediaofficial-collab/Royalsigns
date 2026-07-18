@@ -107,6 +107,7 @@ export default function Footer() {
         <div className="container footer-bottom-flex">
           <p>&copy; {currentYear} Royal Signs. All Rights Reserved.</p>
           <p>Sign Board Manufacturer in Krishnagiri</p>
+          <p>Developed with <a href="https://risewithmedia.com" target="_blank" rel="noopener noreferrer" className="footer-bottom-link">risewithmedia</a></p>
         </div>
       </div>
     </footer>
